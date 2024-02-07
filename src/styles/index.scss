@@ -1,0 +1,18 @@
+@use './base/reset';
+@use './base/typography';
+
+@use './components/carousel';
+@use './components/buttons';
+
+@use './layout/header';
+@use './layout/footer';
+
+@use './pages/home';
+
+@use './utils/mixins';
+@use './utils/variables';
+@use './utils/animations';
+
+body {
+    background-color: aqua;
+}

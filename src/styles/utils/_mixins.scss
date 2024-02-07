@@ -1,0 +1,40 @@
+$breakpoints: (
+    'desktop': (
+        min-width: 1200px,
+    ),
+    'laptop': (
+        min-width: 992px,
+    ),
+    'tablet': (
+        min-width: 768px,
+    ),
+    'mobile': (
+        min-width: 576px,
+    ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+@mixin flex($dir, $jus, $ali) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jus;
+    align-items: $ali;
+    gap: var(--gap, 1rem);
+}
+
+@mixin abs-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
