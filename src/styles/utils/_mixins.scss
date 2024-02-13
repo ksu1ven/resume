@@ -32,6 +32,12 @@ $breakpoints: (
     gap: var(--gap, 1rem);
 }
 
+@mixin abs() {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @mixin abs-center() {
     position: absolute;
     top: 50%;

@@ -1,0 +1,38 @@
+@use '../utils/mixins';
+
+header {
+    background-color: red;
+    padding: 0 3rem;
+}
+
+.game {
+    @include mixins.flex(null, space-between, auto);
+    min-height: fit-content;
+
+    .cat-container {
+        position: relative;
+
+        &__cat-banana__img {
+            @include mixins.abs();
+
+            min-height: 8rem;
+            min-width: 4rem;
+            height: 8rem;
+            width: 4rem;
+        }
+
+        &__cat-catch__img {
+            @include mixins.abs();
+            width: 4rem;
+            height: 4rem;
+            background-color: azure;
+            z-index: 2;
+        }
+    }
+
+    .house {
+        width: 4rem;
+        height: 4rem;
+        background-color: azure;
+    }
+}
