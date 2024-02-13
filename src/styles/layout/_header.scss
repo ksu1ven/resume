@@ -31,6 +31,8 @@ header {
     }
 
     .house {
+        position: relative;
+        z-index: 3;
         width: 4rem;
         height: 4rem;
         background-color: azure;

@@ -3,6 +3,7 @@ import { CatBanana } from './CatBanana';
 import mouseCursor from '../../../assets/images/favourite-icon.png';
 
 export function Header() {
+    let catWasClicked = false;
     const [isCatAnimated, setIsCatAnimated] = useState(false);
 
     useEffect(() => {
@@ -13,19 +14,35 @@ export function Header() {
         document.body.style.cursor = newCursor;
     }, [isCatAnimated]);
 
+    function handleClick() {
+        catWasClicked = true;
+    }
+
+    function handleMouseOver() {
+        setIsCatAnimated(false);
+    }
+
+    function handleMouseOut() {
+        if (catWasClicked) setIsCatAnimated(true);
+    }
+
     return (
         <header>
             <h1>Header</h1>
-
             <div className="game">
                 <CatBanana isCatAnimated={isCatAnimated} />
-                <div
+                <button
+                    type="button"
                     className="house"
-                    onMouseOver={() => setIsCatAnimated(!isCatAnimated)}
-                    onFocus={() => setIsCatAnimated(!isCatAnimated)}
+                    onClick={handleClick}
+                    onKeyDown={handleClick}
+                    onMouseOut={handleMouseOut}
+                    onBlur={handleMouseOut}
+                    onMouseOver={handleMouseOver}
+                    onFocus={handleMouseOver}
                 >
                     House
-                </div>
+                </button>
             </div>
         </header>
     );

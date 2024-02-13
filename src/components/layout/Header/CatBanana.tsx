@@ -9,6 +9,7 @@ import {
 import { useCursorPosition } from '../../../utils/useCursorPosition';
 import catBananaLeft from '../../../assets/images/cat-banana-left.gif';
 import catBananaRight from '../../../assets/images/cat-banana-right.gif';
+import happySong from '../../../assets/music/bananacat - original sound.mp3';
 
 interface CatBananaProps {
     isCatAnimated: boolean;
@@ -19,6 +20,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
 
     const [animationEnd, setAnimationEnd] = useState(false);
     const catCurrentPositionRef = useRef<AnimationDefinition>({ x: 0, y: 0 });
+    const happySongRef = useRef<HTMLAudioElement>(null);
 
     const { clientWidth } = document.body;
     const { clientHeight } = document.body;
@@ -42,9 +44,17 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         if (isCatAnimated && cursorPosition) {
             x.set(cursorPosition.left);
             y.set(cursorPosition.top);
+            if (happySongRef.current) {
+                happySongRef.current.muted = false;
+                happySongRef.current.play();
+            }
         } else {
             x.set(0);
             y.set(0);
+            if (happySongRef.current) {
+                happySongRef.current.currentTime = 0;
+                happySongRef.current.pause();
+            }
         }
     }, [cursorPosition, isCatAnimated, x, y]);
 
@@ -83,6 +93,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                         }, 200);
                     }}
                 />
+
                 {animationEnd && (
                     <motion.div
                         key="cat-catch"
@@ -94,6 +105,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                     </motion.div>
                 )}
             </AnimatePresence>
+            <audio src={happySong} ref={happySongRef} muted />
         </div>
     );
 }
