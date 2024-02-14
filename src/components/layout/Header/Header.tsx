@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import mouseCursor from '@assets/images/favourite-icon.png';
 import { CatBanana } from './CatBanana';
-import mouseCursor from '../../../assets/images/favourite-icon.png';
 
 export function Header() {
     let catWasClicked = false;
@@ -28,9 +28,11 @@ export function Header() {
 
     return (
         <header>
-            <h1>Header</h1>
             <div className="game">
                 <CatBanana isCatAnimated={isCatAnimated} />
+                <h2 className="game__rules">
+                    Play with Jungle cat! Click the Mouse house to start game.
+                </h2>
                 <button
                     type="button"
                     className="house"

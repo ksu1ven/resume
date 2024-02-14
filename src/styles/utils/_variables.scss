@@ -1,0 +1,27 @@
+:root {
+    //Colors
+    --color-primary: #80b986;
+    --color-primary-lighter: #bde0c0;
+    --color-light: #e5e5e5;
+    --color-white: #ffffff;
+    --color-dark-m: #32342e;
+    --color-dark-s: #52564d;
+    --color-black: #111111;
+
+    --drop-shadow-white: 0 0 2rem var(--color-white),
+        0 0 0.2rem var(--color-white);
+    --drop-shadow-light: 0 0 2rem var(--color-primary),
+        0 0 0.6rem var(--color-primary);
+    --drop-shadow-dark: 0 0 2rem var(--color-dark-s),
+        0 0 0.6rem var(--color-dark-s);
+
+    //Fonts
+    --ff-title: 'Bitter', serif;
+    --ff-text: 'Bitter', serif;
+
+    --fs-big: clamp(2rem, 2.7vw, 4rem);
+    --fs-medium-big: clamp(1.6rem, 2vw, 3.5rem);
+    --fs-medium: clamp(1.2rem, 1vw, 3rem);
+    --fs-small: clamp(1.3rem, 2vw, 1.6rem);
+    --fs-smallest: clamp(1rem, 0.9vw, 1.1rem);
+}

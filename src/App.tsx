@@ -5,14 +5,15 @@ import {
     Route,
 } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
+import { About } from './components/pages/About/About';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<Layout />}>
-                <Route index element={<main>adsfg</main>} />
+                <Route index element={<About />} />
             </Route>
-            <Route path="*" element={<main>adsfg</main>} />
+            <Route path="*" element={<main>Error</main>} />
         </>
     )
 );

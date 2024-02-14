@@ -6,10 +6,10 @@ import {
     AnimationDefinition,
     AnimatePresence,
 } from 'framer-motion';
-import { useCursorPosition } from '../../../utils/useCursorPosition';
-import catBananaLeft from '../../../assets/images/cat-banana-left.gif';
-import catBananaRight from '../../../assets/images/cat-banana-right.gif';
-import happySong from '../../../assets/music/bananacat - original sound.mp3';
+import { useCursorPosition } from '@utils/useCursorPosition';
+import catBananaLeft from '@assets/images/cat-banana-left.gif';
+import catBananaRight from '@assets/images/cat-banana-right.gif';
+import happySong from '@assets/music/bananacat - original sound.mp3';
 
 interface CatBananaProps {
     isCatAnimated: boolean;
@@ -65,6 +65,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                     ref={imageRef}
                     className="cat-container__cat-banana__img"
                     src={
+                        isCatAnimated &&
                         cursorPosition &&
                         cursorPosition.cursorDirection.X === 'left'
                             ? catBananaLeft
