@@ -70,6 +70,13 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
 
     return (
         <div className="cat-container">
+            {!isCatAnimated && (
+                <img
+                    src={catBananaRight}
+                    alt="catBanana"
+                    style={{ display: 'none' }}
+                />
+            )}
             <AnimatePresence>
                 <motion.img
                     ref={imageRef}
