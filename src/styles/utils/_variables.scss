@@ -2,6 +2,7 @@
     //Colors
     --color-primary: #80b986;
     --color-primary-lighter: #bde0c0;
+    --color-primary-lighter-opacity: #bde0c06b;
     --color-light: #e5e5e5;
     --color-white: #ffffff;
     --color-dark-m: #32342e;
@@ -17,11 +18,11 @@
 
     //Fonts
     --ff-title: 'Bitter', serif;
-    --ff-text: 'Bitter', serif;
+    --ff-text: 'Tenor Sans', sans-serif;
 
     --fs-big: clamp(2rem, 2.7vw, 4rem);
     --fs-medium-big: clamp(1.6rem, 2vw, 3.5rem);
-    --fs-medium: clamp(1.2rem, 1vw, 3rem);
-    --fs-small: clamp(1.3rem, 2vw, 1.6rem);
-    --fs-smallest: clamp(1rem, 0.9vw, 1.1rem);
+    --fs-medium: clamp(1.4rem, 1.7vw, 3rem);
+    --fs-small: clamp(1.1rem, 1.2vw, 1.6rem);
+    --fs-smallest: clamp(0.7rem, 0.9vw, 1.1rem);
 }

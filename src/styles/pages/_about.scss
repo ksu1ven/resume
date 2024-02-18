@@ -1,69 +1,96 @@
 @use '../utils/mixins';
 @use '../utils/variables';
 
-.contacts {
-    @include mixins.flex(null, flex-start, flex-start);
-    gap: 7rem;
-    padding: 5rem 5rem;
-    min-height: 47rem;
+.personal-info {
+    padding: 5rem 0;
     background-image: url('@assets/images/background-about-2.jpg');
     background-size: cover;
 
-    .photo-container {
-        @include mixins.flex(null, center, center);
-        width: 30rem;
-        height: 35rem;
-        transform: rotate(-5deg);
-        background-image: url(@assets/images/jungle.jpg);
-        background-size: cover;
+    &__block {
+        @include mixins.flex(null, flex-start, flex-start);
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+}
 
-        &_inner {
-            @include mixins.flex(null, center, center);
-            width: 25rem;
-            height: 30rem;
-            transform: rotate(25deg);
-            background-color: var(--color-light);
-            box-shadow: var(--drop-shadow-dark);
-        }
+.photo-container {
+    @include mixins.flex(null, center, center);
+    width: 30rem;
+    height: 35rem;
+    transform: rotate(-5deg);
+    background-image: url(@assets/images/jungle.jpg);
+    background-size: cover;
+
+    &_inner {
+        @include mixins.flex(null, center, center);
+        width: 25rem;
+        height: 30rem;
+        transform: rotate(25deg);
+        background-color: var(--color-light);
+        box-shadow: var(--drop-shadow-dark);
     }
 
     .photo {
         width: 20rem;
         height: 26rem;
-
         transform: rotate(-20deg) translate(-20px, -30px);
     }
+}
 
-    &__content {
-        width: 40rem;
-        font-size: var(--fs-medium-big);
-        font-weight: bold;
-        h1 {
-            font-family: var(--ff-title);
-            font-size: var(--fs-big);
-            color: var(--color-dark-m);
-            margin-bottom: 2rem;
-        }
+.contacts {
+    width: 40rem;
+    font-size: var(--fs-medium);
+    font-weight: bold;
+    color: var(--color-dark-m);
+
+    h1 {
+        font-family: var(--ff-title);
+        font-size: var(--fs-big);
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
     }
 
     &__block {
-        h2 {
-            font-family: var(--ff-text);
-            font-size: var(--fs-medium-big);
-            font-weight: bold;
-            font-style: italic;
+        color: var(--color-dark-s);
+        margin-left: 3rem;
+    }
+
+    &__list {
+        @include mixins.flex(column, flex-start, flex-start);
+
+        &_professional {
+            padding-left: 7rem;
+        }
+    }
+
+    &__item {
+        @include mixins.flex(null, flex-start, center);
+        font-size: var(--fs-medium);
+        font-weight: bold;
+
+        a {
             color: var(--color-dark-s);
+        }
+
+        &__icon {
+            width: 4rem;
+            height: 4rem;
         }
     }
 }
 
 .description {
-    padding: 5rem 5rem;
+    padding: 5rem 0;
     color: var(--color-dark-m);
     background-color: var(--color-primary);
-    min-height: 30rem;
     font-family: var(--ff-text);
     font-size: var(--fs-medium-big);
     font-weight: bold;
-    font-style: italic;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
 }

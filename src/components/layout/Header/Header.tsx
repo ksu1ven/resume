@@ -28,7 +28,7 @@ export function Header() {
 
     return (
         <header>
-            <div className="game">
+            <div className="game wrapper">
                 <CatBanana isCatAnimated={isCatAnimated} />
                 <h2 className="game__rules">
                     Play with Jungle cat! Click the Mouse house to start game.

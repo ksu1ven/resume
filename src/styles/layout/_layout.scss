@@ -1,5 +1,12 @@
+@use '../utils/mixins';
+
 #root {
     min-height: 100vh;
     display: grid;
     grid-template-rows: 9rem 1fr 100px;
+}
+
+.wrapper {
+    max-width: 1300px;
+    margin: auto;
 }

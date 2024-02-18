@@ -27,18 +27,28 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
     const imageRef = useRef<HTMLImageElement>(null);
     const imageWidth = imageRef.current?.width || 0;
     const imageHeigth = imageRef.current?.height || 0;
+    const [imageOffsetLeft, setImageOffsetLeft] = useState(0);
+    const [imageOffsetTop, setImageOffsetTop] = useState(0);
     const x = useMotionValue(0);
     const catX = useTransform(
         x,
-        [0, clientWidth],
-        [-imageWidth * 0.9, clientWidth - imageWidth * 1.5]
+        [imageWidth / 2, clientWidth - imageWidth / 2],
+        [-imageOffsetLeft, clientWidth - imageOffsetLeft - imageWidth]
     );
+
     const y = useMotionValue(0);
     const catY = useTransform(
         y,
-        [0, clientHeight],
-        [-imageWidth * 0.4, clientHeight - imageHeigth * 1.09]
+        [imageHeigth / 2, clientHeight - imageHeigth / 2],
+        [-imageOffsetTop, clientHeight - imageOffsetTop - imageHeigth]
     );
+
+    useEffect(() => {
+        if (!imageOffsetLeft && !imageOffsetTop && imageRef.current) {
+            setImageOffsetLeft(imageRef.current?.getBoundingClientRect().x);
+            setImageOffsetTop(imageRef.current?.getBoundingClientRect().y);
+        }
+    }, [imageOffsetLeft, imageOffsetTop]);
 
     useEffect(() => {
         if (isCatAnimated && cursorPosition) {
