@@ -72,8 +72,8 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         <div className="cat-container">
             {!isCatAnimated && (
                 <img
-                    src={catBananaRight}
-                    alt="catBanana"
+                    src={catBananaLeft}
+                    alt="catBanana hidden"
                     style={{ display: 'none' }}
                 />
             )}
