@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import talkingCats from '@assets/videos/talking-cats.webm';
 import certificateJs from '@assets/images/certificate-js.png';
 import certificateReact from '@assets/images/certificate-react.png';
+import talkingCloudLeft from '@assets/icons/talking-cloud-left.png';
+import talkingCloudRight from '@assets/icons/talking-cloud-right.png';
 import { CertificatesSwiper } from './CertificatesSwiper';
 
 export function EducationCats() {
@@ -127,6 +129,8 @@ export function EducationCats() {
             )}
             <link rel="preload" as="image" href={certificateReact} />
             <link rel="preload" as="image" href={certificateJs} />
+            <link rel="preload" as="image" href={talkingCloudLeft} />
+            <link rel="preload" as="image" href={talkingCloudRight} />
         </>
     );
 }
