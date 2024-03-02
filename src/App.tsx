@@ -21,7 +21,9 @@ const router = createBrowserRouter(
 );
 
 function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <RouterProvider router={router} fallbackElement={<h1>Loading...</h1>} />
+    );
 }
 
 export default App;
