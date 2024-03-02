@@ -1,0 +1,130 @@
+import { useState, useRef } from 'react';
+import talkingCats from '@assets/videos/talking-cats.webm';
+import certificateJs from '@assets/images/certificate-js.png';
+import certificateReact from '@assets/images/certificate-react.png';
+import { CertificatesSwiper } from './CertificatesSwiper';
+
+export function EducationCats() {
+    const [isVideoPlaying, setVideoPlaying] = useState(false);
+    const [isSwiperVisible, setSwiperVisible] = useState(false);
+
+    const [catHRSpeech, setCatHRSpeech] = useState('');
+    const [catMeSpeech, setCatMeSpeech] = useState('');
+    const [catMeCertificate, setCatMeCertificate] = useState<
+        'js' | 'react' | null
+    >(null);
+
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const timersId = useRef<ReturnType<typeof setTimeout>[] | null[]>([
+        null,
+        null,
+        null,
+        null,
+    ]);
+
+    function handleTalk() {
+        setVideoPlaying(!isVideoPlaying);
+
+        if (!isVideoPlaying && videoRef.current) {
+            videoRef.current.play();
+        } else if (videoRef.current) {
+            setCatHRSpeech('');
+            setCatMeSpeech('');
+            timersId.current.forEach((el) => {
+                if (el) clearTimeout(el);
+            });
+            videoRef.current.currentTime = 0;
+            videoRef.current.pause();
+            return;
+        }
+        setCatHRSpeech('Котик, чем докажешь, что знаешь JavaScript?');
+        timersId.current[0] = setTimeout(() => {
+            setCatHRSpeech('');
+            setCatMeCertificate('js');
+            setCatMeSpeech('У меня есть серьёзная бумажка. Воть!');
+        }, 2500);
+        timersId.current[1] = setTimeout(() => {
+            setCatMeSpeech('');
+            setCatHRSpeech('Этого мало. Нужен фреймворк.');
+        }, 4200);
+        timersId.current[2] = setTimeout(() => {
+            setCatHRSpeech('');
+            setCatMeCertificate('react');
+            setCatMeSpeech('Воть бумажка на React.');
+        }, 8400);
+        timersId.current[3] = setTimeout(() => {
+            setCatMeCertificate(null);
+            setCatMeSpeech('И на Node JS скоро будет.');
+        }, 10000);
+    }
+
+    function handleClickOverlay(el: HTMLElement) {
+        if (el.classList.contains('swiper__overlay')) setSwiperVisible(false);
+    }
+
+    return (
+        <>
+            <section className="education-cats">
+                <div className="education-cats__speech">
+                    {catHRSpeech && (
+                        <div className="cat-speech cat-speech_hr">
+                            {catHRSpeech}
+                        </div>
+                    )}
+                    {catMeSpeech && (
+                        <div className="cat-speech cat-speech_me">
+                            {catMeSpeech}
+                            {catMeCertificate && (
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setVideoPlaying(false);
+                                        handleTalk();
+                                        setSwiperVisible(true);
+                                    }}
+                                >
+                                    <img
+                                        className="cat-speech_me__certificate"
+                                        src={
+                                            catMeCertificate === 'js'
+                                                ? certificateJs
+                                                : certificateReact
+                                        }
+                                        alt={`${catMeCertificate} certificate`}
+                                    />
+                                </button>
+                            )}
+                        </div>
+                    )}
+                    <div />
+                </div>
+                <video
+                    ref={videoRef}
+                    src={talkingCats}
+                    onClick={handleTalk}
+                    onEnded={() => {
+                        setVideoPlaying(false);
+                        setCatHRSpeech('');
+                        setCatMeSpeech('');
+                    }}
+                />
+                <p className="education-cats__description">
+                    Нажмите на котиков, они покажут мои сертификаты. <br />
+                    Подробнее рассмотреть сертификаты вы можете кликнув на них.
+                </p>
+            </section>
+            {isSwiperVisible && catMeCertificate && (
+                <div
+                    className="swiper__overlay"
+                    onClick={(e) => handleClickOverlay(e.target as HTMLElement)}
+                    onKeyDown={(e) =>
+                        handleClickOverlay(e.target as HTMLElement)
+                    }
+                    role="presentation"
+                >
+                    <CertificatesSwiper activeSlide={catMeCertificate} />
+                </div>
+            )}
+        </>
+    );
+}

@@ -31,7 +31,7 @@ export function Header() {
             <div className="game wrapper">
                 <CatBanana isCatAnimated={isCatAnimated} />
                 <h2 className="game__rules">
-                    Play with Jungle cat! Click the Mouse house to start game.
+                    Поиграй с котом-бананом. Нажми на домик, чтобы начать
                 </h2>
                 <button
                     type="button"
@@ -46,6 +46,7 @@ export function Header() {
                     House
                 </button>
             </div>
+            <nav className="pagination">Pagination</nav>
         </header>
     );
 }

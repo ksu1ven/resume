@@ -1,5 +1,4 @@
 @use './base/reset';
-@use './base/typography';
 
 @use './components/carousel';
 @use './components/buttons';
@@ -9,6 +8,7 @@
 @use './layout/layout';
 
 @use './pages/about';
+@use './pages/education';
 
 @use './utils/mixins';
 @use './utils/variables';
@@ -17,4 +17,5 @@
 body {
     overflow-x: hidden;
     font-family: var(--ff-text);
+    color: var(--color-dark-m);
 }

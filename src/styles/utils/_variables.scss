@@ -2,18 +2,20 @@
     //Colors
     --color-primary: #80b986;
     --color-primary-lighter: #bde0c0;
-    --color-primary-lighter-opacity: #bde0c06b;
+    --color-primary-lighter-transparent: #bde0c0ab;
     --color-light: #e5e5e5;
+    --color-light-transparent: #e5e5e560;
     --color-white: #ffffff;
     --color-dark-m: #32342e;
     --color-dark-s: #52564d;
     --color-black: #111111;
 
-    --drop-shadow-white: 0 0 2rem var(--color-white),
+    --drop-shadow-white: 0rem 0rem 1rem 0.5rem var(--color-white),
         0 0 0.2rem var(--color-white);
-    --drop-shadow-light: 0 0 2rem var(--color-primary),
+    --text-shadow-white: 2px 4px 5px #ffffff;
+    --drop-shadow-primary: 0 0 1.5rem 1rem var(--color-primary),
         0 0 0.6rem var(--color-primary);
-    --drop-shadow-dark: 0 0 2rem var(--color-dark-s),
+    --drop-shadow-dark: 0 0 1.5rem 1rem var(--color-dark-s),
         0 0 0.6rem var(--color-dark-s);
 
     //Fonts
@@ -22,7 +24,7 @@
 
     --fs-big: clamp(2rem, 2.7vw, 4rem);
     --fs-medium-big: clamp(1.6rem, 2vw, 3.5rem);
-    --fs-medium: clamp(1.4rem, 1.7vw, 3rem);
-    --fs-small: clamp(1.1rem, 1.2vw, 1.6rem);
-    --fs-smallest: clamp(0.7rem, 0.9vw, 1.1rem);
+    --fs-medium: clamp(1rem, 1.2vw, 2.5rem);
+    --fs-small: clamp(0.8rem, 0.8vw, 1.2rem);
+    --fs-smallest: clamp(0.5rem, 0.7vw, 1rem);
 }

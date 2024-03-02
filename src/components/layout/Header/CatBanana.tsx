@@ -74,7 +74,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 <img
                     src={catBananaLeft}
                     alt="catBanana hidden"
-                    style={{ display: 'none' }}
+                    style={{ visibility: 'hidden' }}
                 />
             )}
             <AnimatePresence>

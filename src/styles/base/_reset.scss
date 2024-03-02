@@ -92,9 +92,16 @@ h4,
 h5,
 h6,
 b,
-strong {
+strong,
+section,
+main,
+div,
+nav,
+header,
+footer {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 i,
 cite,
@@ -118,6 +125,12 @@ textarea,
 input,
 select {
     display: inline-block;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+button {
+    cursor: pointer;
 }
 big {
     font-size: 1.17em;

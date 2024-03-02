@@ -1,0 +1,32 @@
+@use '../utils/mixins';
+
+.swiper__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    @include mixins.flex(null, center, center);
+
+    background-image: url('@assets/images/jungle.jpg');
+    background-size: cover;
+}
+.certificates-swiper {
+    background-color: var(--color-light-transparent);
+}
+.certificates-slide {
+    @include mixins.flex(null, center, center);
+    height: 100vh;
+    width: fit-content;
+
+    &__img {
+        width: 70%;
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-white);
+}

@@ -2,19 +2,19 @@
 @use '../utils/mixins';
 
 header {
+    // background-color: var(--color-primary);
     background-image: url('@assets/images/jungle.jpg');
     background-size: 100%;
 }
 
 .game {
     @include mixins.flex(null, space-between, center);
-    height: fit-content;
     font-family: var(--ff-title);
     font-weight: 400;
 
     &__rules {
         color: var(--color-white);
-        font-size: var(--fs-big);
+        font-size: var(--fs-medium-big);
         font-weight: bold;
     }
 
@@ -22,7 +22,7 @@ header {
         position: relative;
         height: 8rem;
         width: 4rem;
-        z-index: 100;
+        z-index: 5;
 
         &__cat-banana__img {
             @include mixins.abs();
@@ -47,4 +47,10 @@ header {
         height: 4rem;
         background-color: azure;
     }
+}
+
+.pagination {
+    padding: 2rem 0;
+    background-color: var(--color-primary);
+    box-shadow: var(--drop-shadow-primary);
 }

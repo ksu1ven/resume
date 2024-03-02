@@ -1,9 +1,8 @@
 @use '../utils/mixins';
-@use '../utils/variables';
 
 .personal-info {
     padding: 5rem 0;
-    background-image: url('@assets/images/background-about-2.jpg');
+    background-image: url('@assets/images/background-2.jpg');
     background-size: cover;
 
     &__block {
@@ -20,6 +19,7 @@
     transform: rotate(-5deg);
     background-image: url(@assets/images/jungle.jpg);
     background-size: cover;
+    box-shadow: var(--drop-shadow-dark);
 
     &_inner {
         @include mixins.flex(null, center, center);

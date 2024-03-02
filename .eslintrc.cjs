@@ -27,6 +27,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'prettier/prettier': 'error',
         'import/prefer-default-export': 'off',
+        'jsx-a11y/media-has-caption': 'off',
         '@typescript-eslint/no-explicit-any': 'error',
         '@typescript-eslint/array-type': [
             'error',
