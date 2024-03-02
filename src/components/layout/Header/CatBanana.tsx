@@ -70,13 +70,6 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
 
     return (
         <div className="cat-container">
-            {!isCatAnimated && (
-                <img
-                    src={catBananaLeft}
-                    alt="catBanana hidden"
-                    style={{ visibility: 'hidden' }}
-                />
-            )}
             <AnimatePresence>
                 <motion.img
                     ref={imageRef}
@@ -124,6 +117,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 )}
             </AnimatePresence>
             <audio src={happySong} ref={happySongRef} muted />
+            <link rel="preload" as="image" href={catBananaLeft} />
         </div>
     );
 }

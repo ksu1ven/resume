@@ -125,6 +125,8 @@ export function EducationCats() {
                     <CertificatesSwiper activeSlide={catMeCertificate} />
                 </div>
             )}
+            <link rel="preload" as="image" href={certificateReact} />
+            <link rel="preload" as="image" href={certificateJs} />
         </>
     );
 }
