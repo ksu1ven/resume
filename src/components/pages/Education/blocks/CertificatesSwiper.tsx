@@ -9,8 +9,10 @@ import {
 import certificateJs from '@assets/images/certificate-js.png';
 import certificateReact from '@assets/images/certificate-react.png';
 
-import 'swiper/css';
+import 'swiper/scss';
 import 'swiper/scss/navigation';
+import 'swiper/scss/a11y';
+import 'swiper/scss/effect-flip';
 
 interface CertificatesSwiperProps {
     activeSlide: string;

@@ -3,3 +3,14 @@ export type CursorProps = {
     top: number;
     cursorDirection: { X: 'left' | 'right'; Y: 'top' | 'bottom' };
 };
+
+export type PortfolioItem = {
+    name: string;
+    images: string[];
+    stack: string;
+    deploy: string;
+    repo: string;
+    description: string;
+    type: 'Командный' | 'Индивидуальный';
+    responsibility?: string;
+};

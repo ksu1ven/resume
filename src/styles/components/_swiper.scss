@@ -1,0 +1,107 @@
+@use '../utils/mixins';
+
+.swiper__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    @include mixins.flex(null, center, center);
+
+    background-image: url('@assets/images/jungle.jpg');
+    background-size: cover;
+}
+.certificates-swiper {
+    background-color: var(--color-light-transparent);
+}
+.certificates-slide {
+    @include mixins.flex(null, center, center);
+    height: 100vh;
+    width: fit-content;
+
+    &__img {
+        width: 70%;
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    padding: 0 2rem;
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-white);
+}
+
+.portfolio-swiper {
+    height: calc(100vh - 5rem);
+
+    .parallax-bg {
+        width: 150%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        background-image: url('@assets/images/jungle.jpg');
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.portfolio-slide {
+    &__container {
+        @include mixins.flex(null, center, center);
+    }
+
+    width: 80%;
+    height: 90%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+
+    background-color: var(--color-light-transparent);
+
+    &__img-container {
+        @include mixins.flex(null, center, center);
+
+        &_inner {
+            position: relative;
+        }
+
+        img {
+            width: 25rem;
+            height: 21rem;
+
+            position: absolute;
+        }
+    }
+
+    &__content {
+        padding: 2rem;
+
+        @include mixins.flex(column, flex-start, flex-start);
+        gap: 1rem;
+
+        font-weight: bold;
+        font-family: var(--ff-title);
+
+        h1 {
+            font-size: var(--fs-medium-big);
+            text-transform: uppercase;
+        }
+
+        h2,
+        h3 {
+            font-size: var(--fs-medium);
+        }
+
+        a,
+        p {
+            color: var(--color-dark-s);
+            font-family: var(--ff-text);
+        }
+    }
+}

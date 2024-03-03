@@ -7,6 +7,7 @@ import {
 import { Layout } from './components/layout/Layout';
 import { About } from './components/pages/About/About';
 import { Education } from './components/pages/Education/Education';
+import { Portfolio } from './components/pages/Portfolio/Portfolio';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
             <Route path="/" element={<Layout />}>
                 <Route index element={<About />} />
                 <Route path="education" element={<Education />} />
+                <Route path="portfolio" element={<Portfolio />} />
             </Route>
             <Route path="*" element={<main>Error</main>} />
         </>

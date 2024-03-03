@@ -1,0 +1,10 @@
+@use '../utils/mixins';
+
+.portfolio {
+    width: 100vw;
+    background-color: var(--color-primary);
+
+    &-content {
+        @include mixins.flex(null, center, center);
+    }
+}

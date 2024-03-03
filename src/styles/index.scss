@@ -1,6 +1,6 @@
 @use './base/reset';
 
-@use './components/carousel';
+@use './components/swiper';
 @use './components/buttons';
 
 @use './layout/header';
@@ -9,6 +9,7 @@
 
 @use './pages/about';
 @use './pages/education';
+@use './pages/portfolio';
 
 @use './utils/mixins';
 @use './utils/variables';
