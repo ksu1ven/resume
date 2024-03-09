@@ -1,15 +1,15 @@
 @use '../utils/mixins';
 
 .personal-info {
-    padding: 5rem 0;
-    background-image: url('@assets/images/background-2.jpg');
-    background-size: cover;
-
-    &__block {
-        @include mixins.flex(null, flex-start, flex-start);
-        gap: 3rem;
-        margin-bottom: 3rem;
+    &-bg {
+        padding: 5rem 0;
+        background-image: url('@assets/images/background-2.jpg');
+        background-size: cover;
     }
+
+    @include mixins.flex(null, flex-start, flex-start);
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
 .photo-container {
@@ -43,13 +43,13 @@
     font-weight: bold;
     color: var(--color-dark-m);
 
-    h1 {
+    .greeting {
         font-family: var(--ff-title);
         font-size: var(--fs-big);
         margin-bottom: 2rem;
     }
 
-    h2 {
+    &__h2 {
         margin-bottom: 1rem;
     }
 
@@ -71,7 +71,7 @@
         font-size: var(--fs-medium);
         font-weight: bold;
 
-        a {
+        &__link {
             color: var(--color-dark-s);
         }
 
@@ -90,7 +90,7 @@
     font-size: var(--fs-medium-big);
     font-weight: bold;
 
-    h2 {
+    &__h2 {
         margin-bottom: 1rem;
     }
 }

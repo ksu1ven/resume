@@ -8,9 +8,11 @@ import RSIcon from '@assets/icons/rs-logo.jpg';
 export function Contacts() {
     return (
         <div className="contacts">
-            <h1>Привет! Я КотОксана, JavaScript разработчик.</h1>
+            <h1 className="greeting">
+                Привет! Я КотОксана, JavaScript разработчик.
+            </h1>
             <div className="contacts__block">
-                <h2>Мои контакты</h2>
+                <h2 className="contacts__h2">Мои контакты</h2>
                 <ul className="contacts__list">
                     <li className="contacts__item">
                         <img
@@ -18,7 +20,12 @@ export function Contacts() {
                             alt="Phone icon"
                             className="contacts__item__icon"
                         />
-                        <Link to="tel:+375291219346">+375(29) 121-93-46</Link>
+                        <Link
+                            to="tel:+375291219346"
+                            className="contacts__item__link"
+                        >
+                            +375(29) 121-93-46
+                        </Link>
                     </li>
                     <li className="contacts__item">
                         <img
@@ -26,7 +33,12 @@ export function Contacts() {
                             alt="Mail icon"
                             className="contacts__item__icon"
                         />
-                        <Link to="mailto:ksu1ven@mail.ru">ksu1ven@mail.ru</Link>
+                        <Link
+                            to="mailto:ksu1ven@mail.ru"
+                            className="contacts__item__link"
+                        >
+                            ksu1ven@mail.ru
+                        </Link>
                     </li>
                     <li className="contacts__item">
                         <img
@@ -34,7 +46,10 @@ export function Contacts() {
                             alt="Telegram icon"
                             className="contacts__item__icon"
                         />
-                        <Link to="https://t.me/ksu1ven">
+                        <Link
+                            to="https://t.me/ksu1ven"
+                            className="contacts__item__link"
+                        >
                             https://t.me/ksu1ven
                         </Link>
                     </li>
@@ -53,7 +68,12 @@ export function ProfessionalContacts() {
                     alt="Github icon"
                     className="contacts__item__icon"
                 />
-                <Link to="https://github.com/ksu1ven">GitHub</Link>
+                <Link
+                    to="https://github.com/ksu1ven"
+                    className="contacts__item__link"
+                >
+                    GitHub
+                </Link>
             </li>
             <li className="contacts__item">
                 <img
@@ -61,7 +81,10 @@ export function ProfessionalContacts() {
                     alt="RS School icon"
                     className="contacts__item__icon"
                 />
-                <Link to="https://app.rs.school/cv/3adc8c9f-82d7-4588-adae-79ed41ed4c51">
+                <Link
+                    to="https://app.rs.school/cv/3adc8c9f-82d7-4588-adae-79ed41ed4c51"
+                    className="contacts__item__link"
+                >
                     RS School CV
                 </Link>
             </li>

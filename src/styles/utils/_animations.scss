@@ -1,0 +1,39 @@
+.cloud-move {
+    animation: cloud-move 16700ms;
+}
+
+@keyframes cloud-move {
+    0% {
+        scale: 0.5;
+        left: 70%;
+    }
+    5% {
+        left: 85%;
+    }
+    13% {
+        scale: 1;
+        left: 52%;
+    }
+    20% {
+        left: 57%;
+    }
+    48% {
+        left: 57%;
+    }
+    52% {
+        left: 100%;
+    }
+    58% {
+        left: 52%;
+    }
+    65% {
+        left: 57%;
+    }
+    97% {
+        scale: 1;
+    }
+    100% {
+        left: 57%;
+        scale: 0.5;
+    }
+}

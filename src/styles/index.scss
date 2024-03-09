@@ -2,6 +2,7 @@
 
 @use './components/swiper';
 @use './components/buttons';
+@use './components/speech-clouds';
 
 @use './layout/header';
 @use './layout/footer';
@@ -10,6 +11,7 @@
 @use './pages/about';
 @use './pages/education';
 @use './pages/portfolio';
+@use './pages/skills';
 
 @use './utils/mixins';
 @use './utils/variables';

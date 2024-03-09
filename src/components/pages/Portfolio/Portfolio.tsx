@@ -17,47 +17,45 @@ import 'swiper/scss/effect-coverflow';
 
 export function Portfolio() {
     return (
-        <main className="portfolio">
-            <section className="portfolio-content">
-                <Swiper
-                    className="portfolio-swiper"
-                    grabCursor
-                    modules={[
-                        Navigation,
-                        Parallax,
-                        EffectCoverflow,
-                        Keyboard,
-                        A11y,
-                    ]}
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    speed={600}
-                    navigation
-                    parallax
-                    keyboard
-                    a11y={{
-                        prevSlideMessage: 'Previous slide',
-                        nextSlideMessage: 'Next slide',
-                    }}
-                    effect="coverflow"
-                >
-                    <div
-                        slot="container-start"
-                        className="parallax-bg"
-                        data-swiper-parallax="-33%"
-                    />
-                    <div className="wrapper">
-                        {portfolio.map((el) => (
-                            <SwiperSlide
-                                className="portfolio-slide__container"
-                                key={el.name}
-                            >
-                                <PortfolioSlide props={el} />
-                            </SwiperSlide>
-                        ))}
-                    </div>
-                </Swiper>
-            </section>
+        <main className="portfolio-bg">
+            <Swiper
+                className="portfolio-swiper"
+                grabCursor
+                modules={[
+                    Navigation,
+                    Parallax,
+                    EffectCoverflow,
+                    Keyboard,
+                    A11y,
+                ]}
+                spaceBetween={50}
+                slidesPerView={1}
+                speed={600}
+                navigation
+                parallax
+                keyboard
+                a11y={{
+                    prevSlideMessage: 'Previous slide',
+                    nextSlideMessage: 'Next slide',
+                }}
+                effect="coverflow"
+            >
+                <div
+                    slot="container-start"
+                    className="parallax-bg"
+                    data-swiper-parallax="-33%"
+                />
+                <div className="wrapper">
+                    {portfolio.map((el) => (
+                        <SwiperSlide
+                            className="portfolio-slide__container"
+                            key={el.name}
+                        >
+                            <PortfolioSlide props={el} />
+                        </SwiperSlide>
+                    ))}
+                </div>
+            </Swiper>
         </main>
     );
 }

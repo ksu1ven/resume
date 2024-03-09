@@ -4,10 +4,11 @@ import {
     RouterProvider,
     Route,
 } from 'react-router-dom';
-import { Layout } from './components/layout/Layout';
-import { About } from './components/pages/About/About';
-import { Education } from './components/pages/Education/Education';
-import { Portfolio } from './components/pages/Portfolio/Portfolio';
+import { Layout } from '@components/layout/Layout';
+import { About } from '@components/pages/About/About';
+import { Education } from '@components/pages/Education/Education';
+import { Portfolio } from '@components/pages/Portfolio/Portfolio';
+import { Skills } from '@components/pages/Skills/Skills';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
                 <Route index element={<About />} />
                 <Route path="education" element={<Education />} />
                 <Route path="portfolio" element={<Portfolio />} />
+                <Route path="skills" element={<Skills />} />
             </Route>
             <Route path="*" element={<main>Error</main>} />
         </>

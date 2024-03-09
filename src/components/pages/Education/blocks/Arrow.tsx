@@ -8,7 +8,7 @@ interface StudyBlockProps {
 export function Arrow({ direction, id }: StudyBlockProps) {
     return (
         <div className={`arrow arrow_${direction}`} id={id}>
-            <img src={arrowIcon} alt="arrow" />
+            <img src={arrowIcon} alt="arrow" className="arrow__img" />
         </div>
     );
 }

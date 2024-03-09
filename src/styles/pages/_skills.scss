@@ -1,0 +1,20 @@
+@use '../utils/mixins';
+
+.skills {
+    &-bg {
+        background-image: url('@assets/images/background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    @include mixins.flex(null, center, center);
+
+    &-cat__speech {
+        position: relative;
+    }
+
+    &-cat__video {
+        padding-top: 30%;
+        width: 120%;
+    }
+}

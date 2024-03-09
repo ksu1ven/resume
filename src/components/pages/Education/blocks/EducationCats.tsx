@@ -67,7 +67,12 @@ export function EducationCats() {
     return (
         <>
             <section className="education-cats">
-                <div className="education-cats__speech">
+                <div
+                    className="education-cats__speech"
+                    role="presentation"
+                    onClick={handleTalk}
+                    onKeyDown={handleTalk}
+                >
                     {catHRSpeech && (
                         <div className="cat-speech cat-speech_hr">
                             {catHRSpeech}
@@ -103,7 +108,7 @@ export function EducationCats() {
                 <video
                     ref={videoRef}
                     src={talkingCats}
-                    onClick={handleTalk}
+                    className="education-cats__video"
                     onEnded={() => {
                         setVideoPlaying(false);
                         setCatHRSpeech('');

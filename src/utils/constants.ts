@@ -14,10 +14,17 @@ import { PortfolioItem } from './types';
 export const portfolio: PortfolioItem[] = [
     {
         name: 'Интернет-магазин космотуров Space Odyssey[4165]',
-        images: [odysseyLogin, odysseyCart, odysseyCatalog],
+        images: [
+            { img: odysseyLogin, url: 'https://odyssey4165.vercel.app/login' },
+            { img: odysseyCart, url: 'https://odyssey4165.vercel.app/cart' },
+            {
+                img: odysseyCatalog,
+                url: 'https://odyssey4165.vercel.app/store',
+            },
+        ],
         deploy: 'https://odyssey4165.vercel.app/',
         repo: 'https://github.com/itzaur/eCommerce-Application',
-        stack: 'React, Redux, SDK Commercetools, Vite, Vitest',
+        stack: 'React, Redux Toolkit, RTK Query, SDK CommerceTools, Vite, Vitest',
         description:
             'Разработка приложения Space Odyssey[4165] (электронная коммерция) с использованием React. Мы предлагаем незабываемые впечатления и неизведанные эмоции, а наши сувениры станут прекрасным напоминанием об этом. Вы сможете посетить места, о которых не мечтали даже в самых смелых фантазиях.',
         type: 'Командный',
@@ -26,7 +33,9 @@ export const portfolio: PortfolioItem[] = [
     },
     {
         name: 'Игровая площадка/IDE для запросов GraphiQL',
-        images: [graphQl],
+        images: [
+            { img: graphQl, url: 'https://graphql-rsschool-app.netlify.app/' },
+        ],
         deploy: 'https://graphql-rsschool-app.netlify.app/',
         repo: 'https://github.com/AndreiZaretski/graphiql-app',
         stack: 'React, GraphiQl, Vite, Vitest',
@@ -38,7 +47,12 @@ export const portfolio: PortfolioItem[] = [
     },
     {
         name: 'Игра "Сапёр"',
-        images: [minesweeper],
+        images: [
+            {
+                img: minesweeper,
+                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/minesweeper/',
+            },
+        ],
         deploy: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/minesweeper/',
         repo: 'https://github.com/rolling-scopes-school/ksu1ven-JSFE2023Q1/tree/minesweeper',
         stack: 'Vanilla JS, Webpack',
@@ -48,7 +62,20 @@ export const portfolio: PortfolioItem[] = [
     },
     {
         name: 'Интернет-магазин парфюмерии',
-        images: [perfumeCart, perfumeOrder, perfumeCatalog],
+        images: [
+            {
+                img: perfumeCart,
+                url: 'https://ksu1ven.github.io/online-store/',
+            },
+            {
+                img: perfumeOrder,
+                url: 'https://ksu1ven.github.io/online-store/',
+            },
+            {
+                img: perfumeCatalog,
+                url: 'https://ksu1ven.github.io/online-store/',
+            },
+        ],
         deploy: 'https://ksu1ven.github.io/online-store/',
         repo: 'https://github.com/ksu1ven/online-store',
         stack: 'Vanilla JS, Webpack',
@@ -58,7 +85,12 @@ export const portfolio: PortfolioItem[] = [
     },
     {
         name: 'Тренажёр CSS-Селекторов',
-        images: [selectors],
+        images: [
+            {
+                img: selectors,
+                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/rss-css-selectors/',
+            },
+        ],
         deploy: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/rss-css-selectors/',
         repo: 'https://github.com/rolling-scopes-school/ksu1ven-JSFE2023Q1/tree/RSS-CSS-Selectors',
         stack: 'Vanilla JS, Webpack',
@@ -68,7 +100,16 @@ export const portfolio: PortfolioItem[] = [
     },
     {
         name: 'Сайт приюта для животных',
-        images: [shelterPets, shelter],
+        images: [
+            {
+                img: shelterPets,
+                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/shelter/dist/our-pets.html',
+            },
+            {
+                img: shelter,
+                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/shelter/dist/',
+            },
+        ],
         deploy: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/shelter/dist/',
         repo: 'https://github.com/rolling-scopes-school/ksu1ven-JSFE2023Q1/tree/shelter',
         stack: 'Vanilla JS, Webpack',

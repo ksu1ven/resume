@@ -4,11 +4,11 @@ import { EducationCats } from './blocks/EducationCats';
 
 export function Education() {
     return (
-        <main className="education">
+        <main className="education-bg">
             <div className="wrapper">
-                <div className="education-content">
+                <div className="education">
                     <section className="education-path">
-                        <div className="education-blocks">
+                        <div className="education__blocks">
                             <EducationBlock
                                 direction="left"
                                 text={{

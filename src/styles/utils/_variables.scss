@@ -4,7 +4,7 @@
     --color-primary-lighter: #bde0c0;
     --color-primary-lighter-transparent: #bde0c0ab;
     --color-light: #e5e5e5;
-    --color-light-transparent: #e5e5e58e;
+    --color-light-transparent: #e5e5e584;
     --color-white: #ffffff;
     --color-dark-m: #32342e;
     --color-dark-s: #52564d;
@@ -17,6 +17,7 @@
         0 0 0.6rem var(--color-primary);
     --drop-shadow-dark: 0 0 1.5rem 1rem var(--color-dark-s),
         0 0 0.6rem var(--color-dark-s);
+    --text-shadow-dark: 1px 1px 2px #52564d;
 
     //Fonts
     --ff-title: 'Bitter', serif;

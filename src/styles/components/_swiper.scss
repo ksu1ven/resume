@@ -64,14 +64,14 @@
 
     background-color: var(--color-light-transparent);
 
-    &__img-container {
+    .img-container {
         @include mixins.flex(null, center, center);
 
         &_inner {
             position: relative;
         }
 
-        img {
+        .portfolio-slide__img {
             width: 25rem;
             height: 21rem;
 
@@ -87,21 +87,20 @@
 
         font-weight: bold;
         font-family: var(--ff-title);
+    }
 
-        h1 {
-            font-size: var(--fs-medium-big);
-            text-transform: uppercase;
-        }
+    &__name {
+        font-size: var(--fs-medium-big);
+        text-transform: uppercase;
+    }
 
-        h2,
-        h3 {
-            font-size: var(--fs-medium);
-        }
+    &__stack &__type {
+        font-size: var(--fs-medium);
+    }
 
-        a,
-        p {
-            color: var(--color-dark-s);
-            font-family: var(--ff-text);
-        }
+    &__link,
+    &__description {
+        color: var(--color-dark-s);
+        font-family: var(--ff-text);
     }
 }

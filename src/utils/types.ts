@@ -6,7 +6,7 @@ export type CursorProps = {
 
 export type PortfolioItem = {
     name: string;
-    images: string[];
+    images: { img: string; url: string }[];
     stack: string;
     deploy: string;
     repo: string;
