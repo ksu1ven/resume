@@ -23,3 +23,14 @@ export type ExperienceItem = {
     dateTo: Date;
     description: string;
 };
+
+export type PaginationItem = {
+    path: string;
+    name: string;
+};
+
+export type CurrentPageProps = {
+    prev: PaginationItem | null;
+    current: PaginationItem;
+    next: PaginationItem | null;
+};

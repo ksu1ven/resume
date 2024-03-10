@@ -9,7 +9,7 @@ import perfumeOrder from '@assets/images/perfume-store-order.jpg';
 import selectors from '@assets/images/selectors.jpg';
 import shelter from '@assets/images/shelter.jpg';
 import shelterPets from '@assets/images/shelter-pets.jpg';
-import { ExperienceItem, PortfolioItem } from './types';
+import { ExperienceItem, PaginationItem, PortfolioItem } from './types';
 
 export const PORTFOLIO: PortfolioItem[] = [
     {
@@ -161,4 +161,13 @@ export const MONTHES = [
     'октябрь',
     'ноябрь',
     'декабрь',
+];
+
+export const PAGES: PaginationItem[] = [
+    { path: '', name: 'Обо мне' },
+    { path: 'education', name: 'Образование' },
+    { path: 'portfolio', name: 'Портфолио' },
+    { path: 'skills', name: 'Навыки' },
+    { path: 'experience', name: 'Опыт работы' },
+    { path: 'bye-bye', name: 'Пока-пока!' },
 ];

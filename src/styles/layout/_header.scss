@@ -1,7 +1,7 @@
 @use '../utils/variables';
 @use '../utils/mixins';
 
-header {
+.header {
     // background-color: var(--color-primary);
     background-image: url('@assets/images/jungle.jpg');
     background-size: 100%;
@@ -50,7 +50,51 @@ header {
 }
 
 .pagination {
-    padding: 2rem 0;
-    background-color: var(--color-primary);
-    box-shadow: var(--drop-shadow-primary);
+    &-bg {
+        padding: 1rem 0;
+        background-color: var(--color-light-transparent);
+    }
+
+    @include mixins.flex(null, center, center);
+
+    &__list {
+        list-style: none;
+        @include mixins.flex(null, center, center);
+
+        color: var(--color-white);
+    }
+
+    &__item {
+        font-weight: bold;
+
+        a {
+            color: var(--color-white);
+        }
+
+        &_current {
+            padding: 1rem;
+            background-color: var(--color-primary);
+        }
+
+        &_next {
+            padding: 0.5rem;
+            background-color: var(--color-primary-lighter);
+            transform: perspective(12rem) rotateY(30deg) translateZ(2rem);
+        }
+
+        &_prev {
+            padding: 0.5rem;
+            background-color: var(--color-primary-lighter);
+            transform: perspective(10rem) rotateY(-30deg) translateZ(2rem);
+        }
+    }
+
+    &__arrow {
+        font-size: var(--fs-medium-big);
+        color: var(--color-white);
+
+        &:disabled {
+            color: var(--color-white-transparent);
+        }
+    }
 }

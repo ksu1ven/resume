@@ -66,13 +66,13 @@ export function EducationCats() {
 
     return (
         <>
-            <section className="education-cats">
-                <div
-                    className="education-cats__speech"
-                    role="presentation"
-                    onClick={handleTalk}
-                    onKeyDown={handleTalk}
-                >
+            <section
+                className="education-cats"
+                onClick={handleTalk}
+                onKeyDown={handleTalk}
+                role="presentation"
+            >
+                <div className="education-cats__speech" role="presentation">
                     {catHRSpeech && (
                         <div className="cat-speech cat-speech_hr">
                             {catHRSpeech}
