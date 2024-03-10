@@ -40,7 +40,10 @@ export function Pagination() {
             <ul className="pagination__list">
                 {currentPage.prev && (
                     <li className="pagination__item pagination__item_prev">
-                        <Link to={currentPage.prev.path}>
+                        <Link
+                            to={currentPage.prev.path}
+                            onClick={() => handleChangePage('prev')}
+                        >
                             {currentPage.prev.name}
                         </Link>
                     </li>
@@ -50,7 +53,10 @@ export function Pagination() {
                 </li>
                 {currentPage.next && (
                     <li className="pagination__item pagination__item_next">
-                        <Link to={currentPage.next.path}>
+                        <Link
+                            to={currentPage.next.path}
+                            onClick={() => handleChangePage('next')}
+                        >
                             {currentPage.next.name}
                         </Link>
                     </li>
