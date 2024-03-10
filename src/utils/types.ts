@@ -14,3 +14,12 @@ export type PortfolioItem = {
     type: 'Командный' | 'Индивидуальный';
     responsibility?: string;
 };
+
+export type ExperienceItem = {
+    profession: string;
+    company: string;
+    city: string;
+    dateFrom: Date;
+    dateTo: Date;
+    description: string;
+};

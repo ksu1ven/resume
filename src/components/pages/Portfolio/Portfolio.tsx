@@ -6,7 +6,7 @@ import {
     EffectCoverflow,
     Parallax,
 } from 'swiper/modules';
-import { portfolio } from '@utils/constants';
+import { PORTFOLIO } from '@utils/constants';
 import { PortfolioSlide } from './blocks/PortfolioSlide';
 
 import 'swiper/scss';
@@ -46,7 +46,7 @@ export function Portfolio() {
                     data-swiper-parallax="-33%"
                 />
                 <div className="wrapper">
-                    {portfolio.map((el) => (
+                    {PORTFOLIO.map((el) => (
                         <SwiperSlide
                             className="portfolio-slide__container"
                             key={el.name}

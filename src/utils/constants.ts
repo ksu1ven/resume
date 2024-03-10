@@ -9,9 +9,9 @@ import perfumeOrder from '@assets/images/perfume-store-order.jpg';
 import selectors from '@assets/images/selectors.jpg';
 import shelter from '@assets/images/shelter.jpg';
 import shelterPets from '@assets/images/shelter-pets.jpg';
-import { PortfolioItem } from './types';
+import { ExperienceItem, PortfolioItem } from './types';
 
-export const portfolio: PortfolioItem[] = [
+export const PORTFOLIO: PortfolioItem[] = [
     {
         name: 'Интернет-магазин космотуров Space Odyssey[4165]',
         images: [
@@ -117,4 +117,48 @@ export const portfolio: PortfolioItem[] = [
             'Perfect Pixel вёрстка по макету из Figma. Из сложностей - карусель и пагинация с рандомными питомцами из списка всех, при этом на экране повторяющихся питомцев нет.',
         type: 'Индивидуальный',
     },
+];
+
+export const EXPERIENCE: ExperienceItem[] = [
+    {
+        profession: 'бухгалтер',
+        company: 'Технокласс',
+        city: 'Минск',
+        dateFrom: new Date(2020, 6),
+        dateTo: new Date(2024, 2),
+        description:
+            'Учёт входящих и исходящих ТТН, топлива, кассовые операции, банковские операции, БСО, составление прайсов по импортируемым товарам, прочие.',
+    },
+    {
+        profession: 'владелец / бариста',
+        company: 'ИП Яхимович Н.А. (FoxyCoffee)',
+        city: 'Брест',
+        dateFrom: new Date(2019, 5),
+        dateTo: new Date(2020, 5),
+        description:
+            'Приготовление кофе, бухгалтерский учёт,предоставление отчётности в налоговую инспекцию, ФСЗН, Белгосстрах.',
+    },
+    {
+        profession: 'кассир',
+        company: 'БНБ-Банк',
+        city: 'Минск',
+        dateFrom: new Date(2016, 1),
+        dateTo: new Date(2018, 6),
+        description:
+            'Обмен валют, проведение платежей, выдача и пополнение депозитов.',
+    },
+];
+
+export const MONTHES = [
+    'январь',
+    'февраль',
+    'март',
+    'апрель',
+    'май',
+    'июль',
+    'август',
+    'сентябрь',
+    'октябрь',
+    'ноябрь',
+    'декабрь',
 ];

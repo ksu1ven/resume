@@ -1,0 +1,58 @@
+@use '../utils/mixins';
+
+.experience {
+    &-bg {
+        padding: 5rem 0;
+        background-image: url('@assets/images/background-2.jpg');
+        background-size: cover;
+    }
+
+    @include mixins.flex(column, flex-start, null);
+}
+
+.experience__item {
+    width: 80%;
+    padding: 2rem;
+
+    @include mixins.flex(null, flex-start, center);
+    gap: 2rem;
+
+    background-color: var(--color-primary-lighter-transparent);
+
+    .item__img {
+        width: 10rem;
+        padding: 2rem;
+
+        background-color: var(--color-light);
+    }
+
+    .item__details {
+        width: 70%;
+
+        @include mixins.flex(column, flex-start, null);
+        gap: 0.3rem;
+    }
+
+    .item__profession {
+        font-family: var(--ff-title);
+        text-transform: uppercase;
+        font-size: var(--fs-medium-big);
+    }
+
+    .item__company {
+        color: var(--color-dark-s);
+        font-family: var(--ff-title);
+        text-transform: uppercase;
+        font-size: var(--fs-medium);
+    }
+
+    .item__description,
+    .item__date {
+        color: var(--color-dark-s);
+        font-size: var(--fs-medium-small);
+    }
+
+    .item__date {
+        text-transform: capitalize;
+    }
+}
