@@ -1,19 +1,10 @@
-import { useEffect, useState } from 'react';
-import mouseCursor from '@assets/images/favourite-icon.png';
+import { useState } from 'react';
 import { CatBanana } from './blocks/CatBanana';
 import { Pagination } from './blocks/Pagination';
 
 export function Header() {
     let catWasClicked = false;
     const [isCatAnimated, setIsCatAnimated] = useState(false);
-
-    useEffect(() => {
-        const newCursor = isCatAnimated
-            ? `url(${mouseCursor}), pointer`
-            : 'auto';
-
-        document.body.style.cursor = newCursor;
-    }, [isCatAnimated]);
 
     function handleClick() {
         catWasClicked = true;
@@ -36,6 +27,7 @@ export function Header() {
                         Поиграй с котом-бананом. Нажми на домик, чтобы начать
                     </h2>
                     <button
+                        aria-label="House"
                         type="button"
                         className="house"
                         onClick={handleClick}
@@ -44,9 +36,7 @@ export function Header() {
                         onBlur={handleMouseOut}
                         onMouseOver={handleMouseOver}
                         onFocus={handleMouseOver}
-                    >
-                        House
-                    </button>
+                    />
                 </section>
             </div>
             <div className="pagination-bg">

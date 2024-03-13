@@ -39,6 +39,7 @@ export function Portfolio() {
                     nextSlideMessage: 'Next slide',
                 }}
                 effect="coverflow"
+                coverflowEffect={{ slideShadows: false }}
             >
                 <div
                     slot="container-start"

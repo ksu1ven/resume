@@ -1,3 +1,14 @@
-footer {
-    background-color: var(--color-light);
+@use '../utils/mixins';
+
+.footer {
+    background-image: url('@assets/images/footer.png');
+    background-size: cover;
+
+    &__content {
+        height: 100%;
+        @include mixins.flex(column, center, flex-end);
+        gap: 0.2rem;
+        color: var(--color-white);
+        text-shadow: var(--text-shadow-white);
+    }
 }

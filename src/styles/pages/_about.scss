@@ -3,7 +3,7 @@
 .personal-info {
     &-bg {
         padding: 5rem 0;
-        background-image: url('@assets/images/background-2.jpg');
+        background-image: url('@assets/images/background-cat-7.png');
         background-size: cover;
     }
 
@@ -16,8 +16,10 @@
     @include mixins.flex(null, center, center);
     width: 30rem;
     height: 35rem;
+    border-radius: var(--border-radius);
+
     transform: rotate(-5deg);
-    background-image: url(@assets/images/jungle.jpg);
+    background-image: url(@assets/images/cats-square-2.png);
     background-size: cover;
     box-shadow: var(--drop-shadow-dark);
 
@@ -25,6 +27,8 @@
         @include mixins.flex(null, center, center);
         width: 25rem;
         height: 30rem;
+        border-radius: var(--border-radius);
+
         transform: rotate(25deg);
         background-color: var(--color-light);
         box-shadow: var(--drop-shadow-dark);
@@ -33,6 +37,7 @@
     .photo {
         width: 20rem;
         height: 26rem;
+
         transform: rotate(-20deg) translate(-20px, -30px);
     }
 }

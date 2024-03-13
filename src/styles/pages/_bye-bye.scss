@@ -1,0 +1,22 @@
+@use '../utils/mixins';
+
+.bye-bye {
+    &-bg {
+        background-image: url('@assets/images/background-17.jpg');
+        background-size: cover;
+    }
+    margin: 5rem;
+    @include mixins.flex(column, center, center);
+    gap: 2rem;
+
+    &__img {
+        border: 4rem solid var(--color-primary-lighter);
+        border-radius: var(--border-radius);
+        width: 60%;
+    }
+
+    &__h1 {
+        font-family: var(--ff-title);
+        font-size: var(--fs-big);
+    }
+}

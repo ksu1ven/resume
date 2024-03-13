@@ -9,6 +9,9 @@ import perfumeOrder from '@assets/images/perfume-store-order.jpg';
 import selectors from '@assets/images/selectors.jpg';
 import shelter from '@assets/images/shelter.jpg';
 import shelterPets from '@assets/images/shelter-pets.jpg';
+import catAccountant from '@assets/images/cat-accountant.png';
+import catBarista from '@assets/images/cat-barista.png';
+import catCasier from '@assets/images/cat-cashier.png';
 import { ExperienceItem, PaginationItem, PortfolioItem } from './types';
 
 export const PORTFOLIO: PortfolioItem[] = [
@@ -121,6 +124,7 @@ export const PORTFOLIO: PortfolioItem[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
     {
+        img: catAccountant,
         profession: 'бухгалтер',
         company: 'Технокласс',
         city: 'Минск',
@@ -130,6 +134,7 @@ export const EXPERIENCE: ExperienceItem[] = [
             'Учёт входящих и исходящих ТТН, топлива, кассовые операции, банковские операции, БСО, составление прайсов по импортируемым товарам, прочие.',
     },
     {
+        img: catBarista,
         profession: 'владелец / бариста',
         company: 'ИП Яхимович Н.А. (FoxyCoffee)',
         city: 'Брест',
@@ -139,6 +144,7 @@ export const EXPERIENCE: ExperienceItem[] = [
             'Приготовление кофе, бухгалтерский учёт,предоставление отчётности в налоговую инспекцию, ФСЗН, Белгосстрах.',
     },
     {
+        img: catCasier,
         profession: 'кассир',
         company: 'БНБ-Банк',
         city: 'Минск',

@@ -6,7 +6,6 @@ import { CurrentPageProps } from '@utils/types';
 export function Pagination() {
     const path = useLocation().pathname.slice(1);
     const currentIndex = useRef(PAGES.findIndex((el) => el.path === path));
-    console.log(path);
     const [currentPage, setCurrentPage] = useState<CurrentPageProps>({
         current: PAGES[currentIndex.current],
         prev: PAGES[currentIndex.current - 1],

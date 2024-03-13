@@ -4,18 +4,17 @@
     &-bg {
         margin-bottom: -5rem;
 
-        background-image: url('@assets/images/background.jpg');
-        background-size: contain;
+        background-image: url('@assets/images/background-12.png');
+        background-size: cover;
         background-position: left top;
         background-repeat: no-repeat;
     }
 
-    @include mixins.flex(null, space-between, flex-start);
-    gap: 5rem;
+    @include mixins.flex(null, flex-start, flex-start);
 }
 
 .education__blocks {
-    padding: 10rem 0;
+    padding: 5rem 0;
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -32,6 +31,7 @@
 .education__block {
     height: 13rem;
     width: 13rem;
+    border-radius: var(--border-radius);
 
     font-size: var(--fs-small);
 
@@ -42,8 +42,9 @@
     &_inner {
         height: 90%;
         padding: 1rem;
+        border-radius: var(--border-radius);
         color: var(--color-dark-s);
-        background-color: var(--color-light);
+        background-color: var(--color-white);
     }
 
     &_left {
@@ -113,11 +114,12 @@
 }
 
 .education-cats {
+    margin-top: 8rem;
+    margin-left: 1rem;
     padding: 1rem;
+    width: 32%;
 
     @include mixins.flex(column, center, center);
-
-    background-color: var(--color-primary-lighter);
 
     &__speech {
         height: 18rem;
@@ -133,7 +135,7 @@
     }
 
     &__description {
-        margin-bottom: -3rem;
+        margin: 11rem 0 -3rem;
 
         position: relative;
         top: -5rem;

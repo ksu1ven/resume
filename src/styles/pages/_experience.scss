@@ -3,7 +3,7 @@
 .experience {
     &-bg {
         padding: 5rem 0;
-        background-image: url('@assets/images/background-2.jpg');
+        background-color: var(--color-primary);
         background-size: cover;
     }
 
@@ -12,18 +12,20 @@
 
 .experience__item {
     width: 80%;
-    padding: 2rem;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
 
     @include mixins.flex(null, flex-start, center);
     gap: 2rem;
 
-    background-color: var(--color-primary-lighter-transparent);
+    background-color: var(--color-light);
 
     .item__img {
-        width: 10rem;
-        padding: 2rem;
+        width: 12rem;
+        padding: 1rem;
+        border-radius: var(--border-radius);
 
-        background-color: var(--color-light);
+        background-color: var(--color-primary-lighter);
     }
 
     .item__details {
@@ -34,6 +36,7 @@
     }
 
     .item__profession {
+        text-shadow: var(--text-shadow-dark);
         font-family: var(--ff-title);
         text-transform: uppercase;
         font-size: var(--fs-medium-big);

@@ -2,8 +2,7 @@
 @use '../utils/mixins';
 
 .header {
-    // background-color: var(--color-primary);
-    background-image: url('@assets/images/jungle.jpg');
+    background-image: url('@assets/images/cats.png');
     background-size: 100%;
 }
 
@@ -33,9 +32,8 @@
 
         &__cat-catch__img {
             @include mixins.abs();
-            width: 4rem;
-            height: 4rem;
-            background-color: azure;
+            width: 10rem;
+
             z-index: 2;
         }
     }
@@ -43,9 +41,10 @@
     .house {
         position: relative;
         z-index: 3;
-        width: 4rem;
-        height: 4rem;
-        background-color: azure;
+        width: 8rem;
+        height: 8rem;
+        background-image: url('@assets/images/mouse-house.png');
+        background-size: contain;
     }
 }
 
@@ -53,6 +52,7 @@
     &-bg {
         padding: 1rem 0;
         background-color: var(--color-light-transparent);
+        box-shadow: 0rem 0rem 1.5rem 1.5rem var(--color-light-transparent);
     }
 
     @include mixins.flex(null, center, center);
@@ -65,6 +65,8 @@
     }
 
     &__item {
+        border-radius: var(--border-radius);
+        box-shadow: var(--drop-shadow-white);
         font-weight: bold;
 
         a {
@@ -73,18 +75,29 @@
 
         &_current {
             padding: 1rem;
+            font-size: calc(1.1 * var(--fs-medium));
             background-color: var(--color-primary);
         }
 
         &_next {
             padding: 0.5rem;
-            background-color: var(--color-primary-lighter);
+            font-size: calc(0.8 * var(--fs-medium));
+            background: linear-gradient(
+                90deg,
+                var(--color-primary) 0%,
+                var(--color-primary-lighter) 30%
+            );
             transform: perspective(12rem) rotateY(30deg) translateZ(2rem);
         }
 
         &_prev {
             padding: 0.5rem;
-            background-color: var(--color-primary-lighter);
+            font-size: calc(0.8 * var(--fs-medium));
+            background: linear-gradient(
+                90deg,
+                var(--color-primary-lighter) 0%,
+                var(--color-primary) 70%
+            );
             transform: perspective(10rem) rotateY(-30deg) translateZ(2rem);
         }
     }
@@ -94,7 +107,7 @@
         color: var(--color-white);
 
         &:disabled {
-            color: var(--color-white-transparent);
+            color: var(--color-dark-transparent);
         }
     }
 }

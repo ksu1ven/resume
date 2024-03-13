@@ -9,8 +9,8 @@
     z-index: 50;
     @include mixins.flex(null, center, center);
 
-    background-image: url('@assets/images/jungle.jpg');
-    background-size: cover;
+    background-image: url('@assets/images/background-cat-13.png');
+    background-size: contain;
 }
 .certificates-swiper {
     background-color: var(--color-light-transparent);
@@ -34,6 +34,7 @@
 
 .portfolio-swiper {
     height: calc(100vh - 5rem);
+    padding: 2rem 0;
 
     .parallax-bg {
         width: 150%;
@@ -43,8 +44,8 @@
         left: 0;
         top: 0;
 
-        background-image: url('@assets/images/jungle.jpg');
-        -webkit-background-size: cover;
+        background-image: url('@assets/images/background-cat-9.png');
+        -webkit-background-size: contain;
         background-size: cover;
         background-position: center;
     }
@@ -57,12 +58,15 @@
 
     width: 80%;
     height: 90%;
+    border-radius: var(--border-radius);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
 
-    background-color: var(--color-light-transparent);
+    color: var(--color-white);
+
+    background-color: var(--color-dark-transparent);
 
     .img-container {
         @include mixins.flex(null, center, center);
@@ -86,21 +90,31 @@
         gap: 1rem;
 
         font-weight: bold;
-        font-family: var(--ff-title);
+        background-color: var(--color-dark-transparent-m);
+        box-shadow: -2rem 0.7rem 3rem 2rem var(--color-dark-transparent-m);
     }
 
     &__name {
+        font-family: var(--ff-title);
         font-size: var(--fs-medium-big);
         text-transform: uppercase;
     }
 
-    &__stack &__type {
+    &__type {
+        font-family: var(--ff-title);
+        font-size: var(--fs-medium-big);
+        color: var(--color-light);
+    }
+
+    &__stack {
         font-size: var(--fs-medium);
     }
 
     &__link,
     &__description {
-        color: var(--color-dark-s);
+        font-size: var(--fs-medium-small);
+        color: var(--color-light);
         font-family: var(--ff-text);
+        text-align: justify;
     }
 }

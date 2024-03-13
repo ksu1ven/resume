@@ -16,6 +16,7 @@ export type PortfolioItem = {
 };
 
 export type ExperienceItem = {
+    img: string;
     profession: string;
     company: string;
     city: string;

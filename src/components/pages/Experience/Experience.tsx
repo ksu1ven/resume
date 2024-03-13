@@ -1,5 +1,4 @@
 import { EXPERIENCE, MONTHES } from '@utils/constants';
-import img from '@assets/images/cat-house.png';
 
 export function Experience() {
     return (
@@ -13,7 +12,7 @@ export function Experience() {
                             style={{ marginLeft: `${ind * 5}rem` }}
                         >
                             <img
-                                src={img}
+                                src={item.img}
                                 alt={item.profession}
                                 className="item__img"
                             />

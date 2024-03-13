@@ -9,6 +9,9 @@ import {
 import { useCursorPosition } from '@utils/useCursorPosition';
 import catBananaLeft from '@assets/images/cat-banana-left.gif';
 import catBananaRight from '@assets/images/cat-banana-right.gif';
+import mouseCursorLeft from '@assets/images/mouse-left.png';
+import mouseCursorRight from '@assets/images/mouse-right.png';
+import catEatsMouse from '@assets/images/cat-eats-mouse.png';
 import happySong from '@assets/music/bananacat - original sound.mp3';
 
 interface CatBananaProps {
@@ -68,6 +71,14 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         }
     }, [cursorPosition, isCatAnimated, x, y]);
 
+    useEffect(() => {
+        const newCursor = isCatAnimated
+            ? `url(${cursorPosition.cursorDirection.X === 'left' ? mouseCursorLeft : mouseCursorRight}), pointer`
+            : 'auto';
+
+        document.body.style.cursor = newCursor;
+    }, [isCatAnimated, cursorPosition.cursorDirection.X]);
+
     return (
         <div className="cat-container">
             <AnimatePresence>
@@ -87,6 +98,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                             ? { x: catX.get(), y: catY.get() }
                             : { x: 0, y: 0 }
                     }
+                    style={animationEnd ? { visibility: 'hidden' } : {}}
                     transition={{ duration: 0.4 }}
                     onAnimationStart={() => setAnimationEnd(false)}
                     onAnimationComplete={(e) => {
@@ -106,19 +118,21 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 />
 
                 {animationEnd && (
-                    <motion.div
+                    <motion.img
+                        src={catEatsMouse}
+                        alt="Cat eats mouse"
                         key="cat-catch"
                         className="cat-container__cat-catch__img"
                         initial={{ x: catX.get(), y: catY.get(), opacity: 0 }}
                         animate={{ x: catX.get(), y: catY.get(), opacity: 1 }}
-                    >
-                        Я словиль!
-                    </motion.div>
+                    />
                 )}
             </AnimatePresence>
             <audio src={happySong} ref={happySongRef} muted />
             <link rel="preload" as="image" href={catBananaLeft} />
             <link rel="preload" as="image" href={catBananaRight} />
+            <link rel="preload" as="image" href={mouseCursorLeft} />
+            <link rel="preload" as="image" href={mouseCursorRight} />
         </div>
     );
 }
