@@ -3,6 +3,7 @@
 .personal-info {
     &-bg {
         padding: 5rem 0;
+        overflow-x: hidden;
         background-image: url('@assets/images/background-about.png');
         background-size: cover;
         background-position: right top;
