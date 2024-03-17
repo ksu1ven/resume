@@ -63,7 +63,6 @@
         @include mixins.flex(null, center, center);
 
         transform: rotate(25deg);
-        overflow-x: hidden;
 
         border-radius: var(--border-radius);
         background-color: var(--color-light);
