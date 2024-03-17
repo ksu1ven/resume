@@ -1,3 +1,5 @@
+import { useRef, useEffect, useState } from 'react';
+
 interface StudyBlockProps {
     direction: 'left' | 'right';
     id: string;
@@ -14,10 +16,20 @@ export function EducationBlock({
     id,
     text: { institution, year, course, position },
 }: StudyBlockProps) {
+    const educationBlockRef = useRef<HTMLDivElement>(null);
+    const [educationBlockWidth, setEducationBlockWidth] = useState(0);
+
+    useEffect(() => {
+        if (educationBlockRef.current?.offsetWidth)
+            setEducationBlockWidth(educationBlockRef.current?.offsetWidth);
+    }, [setEducationBlockWidth]);
+
     return (
         <div
             className={`education__block education__block_${direction}`}
             id={id}
+            ref={educationBlockRef}
+            style={{ height: educationBlockWidth }}
         >
             <div
                 className={`education__block_inner education__block_${direction}_inner`}

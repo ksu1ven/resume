@@ -1,30 +1,31 @@
 @use '../utils/mixins';
 
 .cat-speech {
-    width: 18rem;
-    height: 18rem;
+    width: 100%;
+    height: 100%;
 
     @include mixins.flex(column, center, center);
 
-    font-size: var(--fs-medium);
+    font-size: var(--fs-medium-small);
+    text-align: center;
 
     background-size: contain;
     background-repeat: no-repeat;
 
     &_hr,
     &_skills {
-        padding: 2rem 4rem 6rem 6rem;
+        padding: 4% 10% 25% 18%;
 
         background-image: url('@assets/icons/talking-cloud-left.png');
     }
 
     &_me {
-        padding: 2rem 4rem 6rem 4rem;
+        padding: 10% 18% 25% 10%;
 
         background-image: url('@assets/icons/talking-cloud-right.png');
 
         &__certificate {
-            width: 70%;
+            width: 60%;
         }
     }
 
@@ -32,6 +33,7 @@
         position: absolute;
         top: 3rem;
         left: 55%;
+
         font-weight: bold;
         font-size: var(--fs-medium-big);
     }

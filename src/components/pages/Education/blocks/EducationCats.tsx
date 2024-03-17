@@ -105,6 +105,7 @@ export function EducationCats() {
                     )}
                     <div />
                 </div>
+
                 <video
                     ref={videoRef}
                     src={talkingCats}
