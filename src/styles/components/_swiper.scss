@@ -9,7 +9,7 @@
     z-index: 50;
     @include mixins.flex(null, center, center);
 
-    background-image: url('@assets/images/background-cat-13.png');
+    background-image: url('@assets/images/swiper-certificates.png');
     background-size: contain;
 }
 .certificates-swiper {
@@ -44,7 +44,7 @@
         left: 0;
         top: 0;
 
-        background-image: url('@assets/images/background-cat-9.png');
+        background-image: url('@assets/images/swiper-portfolio.png');
         -webkit-background-size: contain;
         background-size: cover;
         background-position: center;

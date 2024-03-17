@@ -3,55 +3,111 @@
 .personal-info {
     &-bg {
         padding: 5rem 0;
-        background-image: url('@assets/images/background-cat-7.png');
+        background-image: url('@assets/images/background-about.png');
         background-size: cover;
+        background-position: right top;
+
+        @include mixins.respond-to(desktop) {
+            background-position: center top;
+        }
+
+        @include mixins.respond-to(laptop) {
+            background-image: url('@assets/images/background-about-laptop.png');
+            background-position: right bottom;
+        }
+
+        @include mixins.respond-to(tablet) {
+            background-position: center bottom;
+        }
     }
 
-    @include mixins.flex(null, flex-start, flex-start);
-    gap: 3rem;
     margin-bottom: 3rem;
+
+    @include mixins.flex(null, flex-start, flex-start);
+    gap: 5rem;
+
+    @include mixins.respond-to(laptop) {
+        @include mixins.flex(column, flex-start, flex-start);
+    }
 }
 
 .photo-container {
+    padding: 3rem 0;
+
     @include mixins.flex(null, center, center);
-    width: 30rem;
-    height: 35rem;
-    border-radius: var(--border-radius);
+    flex-basis: 35%;
 
     transform: rotate(-5deg);
-    background-image: url(@assets/images/cats-square-2.png);
+
+    background-image: url('@assets/images/background-photo.png');
     background-size: cover;
+    border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow-dark);
+
+    @include mixins.respond-to(laptop) {
+        align-self: center;
+        margin-bottom: 3rem;
+    }
+
+    @include mixins.respond-to(tablet) {
+        width: 65%;
+    }
+
+    @include mixins.respond-to(mobile) {
+        width: 75%;
+        padding: 2rem 0;
+    }
 
     &_inner {
         @include mixins.flex(null, center, center);
-        width: 25rem;
-        height: 30rem;
-        border-radius: var(--border-radius);
 
         transform: rotate(25deg);
+
+        border-radius: var(--border-radius);
         background-color: var(--color-light);
         box-shadow: var(--drop-shadow-dark);
+
+        @include mixins.respond-to(tablet) {
+            width: 100%;
+        }
     }
 
     .photo {
-        width: 20rem;
-        height: 26rem;
+        width: 70%;
+        padding: 3rem 0;
 
         transform: rotate(-20deg) translate(-20px, -30px);
+
+        @include mixins.respond-to(mobile) {
+            width: 80%;
+            padding: 2rem 0;
+        }
     }
 }
 
 .contacts {
-    width: 40rem;
+    flex-grow: 1;
+
     font-size: var(--fs-medium);
-    font-weight: bold;
     color: var(--color-dark-m);
+
+    @include mixins.respond-to(laptop) {
+        width: 100%;
+    }
 
     .greeting {
         font-family: var(--ff-title);
         font-size: var(--fs-big);
         margin-bottom: 2rem;
+
+        @include mixins.respond-to(laptop) {
+            margin-left: 20%;
+        }
+
+        @include mixins.respond-to(mobile) {
+            margin-left: 0;
+            text-align: center;
+        }
     }
 
     &__h2 {
@@ -59,20 +115,44 @@
     }
 
     &__block {
-        color: var(--color-dark-s);
         margin-left: 3rem;
+
+        color: var(--color-dark-s);
+
+        @include mixins.respond-to(laptop) {
+            margin-left: 10%;
+        }
+
+        @include mixins.respond-to(mobile) {
+            margin-left: 0;
+            text-align: center;
+        }
     }
 
     &__list {
         @include mixins.flex(column, flex-start, flex-start);
 
+        @include mixins.respond-to(tablet) {
+            gap: 0.5rem;
+        }
+
         &_professional {
-            padding-left: 7rem;
+            margin-left: 7rem;
+            @include mixins.flex(column, flex-start, flex-start);
+
+            @include mixins.respond-to(laptop) {
+                margin-left: 0;
+            }
+
+            @include mixins.respond-to(tablet) {
+                gap: 0.5rem;
+            }
         }
     }
 
     &__item {
         @include mixins.flex(null, flex-start, center);
+
         font-size: var(--fs-medium-big);
         font-weight: bold;
 
@@ -83,19 +163,34 @@
         &__icon {
             width: 4rem;
             height: 4rem;
+
+            @include mixins.respond-to(laptop) {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            @include mixins.respond-to(mobile) {
+                width: 2rem;
+                height: 2rem;
+            }
         }
     }
 }
 
 .description {
     padding: 5rem 0;
+
     color: var(--color-dark-m);
-    background-color: var(--color-primary);
-    font-family: var(--ff-text);
     font-size: var(--fs-medium-big);
     font-weight: bold;
+    text-align: justify;
+
+    background-color: var(--color-primary);
 
     &__h2 {
         margin-bottom: 1rem;
+
+        font-family: var(--ff-title);
+        text-align: left;
     }
 }

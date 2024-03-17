@@ -9,7 +9,8 @@ export function Contacts() {
     return (
         <div className="contacts">
             <h1 className="greeting">
-                Привет! Я КотОксана, JavaScript разработчик.
+                Привет! Я КотОксана, <br />
+                Frontend разработчик.
             </h1>
             <div className="contacts__block">
                 <h2 className="contacts__h2">Мои контакты</h2>
