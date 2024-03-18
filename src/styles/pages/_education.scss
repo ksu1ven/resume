@@ -99,7 +99,7 @@
     }
 
     @include mixins.respond-to(mobile) {
-        grid-template-columns: repeat(3, 30%);
+        grid-template-columns: repeat(3, 35%);
         grid-template-areas:
             'b1 b1 . '
             '.  a1 .'
