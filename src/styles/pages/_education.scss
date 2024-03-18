@@ -232,6 +232,7 @@
     @include mixins.respond-to(mobile) {
         width: 100%;
         padding-bottom: 6rem;
+        transform: scale(1.21);
     }
 
     &__laptop {
@@ -296,6 +297,7 @@
         }
 
         @include mixins.respond-to(mobile) {
+            bottom: 4%;
             font-size: var(--fs-medium-small);
         }
     }
