@@ -21,7 +21,7 @@ export function EducationBlock({
 
     useEffect(() => {
         if (educationBlockRef.current?.offsetWidth)
-            setEducationBlockWidth(educationBlockRef.current?.offsetWidth);
+            setEducationBlockWidth(educationBlockRef.current.offsetWidth);
     }, [setEducationBlockWidth]);
 
     return (

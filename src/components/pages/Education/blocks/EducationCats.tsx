@@ -72,50 +72,51 @@ export function EducationCats() {
                 onKeyDown={handleTalk}
                 role="presentation"
             >
-                <div className="education-cats__speech" role="presentation">
-                    {catHRSpeech && (
-                        <div className="cat-speech cat-speech_hr">
-                            {catHRSpeech}
-                        </div>
-                    )}
-                    {catMeSpeech && (
-                        <div className="cat-speech cat-speech_me">
-                            {catMeSpeech}
-                            {catMeCertificate && (
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setVideoPlaying(false);
-                                        handleTalk();
-                                        setSwiperVisible(true);
-                                    }}
-                                >
-                                    <img
-                                        className="cat-speech_me__certificate"
-                                        src={
-                                            catMeCertificate === 'js'
-                                                ? certificateJs
-                                                : certificateReact
-                                        }
-                                        alt={`${catMeCertificate} certificate`}
-                                    />
-                                </button>
-                            )}
-                        </div>
-                    )}
-                    <div />
+                <div className="education-cats__laptop">
+                    <div className="education-cats__speech" role="presentation">
+                        {catHRSpeech && (
+                            <div className="cat-speech cat-speech_hr">
+                                {catHRSpeech}
+                            </div>
+                        )}
+                        {catMeSpeech && (
+                            <div className="cat-speech cat-speech_me">
+                                {catMeSpeech}
+                                {catMeCertificate && (
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setVideoPlaying(false);
+                                            handleTalk();
+                                            setSwiperVisible(true);
+                                        }}
+                                    >
+                                        <img
+                                            className="cat-speech_me__certificate"
+                                            src={
+                                                catMeCertificate === 'js'
+                                                    ? certificateJs
+                                                    : certificateReact
+                                            }
+                                            alt={`${catMeCertificate} certificate`}
+                                        />
+                                    </button>
+                                )}
+                            </div>
+                        )}
+                        <div />
+                    </div>
+                    <video
+                        ref={videoRef}
+                        src={talkingCats}
+                        className="education-cats__video"
+                        onEnded={() => {
+                            setVideoPlaying(false);
+                            setCatHRSpeech('');
+                            setCatMeSpeech('');
+                        }}
+                    />
                 </div>
-
-                <video
-                    ref={videoRef}
-                    src={talkingCats}
-                    className="education-cats__video"
-                    onEnded={() => {
-                        setVideoPlaying(false);
-                        setCatHRSpeech('');
-                        setCatMeSpeech('');
-                    }}
-                />
                 <p className="education-cats__description">
                     Нажмите на котиков, они покажут мои сертификаты. <br />
                     Подробнее рассмотреть сертификаты вы можете кликнув на них.

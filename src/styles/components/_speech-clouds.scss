@@ -5,22 +5,28 @@
     height: 100%;
 
     @include mixins.flex(column, center, center);
+    gap: 0.5rem;
 
-    font-size: var(--fs-medium-small);
+    font-size: var(--fs-medium);
     text-align: center;
 
     background-size: contain;
     background-repeat: no-repeat;
 
+    @include mixins.respond-to(mobile) {
+        gap: 0;
+        font-size: var(--fs-small);
+    }
+
     &_hr,
     &_skills {
-        padding: 4% 10% 25% 18%;
+        padding: 4% 18% 25% 18%;
 
         background-image: url('@assets/icons/talking-cloud-left.png');
     }
 
     &_me {
-        padding: 10% 18% 25% 10%;
+        padding: 6% 18% 25% 10%;
 
         background-image: url('@assets/icons/talking-cloud-right.png');
 
