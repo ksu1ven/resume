@@ -15,7 +15,6 @@
 
     @include mixins.respond-to(mobile) {
         gap: 0;
-        font-size: var(--fs-small);
     }
 
     &_hr,
