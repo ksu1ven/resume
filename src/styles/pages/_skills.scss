@@ -5,6 +5,10 @@
         background-image: url('@assets/images/background-skills.png');
         background-size: cover;
         background-repeat: no-repeat;
+
+        @include mixins.respond-to(laptop) {
+            background-position: top center;
+        }
     }
 
     @include mixins.flex(null, center, center);
@@ -16,5 +20,10 @@
     &-cat__video {
         padding-top: 30%;
         width: 120%;
+
+        @include mixins.respond-to(mobile) {
+            padding-top: 80%;
+            transform: scale(1.7) translateX(-5%);
+        }
     }
 }
