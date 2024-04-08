@@ -134,6 +134,11 @@
 
     &_left {
         transform: rotate(-25deg);
+
+        @include mixins.respond-to(mobile) {
+            transform: rotate(-18deg);
+        }
+
         &_inner {
             transform: rotate(25deg);
         }
@@ -141,6 +146,11 @@
 
     &_right {
         transform: rotate(25deg);
+
+        @include mixins.respond-to(mobile) {
+            transform: rotate(18deg);
+        }
+
         &_inner {
             transform: rotate(-25deg);
         }
@@ -316,6 +326,7 @@
 
         @include mixins.respond-to(mobile) {
             font-size: var(--fs-medium-small);
+            margin-left: 0;
         }
     }
 }

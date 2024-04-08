@@ -132,7 +132,10 @@ export function EducationCats() {
                     }
                     role="presentation"
                 >
-                    <CertificatesSwiper activeSlide={catMeCertificate} />
+                    <CertificatesSwiper
+                        activeSlide={catMeCertificate}
+                        setSwiperVisible={setSwiperVisible}
+                    />
                 </div>
             )}
             <link rel="preload" as="image" href={certificateReact} />

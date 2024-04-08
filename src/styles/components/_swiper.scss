@@ -10,18 +10,45 @@
     @include mixins.flex(null, center, center);
 
     background-image: url('@assets/images/swiper-certificates.png');
-    background-size: contain;
+    background-size: cover;
+    background-position: left bottom;
 }
+
 .certificates-swiper {
     background-color: var(--color-light-transparent);
+
+    @include mixins.respond-to(laptop) {
+        width: 90vh !important;
+        transform: rotate(90deg);
+    }
 }
+
 .certificates-slide {
     @include mixins.flex(null, center, center);
     height: 100vh;
     width: fit-content;
 
+    position: relative;
+
+    @include mixins.respond-to(laptop) {
+        height: 100vw;
+    }
+
     &__img {
         width: 70%;
+
+        @include mixins.respond-to(desktop) {
+            width: 80%;
+        }
+
+        @include mixins.respond-to(tablet) {
+            width: auto;
+            height: 80%;
+        }
+
+        @include mixins.respond-to(mobile) {
+            height: 90%;
+        }
     }
 }
 
@@ -30,6 +57,24 @@
     padding: 0 2rem;
     color: var(--color-white);
     text-shadow: var(--text-shadow-white);
+}
+.swiper-close {
+    width: 4rem;
+    height: 4rem;
+
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 10;
+
+    background-image: url('@assets/icons/cross.png');
+    background-size: contain;
+    background-position: center;
+
+    @include mixins.respond-to(mobile) {
+        left: 2rem;
+    }
 }
 
 .portfolio-swiper {
