@@ -45,10 +45,6 @@
             width: auto;
             height: 80%;
         }
-
-        @include mixins.respond-to(mobile) {
-            height: 90%;
-        }
     }
 }
 
@@ -73,7 +69,11 @@
     background-position: center;
 
     @include mixins.respond-to(mobile) {
-        left: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+
+        top: 1rem;
+        right: 1rem;
     }
 }
 
