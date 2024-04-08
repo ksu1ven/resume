@@ -31,7 +31,7 @@ export function Portfolio() {
                 spaceBetween={50}
                 slidesPerView={1}
                 speed={600}
-                navigation
+                navigation={window.innerWidth > 576}
                 parallax
                 keyboard
                 a11y={{
@@ -39,7 +39,10 @@ export function Portfolio() {
                     nextSlideMessage: 'Next slide',
                 }}
                 effect="coverflow"
-                coverflowEffect={{ slideShadows: false }}
+                coverflowEffect={{
+                    slideShadows: false,
+                    rotate: window.innerWidth > 576 ? 30 : 20,
+                }}
             >
                 <div
                     slot="container-start"

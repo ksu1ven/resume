@@ -17,16 +17,28 @@ export function PortfolioSlide({
         responsibility,
     },
 }: PortfolioSlideProps) {
-    const imageOffset = 4;
+    const imageOffset = window.innerWidth > 576 ? 4 : 1.5;
+    let imageWidth;
+    let imageHeight;
 
+    if (window.innerWidth > 768) {
+        imageWidth = 25;
+        imageHeight = 21;
+    } else if (window.innerWidth > 576) {
+        imageWidth = 18;
+        imageHeight = 15;
+    } else {
+        imageWidth = 11;
+        imageHeight = 8;
+    }
     return (
         <div className="portfolio-slide">
             <div className="img-container">
                 <div
                     className="img-container_inner"
                     style={{
-                        width: `${25 + (images.length - 1) * imageOffset}rem`,
-                        height: `${21 + (images.length - 1) * imageOffset}rem`,
+                        width: `${imageWidth + (images.length - 1) * imageOffset}rem`,
+                        height: `${imageHeight + (images.length - 1) * imageOffset}rem`,
                     }}
                 >
                     {images.map((image, ind) => (

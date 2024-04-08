@@ -55,8 +55,8 @@
 .swiper-button-prev,
 .swiper-button-next {
     padding: 0 2rem;
-    color: var(--color-white);
-    text-shadow: var(--text-shadow-white);
+    color: var(--color-dark-s);
+    font-weight: 800;
 }
 .swiper-close {
     width: 4rem;
@@ -81,6 +81,10 @@
     height: calc(100vh - 5rem);
     padding: 2rem 0;
 
+    @include mixins.respond-to(desktop) {
+        height: auto;
+    }
+
     .parallax-bg {
         width: 150%;
         height: 100%;
@@ -93,6 +97,11 @@
         -webkit-background-size: contain;
         background-size: cover;
         background-position: center;
+
+        @include mixins.respond-to(tablet) {
+            background-image: url('@assets/images/swiper-portfolio-tablet.png');
+            background-position: left;
+        }
     }
 }
 
@@ -113,8 +122,21 @@
 
     background-color: var(--color-dark-transparent);
 
+    @include mixins.respond-to(desktop) {
+        grid-template-columns: 100%;
+    }
+
+    @include mixins.respond-to(mobile) {
+        width: 90%;
+    }
+
     .img-container {
         @include mixins.flex(null, center, center);
+        padding: 2rem 0 0 2rem;
+
+        @include mixins.respond-to(mobile) {
+            padding: 2rem 0 0 0.5rem;
+        }
 
         &_inner {
             position: relative;
@@ -125,6 +147,16 @@
             height: 21rem;
 
             position: absolute;
+
+            @include mixins.respond-to(tablet) {
+                width: 18rem;
+                height: 15rem;
+            }
+
+            @include mixins.respond-to(mobile) {
+                width: 11rem;
+                height: 8rem;
+            }
         }
     }
 
@@ -137,6 +169,15 @@
         font-weight: bold;
         background-color: var(--color-dark-transparent-m);
         box-shadow: -2rem 0.7rem 3rem 2rem var(--color-dark-transparent-m);
+
+        @include mixins.respond-to(desktop) {
+            margin-top: -3rem;
+            box-shadow: 0.7rem -2rem 3rem 2rem var(--color-dark-transparent-m);
+        }
+
+        // @include mixins.respond-to(tablet) {
+        //     width: 100%;
+        // }
     }
 
     &__name {
