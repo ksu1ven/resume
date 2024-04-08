@@ -110,6 +110,7 @@ export function EducationCats() {
                         ref={videoRef}
                         src={talkingCats}
                         className="education-cats__video"
+                        preload="auto"
                         onEnded={() => {
                             setVideoPlaying(false);
                             setCatHRSpeech('');
