@@ -17,19 +17,24 @@ export function PortfolioSlide({
         responsibility,
     },
 }: PortfolioSlideProps) {
-    const imageOffset = window.innerWidth > 576 ? 4 : 1.5;
+    const imageOffset = window.innerWidth > 768 ? 4 : 1.5;
+    const windowWidth = window.innerWidth;
+    const remWidth =
+        document.body.clientWidth /
+        parseInt(
+            window.getComputedStyle(document.documentElement).fontSize,
+            10
+        );
+
     let imageWidth;
     let imageHeight;
 
-    if (window.innerWidth > 768) {
+    if (windowWidth > 768) {
         imageWidth = 25;
         imageHeight = 21;
-    } else if (window.innerWidth > 576) {
-        imageWidth = 18;
-        imageHeight = 15;
     } else {
-        imageWidth = 11;
-        imageHeight = 8;
+        imageWidth = remWidth * 0.65;
+        imageHeight = remWidth * 0.65 * 0.7;
     }
     return (
         <div className="portfolio-slide">

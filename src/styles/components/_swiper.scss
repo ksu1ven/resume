@@ -132,10 +132,10 @@
 
     .img-container {
         @include mixins.flex(null, center, center);
-        padding: 2rem 0 0 2rem;
+        padding: 2rem;
 
-        @include mixins.respond-to(mobile) {
-            padding: 2rem 0 0 0.5rem;
+        @include mixins.respond-to(tablet) {
+            padding: 1rem;
         }
 
         &_inner {
@@ -149,13 +149,8 @@
             position: absolute;
 
             @include mixins.respond-to(tablet) {
-                width: 18rem;
-                height: 15rem;
-            }
-
-            @include mixins.respond-to(mobile) {
-                width: 11rem;
-                height: 8rem;
+                width: calc(100vw * 0.65);
+                height: calc(100vw * 0.65 * 0.8);
             }
         }
     }
