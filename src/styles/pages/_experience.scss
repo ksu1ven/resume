@@ -2,12 +2,16 @@
 
 .experience {
     &-bg {
-        padding: 5rem 0;
         background-color: var(--color-primary);
         background-size: cover;
     }
 
-    @include mixins.flex(column, flex-start, null);
+    padding: 5rem 0;
+    @include mixins.flex(column, flex-start, center);
+
+    @include mixins.respond-to(tablet) {
+        padding: 2rem 0;
+    }
 }
 
 .experience__item {
@@ -19,6 +23,22 @@
     gap: 2rem;
 
     background-color: var(--color-light);
+
+    @include mixins.respond-to(desktop) {
+        width: 68%;
+    }
+
+    @include mixins.respond-to(laptop) {
+        min-height: 14rem;
+    }
+
+    @include mixins.respond-to(tablet) {
+        width: 100%;
+        min-height: auto;
+        padding: 1rem;
+
+        @include mixins.flex(column, center, center);
+    }
 
     .item__img {
         width: 12rem;
@@ -33,6 +53,10 @@
 
         @include mixins.flex(column, flex-start, null);
         gap: 0.3rem;
+
+        @include mixins.respond-to(tablet) {
+            width: 100%;
+        }
     }
 
     .item__profession {

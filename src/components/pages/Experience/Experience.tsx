@@ -9,7 +9,11 @@ export function Experience() {
                         <li
                             key={ind}
                             className="experience__item"
-                            style={{ marginLeft: `${ind * 5}rem` }}
+                            style={
+                                window.innerWidth >= 768
+                                    ? { marginLeft: `${ind * 5}rem` }
+                                    : {}
+                            }
                         >
                             <img
                                 src={item.img}
