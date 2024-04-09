@@ -61,45 +61,40 @@ export function Skills() {
     return (
         <>
             <main className="skills-bg">
-                <div className="wrapper">
-                    <section className="skills">
-                        <div
-                            className="skills-cat__speech"
-                            role="presentation"
-                            onClick={handleSpeak}
-                            onKeyDown={handleSpeak}
-                        >
-                            {isVideoPlaying && (
-                                <div
-                                    className="cat-speech cat-speech_skills"
-                                    ref={cloudRef}
-                                >
-                                    {catSpeech}
-                                </div>
-                            )}
-                            <video
-                                src={skillsCat}
-                                className="skills-cat__video"
-                                ref={videoRef}
-                                onEnded={(e) => {
-                                    if (videoPlayedTimes < 1) {
-                                        setVideoPlayedTimes(
-                                            (times) => times + 1
-                                        );
-                                        videoRef.current?.play();
-                                    } else {
-                                        (
-                                            e.target as HTMLVideoElement
-                                        ).currentTime = 0;
-                                        setVideoPlayedTimes(0);
-                                        setVideoPlaying(false);
-                                        setCatSpeech('');
-                                    }
-                                }}
-                            />
-                        </div>
-                    </section>
-                </div>
+                <section className="wrapper skills">
+                    <div
+                        className="skills-cat__speech"
+                        role="presentation"
+                        onClick={handleSpeak}
+                        onKeyDown={handleSpeak}
+                    >
+                        {isVideoPlaying && (
+                            <div
+                                className="cat-speech cat-speech_skills"
+                                ref={cloudRef}
+                            >
+                                {catSpeech}
+                            </div>
+                        )}
+                        <video
+                            src={skillsCat}
+                            className="skills-cat__video"
+                            ref={videoRef}
+                            onEnded={(e) => {
+                                if (videoPlayedTimes < 1) {
+                                    setVideoPlayedTimes((times) => times + 1);
+                                    videoRef.current?.play();
+                                } else {
+                                    (e.target as HTMLVideoElement).currentTime =
+                                        0;
+                                    setVideoPlayedTimes(0);
+                                    setVideoPlaying(false);
+                                    setCatSpeech('');
+                                }
+                            }}
+                        />
+                    </div>
+                </section>
             </main>
             <link rel="preload" as="image" href={talkingCloudLeft} />
         </>

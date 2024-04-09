@@ -20,7 +20,6 @@ export function Portfolio() {
         <main className="portfolio-bg">
             <Swiper
                 className="portfolio-swiper"
-                grabCursor
                 modules={[
                     Navigation,
                     Parallax,

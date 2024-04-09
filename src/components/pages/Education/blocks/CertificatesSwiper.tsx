@@ -26,7 +26,6 @@ export function CertificatesSwiper({
     return (
         <Swiper
             className="wrapper certificates-swiper"
-            grabCursor
             initialSlide={activeSlide === 'js' ? 0 : 1}
             modules={[Navigation, EffectFlip, Keyboard, Mousewheel, A11y]}
             spaceBetween={10}

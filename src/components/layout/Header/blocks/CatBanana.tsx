@@ -77,6 +77,13 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
             : 'auto';
 
         document.body.style.cursor = newCursor;
+
+        document.querySelectorAll('*').forEach((el) => {
+            if (el instanceof HTMLElement && isCatAnimated)
+                el.style.setProperty('cursor', newCursor);
+            else if (el instanceof HTMLElement)
+                el.style.removeProperty('cursor');
+        });
     }, [isCatAnimated, cursorPosition.cursorDirection.X]);
 
     return (

@@ -26,7 +26,7 @@ export function Pagination() {
     }
 
     return (
-        <nav className="pagination">
+        <nav className="wrapper pagination">
             <button
                 type="button"
                 className="pagination__arrow"
