@@ -48,12 +48,12 @@
         background-image: url('@assets/icons/talking-cloud-left.png');
 
         @include mixins.respond-to(tablet) {
-            width: 18rem;
-            height: 15rem;
+            left: 30%;
         }
 
         @include mixins.respond-to(mobile) {
-            left: 10%;
+            width: 14rem;
+            height: 12rem;
         }
     }
 }

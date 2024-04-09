@@ -4,6 +4,14 @@
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr 8rem;
+
+    @include mixins.respond-to(laptop) {
+        grid-template-rows: auto 1fr 6rem;
+    }
+
+    @include mixins.respond-to(mobile) {
+        grid-template-rows: auto 1fr 4rem;
+    }
 }
 
 .wrapper {

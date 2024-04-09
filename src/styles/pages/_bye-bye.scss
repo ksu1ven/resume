@@ -25,6 +25,8 @@
         width: 60%;
 
         @include mixins.respond-to(laptop) {
+            width: 80%;
+
             border: 3rem solid var(--color-primary-lighter);
         }
 

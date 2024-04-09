@@ -34,7 +34,7 @@ export function Pagination() {
                 onClick={() => handleChangePage('prev')}
                 onKeyDown={() => handleChangePage('prev')}
             >
-                {'<'}
+                ❮
             </button>
             <ul className="pagination__list">
                 {currentPage.prev && (
@@ -68,7 +68,7 @@ export function Pagination() {
                 onClick={() => handleChangePage('next')}
                 onKeyDown={() => handleChangePage('next')}
             >
-                {'>'}
+                ❯
             </button>
         </nav>
     );

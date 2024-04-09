@@ -3,7 +3,7 @@
 .cloud-move {
     animation: cloud-move 16700ms;
 
-    @include mixins.respond-to(mobile) {
+    @include mixins.respond-to(tablet) {
         animation: cloud-move-mobile 16700ms;
     }
 }
@@ -47,35 +47,35 @@
 @keyframes cloud-move-mobile {
     0% {
         scale: 0.5;
-        left: 70%;
+        left: 43%;
     }
     5% {
-        left: 85%;
+        left: 58%;
     }
     13% {
         scale: 1;
-        left: 8%;
+        left: 25%;
     }
     20% {
-        left: 10%;
+        left: 30%;
     }
     48% {
-        left: 10%;
+        left: 30%;
     }
     52% {
         left: 100%;
     }
     58% {
-        left: 8%;
+        left: 25%;
     }
     65% {
-        left: 10%;
+        left: 30%;
     }
     97% {
         scale: 1;
     }
     100% {
-        left: 10%;
+        left: 30%;
         scale: 0.5;
     }
 }
