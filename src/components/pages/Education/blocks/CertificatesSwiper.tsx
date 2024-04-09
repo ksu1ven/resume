@@ -47,7 +47,7 @@ export function CertificatesSwiper({
                 document.body.style.overflow = 'hidden';
             }}
             onDestroy={() => {
-                document.body.style.overflow = 'auto';
+                document.body.style.removeProperty('overflow');
             }}
         >
             <button
