@@ -242,18 +242,20 @@
 
     @include mixins.respond-to(mobile) {
         width: 100%;
-        padding-bottom: 6rem;
+        padding-bottom: 3rem;
     }
 
     &__laptop {
         width: 100%;
-        height: 100%;
+
+        position: relative;
         padding-top: 8.5%;
 
         @include mixins.flex(column, flex-start, center);
 
         background-image: url('@assets/images/laptop.png');
         background-size: contain;
+        background-position: top center;
         background-repeat: no-repeat;
 
         @include mixins.respond-to(laptop) {
@@ -261,7 +263,8 @@
         }
 
         @include mixins.respond-to(mobile) {
-            transform: scaleX(1.15) scaleY(1.8);
+            background-image: url('@assets/images/laptop-mobile.png');
+            transform: scaleX(1.15);
         }
     }
 
@@ -278,10 +281,10 @@
         }
 
         @include mixins.respond-to(mobile) {
-            width: calc(100vw * 0.8);
-            height: calc(100vw * 0.8);
+            width: calc(100vw * 0.75);
+            height: calc(100vw * 0.75);
 
-            transform: scaleX(0.8) scaleY(0.5) translateY(38%);
+            transform: scaleX(0.75) scaleY(0.75) translateY(5%);
         }
     }
 
@@ -300,9 +303,9 @@
         @include mixins.respond-to(mobile) {
             width: 100%;
 
-            top: calc(100vw * -0.36);
+            top: calc(100vw * -0.38);
             left: -4.5%;
-            transform: scaleX(0.81) scaleY(0.51);
+            transform: scaleX(0.81);
         }
     }
 
