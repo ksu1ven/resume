@@ -155,18 +155,20 @@
     }
 
     &__item {
-        @include mixins.flex(null, flex-start, center);
-
+        list-style: none;
         font-size: var(--fs-medium-big);
         font-weight: bold;
 
         &__link {
+            @include mixins.flex(null, flex-start, center);
             color: var(--color-dark-s);
         }
 
         &__icon {
             width: 4rem;
             height: 4rem;
+
+            transition: var(--transition);
 
             @include mixins.respond-to(laptop) {
                 width: 3rem;

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { motion, Variants } from 'framer-motion';
 import skillsCat from '@assets/videos/skills-cat.webm';
 import talkingCloudLeft from '@assets/icons/talking-cloud-right.png';
 
@@ -58,15 +59,35 @@ export function Skills() {
         else cloudRef.current?.classList.remove('cloud-move');
     }, [isVideoPlaying]);
 
+    const catVariants: Variants = {
+        offscreen: {
+            y: '0%',
+        },
+        onscreen: {
+            y: ['500%', '0%'],
+            transition: {
+                type: 'spring',
+                bounce: 0.4,
+                duration: 1.2,
+                ease: 'easeInOut',
+                times: [0.7, 0.5],
+            },
+        },
+    };
+
     return (
         <>
             <main className="skills-bg">
                 <section className="wrapper skills">
-                    <div
+                    <motion.div
                         className="skills-cat__speech"
                         role="presentation"
                         onClick={handleSpeak}
                         onKeyDown={handleSpeak}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 1 }}
+                        variants={catVariants}
                     >
                         {isVideoPlaying && (
                             <div
@@ -93,7 +114,7 @@ export function Skills() {
                                 }
                             }}
                         />
-                    </div>
+                    </motion.div>
                 </section>
             </main>
             <link rel="preload" as="image" href={talkingCloudLeft} />

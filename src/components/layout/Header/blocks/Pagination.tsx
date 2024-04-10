@@ -29,7 +29,7 @@ export function Pagination() {
         <nav className="wrapper pagination">
             <button
                 type="button"
-                className="pagination__arrow"
+                className="btn-arrow pagination__arrow"
                 disabled={!currentPage.prev}
                 onClick={() => handleChangePage('prev')}
                 onKeyDown={() => handleChangePage('prev')}
@@ -38,7 +38,7 @@ export function Pagination() {
             </button>
             <ul className="pagination__list">
                 {currentPage.prev && (
-                    <li className="pagination__item pagination__item_prev">
+                    <li className="btn pagination__item pagination__item_prev">
                         <Link
                             to={currentPage.prev.path}
                             onClick={() => handleChangePage('prev')}
@@ -51,7 +51,7 @@ export function Pagination() {
                     {currentPage.current.name}
                 </li>
                 {currentPage.next && (
-                    <li className="pagination__item pagination__item_next">
+                    <li className="btn pagination__item pagination__item_next">
                         <Link
                             to={currentPage.next.path}
                             onClick={() => handleChangePage('next')}
@@ -63,7 +63,7 @@ export function Pagination() {
             </ul>
             <button
                 type="button"
-                className="pagination__arrow"
+                className="btn-arrow pagination__arrow"
                 disabled={!currentPage.next}
                 onClick={() => handleChangePage('next')}
                 onKeyDown={() => handleChangePage('next')}

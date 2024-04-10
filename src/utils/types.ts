@@ -25,6 +25,13 @@ export type ExperienceItem = {
     description: string;
 };
 
+export type EducationItem = {
+    institution: string;
+    year: number;
+    course: string;
+    position?: string;
+};
+
 export type PaginationItem = {
     path: string;
     name: string;

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import arrowIcon from '@assets/icons/arrow.png';
 
 interface StudyBlockProps {
@@ -7,8 +8,8 @@ interface StudyBlockProps {
 
 export function Arrow({ direction, id }: StudyBlockProps) {
     return (
-        <div className={`arrow arrow_${direction}`} id={id}>
+        <motion.div className={`arrow arrow_${direction}`} id={id}>
             <img src={arrowIcon} alt="arrow" className="arrow__img" />
-        </div>
+        </motion.div>
     );
 }

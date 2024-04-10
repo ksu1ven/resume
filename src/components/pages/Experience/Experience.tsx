@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { EXPERIENCE, MONTHES } from '@utils/constants';
 
 export function Experience() {
@@ -5,7 +6,7 @@ export function Experience() {
         <main className="experience-bg">
             <ul className="wrapper experience">
                 {EXPERIENCE.map((item, ind) => (
-                    <li
+                    <motion.li
                         key={ind}
                         className="experience__item"
                         style={
@@ -13,6 +14,25 @@ export function Experience() {
                                 ? { marginLeft: `${ind * 5}rem` }
                                 : {}
                         }
+                        initial={{
+                            x: '-100%',
+                            borderRadius: '50px',
+                            scaleX: 0,
+                        }}
+                        animate={
+                            window.innerWidth >= 768
+                                ? {
+                                      marginLeft: `${ind * 5}rem`,
+                                      x: 0,
+                                      borderRadius: '0.2rem',
+                                      scaleX: 1,
+                                  }
+                                : {}
+                        }
+                        transition={{
+                            duration: 0.5,
+                            delay: (ind + 1) * 0.2,
+                        }}
                     >
                         <img
                             src={item.img}
@@ -35,7 +55,7 @@ export function Experience() {
                                 {item.description}
                             </p>
                         </div>
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
         </main>

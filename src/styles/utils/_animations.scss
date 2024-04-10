@@ -79,3 +79,29 @@
         scale: 0.5;
     }
 }
+
+.text-animation:hover {
+    background: linear-gradient(
+        90deg,
+        var(--color-primary-lighter),
+        var(--color-primary),
+        var(--color-dark-s),
+        var(--color-primary),
+        var(--color-primary-lighter)
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textflow 5s linear infinite;
+    transition: var(--transition-min);
+}
+
+@keyframes textflow {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: 200% center;
+    }
+}

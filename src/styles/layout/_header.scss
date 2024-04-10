@@ -135,7 +135,13 @@
                 var(--color-primary) 0%,
                 var(--color-primary-lighter) 30%
             );
+            transition: ease-in-out 0.4s;
             transform: perspective(12rem) rotateY(30deg) translateZ(2rem);
+
+            &:hover {
+                transform: perspective(12rem) rotateY(30deg) translateY(-3px)
+                    translateZ(2rem);
+            }
 
             @include mixins.respond-to(mobile) {
                 font-size: calc(0.6 * var(--fs-medium-small));
@@ -150,7 +156,13 @@
                 var(--color-primary-lighter) 0%,
                 var(--color-primary) 70%
             );
+            transition: var(--transition);
             transform: perspective(10rem) rotateY(-30deg) translateZ(2rem);
+
+            &:hover {
+                transform: perspective(10rem) rotateY(-30deg) translateY(-3px)
+                    translateZ(2rem);
+            }
 
             @include mixins.respond-to(mobile) {
                 font-size: calc(0.6 * var(--fs-medium-small));
@@ -162,6 +174,7 @@
         font-size: var(--fs-medium-big);
         color: var(--color-white);
         padding: 0.5rem;
+        border-radius: 50%;
 
         &:disabled {
             color: var(--color-dark-transparent);
