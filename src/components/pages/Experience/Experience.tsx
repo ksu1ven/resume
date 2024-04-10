@@ -16,7 +16,8 @@ export function Experience() {
                         }
                         initial={{
                             x: '-100%',
-                            borderRadius: '50px',
+                            borderRadius:
+                                window.innerWidth >= 768 ? '50px' : '10px',
                             scaleX: 0,
                         }}
                         animate={
@@ -27,7 +28,7 @@ export function Experience() {
                                       borderRadius: '0.2rem',
                                       scaleX: 1,
                                   }
-                                : {}
+                                : { x: 0, borderRadius: '0.2rem', scaleX: 1 }
                         }
                         transition={{
                             duration: 0.5,
