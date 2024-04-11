@@ -138,14 +138,14 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 )}
             </AnimatePresence>
             <audio src={happySong} ref={happySongRef} muted />
-            {document.readyState === 'complete' && (
+            {/* {document.readyState === 'complete' && (
                 <>
                     <link rel="preload" as="image" href={catBananaLeft} />
                     <link rel="preload" as="image" href={catBananaRight} />
                     <link rel="preload" as="image" href={mouseCursorLeft} />
                     <link rel="preload" as="image" href={mouseCursorRight} />
                 </>
-            )}
+            )} */}
         </div>
     );
 }
