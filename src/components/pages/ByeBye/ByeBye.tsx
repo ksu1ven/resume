@@ -1,4 +1,4 @@
-import byeBye from '@assets/images/bye-bye.png';
+import byeBye from '@assets/images/bye-bye.jpg';
 
 export function ByeBye() {
     return (

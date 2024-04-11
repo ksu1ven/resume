@@ -9,9 +9,9 @@ import perfumeOrder from '@assets/images/portfolio images/perfume-store-order.jp
 import selectors from '@assets/images/portfolio images/selectors.jpg';
 import shelter from '@assets/images/portfolio images/shelter.jpg';
 import shelterPets from '@assets/images/portfolio images/shelter-pets.jpg';
-import catAccountant from '@assets/images/cat-accountant.png';
-import catBarista from '@assets/images/cat-barista.png';
-import catCasier from '@assets/images/cat-cashier.png';
+import catAccountant from '@assets/images/cat-accountant.jpg';
+import catBarista from '@assets/images/cat-barista.jpg';
+import catCasier from '@assets/images/cat-cashier.jpg';
 import {
     EducationItem,
     ExperienceItem,

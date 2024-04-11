@@ -7,8 +7,8 @@ import {
     AnimatePresence,
 } from 'framer-motion';
 import { useCursorPosition } from '@utils/useCursorPosition';
-import catBananaLeft from '@assets/images/cat-banana-left.gif';
-import catBananaRight from '@assets/images/cat-banana-right.gif';
+import catBananaLeft from '@assets/images/cat-banana-left-1.gif';
+import catBananaRight from '@assets/images/cat-banana-right-1.gif';
 import mouseCursorLeft from '@assets/images/mouse-left.png';
 import mouseCursorRight from '@assets/images/mouse-right.png';
 import catEatsMouse from '@assets/images/cat-eats-mouse.png';

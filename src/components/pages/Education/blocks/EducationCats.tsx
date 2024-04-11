@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import talkingCats from '@assets/videos/talking-cats.webm';
+import talkingCats from '@assets/videos/education-cats.mp4';
 import certificateJs from '@assets/images/certificate-js.png';
 import certificateReact from '@assets/images/certificate-react.png';
 import talkingCloudLeft from '@assets/icons/talking-cloud-left.png';

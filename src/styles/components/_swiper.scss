@@ -9,7 +9,7 @@
     z-index: 50;
     @include mixins.flex(null, center, center);
 
-    background-image: url('@assets/images/swiper-certificates.png');
+    background-image: url('@assets/images/swiper-certificates.jpg');
     background-size: cover;
     background-position: left bottom;
 }
@@ -105,13 +105,13 @@
         left: 0;
         top: 0;
 
-        background-image: url('@assets/images/swiper-portfolio.png');
+        background-image: url('@assets/images/swiper-portfolio.jpg');
         -webkit-background-size: contain;
         background-size: cover;
         background-position: center;
 
         @include mixins.respond-to(tablet) {
-            background-image: url('@assets/images/swiper-portfolio-tablet.png');
+            background-image: url('@assets/images/swiper-portfolio-tablet.jpg');
             background-position: left;
         }
     }

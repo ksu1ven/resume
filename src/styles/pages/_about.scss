@@ -4,7 +4,7 @@
     &-bg {
         padding: 5rem 0;
         overflow-x: hidden;
-        background-image: url('@assets/images/background-about.png');
+        background-image: url('@assets/images/background-about.jpg');
         background-size: cover;
         background-position: right top;
 
@@ -13,7 +13,7 @@
         }
 
         @include mixins.respond-to(laptop) {
-            background-image: url('@assets/images/background-about-laptop.png');
+            background-image: url('@assets/images/background-about-laptop.jpg');
             background-position: right bottom;
         }
 
@@ -40,7 +40,7 @@
 
     transform: rotate(-5deg);
 
-    background-image: url('@assets/images/background-photo.png');
+    background-image: url('@assets/images/background-photo.jpg');
     background-size: cover;
     border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow-dark);
