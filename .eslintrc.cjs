@@ -24,6 +24,7 @@ module.exports = {
             'warn',
             { allowConstantExport: true },
         ],
+        'no-nested-ternary': 'off',
         'react/no-array-index-key': 'off',
         'prettier/prettier': 'error',
         'import/prefer-default-export': 'off',
