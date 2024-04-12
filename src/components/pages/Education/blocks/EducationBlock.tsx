@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 interface StudyBlockProps {
     direction: 'left' | 'right';
@@ -26,20 +25,22 @@ export function EducationBlock({
     }, [setEducationBlockWidth]);
 
     return (
-        <motion.div
-            className={`education__block education__block_${direction}`}
+        <div
+            className={`block education__block education__block_${direction}`}
             id={id}
             ref={educationBlockRef}
-            style={{ height: educationBlockWidth }}
+            style={{
+                height: educationBlockWidth,
+            }}
         >
-            <motion.div
-                className={`education__block_inner education__block_${direction}_inner`}
+            <div
+                className={`block-inner education__block_inner education__block_${direction}_inner`}
             >
                 <h2 className="education__block__institution">{institution}</h2>
                 <h3>{course}</h3>
                 {position && <h3>{position}</h3>}
                 <h3>{year}</h3>
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     );
 }

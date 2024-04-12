@@ -115,6 +115,7 @@
 .education__block {
     position: relative;
     z-index: 3;
+    transition: var(--transition);
 
     font-size: var(--fs-medium-small);
 
@@ -127,6 +128,7 @@
         width: 100%;
         height: 100%;
         padding: 1rem;
+        transition: var(--transition);
 
         border-radius: var(--border-radius);
         color: var(--color-dark-s);

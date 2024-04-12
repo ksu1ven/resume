@@ -30,12 +30,14 @@ export function Header() {
                     <h2 className="game__rules">
                         {gameIsLoading
                             ? 'Игра загружается...'
-                            : 'Поиграй с котом-бананом. Нажми на домик, чтобы начать'}
+                            : isCatAnimated
+                              ? 'Спрячь мышку отбратно в домик. '
+                              : 'Поиграй с котом-бананом. Нажми на домик, чтобы начать.'}
                     </h2>
                     <button
                         aria-label="House"
                         type="button"
-                        className="house"
+                        className="icon house"
                         onClick={handleClick}
                         onKeyDown={handleClick}
                         onMouseOut={handleMouseOut}

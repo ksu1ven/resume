@@ -52,6 +52,8 @@
         z-index: 3;
         width: 8rem;
         height: 8rem;
+        transition: var(--transition);
+
         background-image: url('@assets/images/mouse-house.png');
         background-size: contain;
         background-repeat: no-repeat;

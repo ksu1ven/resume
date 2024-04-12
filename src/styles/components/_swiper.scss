@@ -143,6 +143,7 @@
     }
 
     .img-container {
+        transition: var(--transition);
         @include mixins.flex(null, center, center);
         padding: 2rem;
 
@@ -154,11 +155,21 @@
             position: relative;
         }
 
+        &__link {
+            transition: var(--transition);
+        }
+
         .portfolio-slide__img {
             width: 25rem;
             height: 21rem;
 
             position: absolute;
+            border-radius: var(--border-radius);
+
+            &:hover {
+                z-index: 2;
+                transform: scale(1.2) !important;
+            }
 
             @include mixins.respond-to(tablet) {
                 width: calc(100vw * 0.65);

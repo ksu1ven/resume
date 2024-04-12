@@ -36,6 +36,11 @@ export function PortfolioSlide({
         imageWidth = remWidth * 0.65;
         imageHeight = remWidth * 0.65 * 0.7;
     }
+
+    function changeTransition(el: HTMLElement) {
+        el.style.setProperty('transition', 'ease-in-out 0.4s');
+    }
+
     return (
         <div className="portfolio-slide">
             <div className="img-container">
@@ -47,7 +52,12 @@ export function PortfolioSlide({
                     }}
                 >
                     {images.map((image, ind) => (
-                        <Link to={image.url} target="blank" key={ind}>
+                        <Link
+                            to={image.url}
+                            target="blank"
+                            key={ind}
+                            className="img-container__link"
+                        >
                             <img
                                 src={image.img}
                                 alt={`${name} ${ind}`}
@@ -56,6 +66,26 @@ export function PortfolioSlide({
                                     left: `${ind * imageOffset}rem`,
                                 }}
                                 className="portfolio-slide__img"
+                                onMouseOut={(e) =>
+                                    changeTransition(
+                                        e.target as HTMLImageElement
+                                    )
+                                }
+                                onMouseOver={(e) =>
+                                    changeTransition(
+                                        e.target as HTMLImageElement
+                                    )
+                                }
+                                onFocus={(e) => {
+                                    changeTransition(
+                                        e.target as HTMLImageElement
+                                    );
+                                }}
+                                onBlur={(e) =>
+                                    changeTransition(
+                                        e.target as HTMLImageElement
+                                    )
+                                }
                                 data-swiper-parallax={-1000 * (ind + 1)}
                             />
                         </Link>
