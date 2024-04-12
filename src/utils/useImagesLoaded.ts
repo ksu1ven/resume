@@ -5,16 +5,17 @@ export function useImagesLoaded() {
 
     useEffect(() => {
         const pageImages = [...document.querySelectorAll('img')];
+        let intervalId: ReturnType<typeof setInterval>;
 
         function checkImageStatuses(images: HTMLImageElement[]) {
-            return images.every((img) => img.complete);
+            if (images.every((img) => img.complete)) {
+                clearInterval(intervalId);
+                setImagesLoaded(true);
+            }
         }
-        if (checkImageStatuses(pageImages)) {
-            setImagesLoaded(true);
-        } else {
-            setTimeout(() => checkImageStatuses(pageImages), 500);
-        }
-    }, [setImagesLoaded]);
+
+        intervalId = setInterval(() => checkImageStatuses(pageImages), 500);
+    });
 
     return imagesLoaded;
 }
