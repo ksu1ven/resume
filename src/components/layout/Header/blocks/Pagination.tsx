@@ -42,6 +42,7 @@ export function Pagination() {
                         <Link
                             to={currentPage.prev.path}
                             onClick={() => handleChangePage('prev')}
+                            onTouchStart={() => handleChangePage('prev')}
                         >
                             {currentPage.prev.name}
                         </Link>
@@ -55,6 +56,7 @@ export function Pagination() {
                         <Link
                             to={currentPage.next.path}
                             onClick={() => handleChangePage('next')}
+                            onTouchStart={() => handleChangePage('next')}
                         >
                             {currentPage.next.name}
                         </Link>
