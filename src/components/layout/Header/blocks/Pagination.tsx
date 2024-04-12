@@ -12,6 +12,8 @@ export function Pagination() {
         next: PAGES[currentIndex.current + 1],
     });
     const navigate = useNavigate();
+    const touchDevice = window.matchMedia('(pointer: coarse)').matches;
+    const mouseDevice = window.matchMedia('(pointer: fine)').matches;
 
     function handleChangePage(direction: 'next' | 'prev') {
         if (direction === 'next') currentIndex.current += 1;
@@ -41,8 +43,16 @@ export function Pagination() {
                     <li className="btn pagination__item pagination__item_prev">
                         <Link
                             to={currentPage.prev.path}
-                            onClick={() => handleChangePage('prev')}
-                            onTouchStart={() => handleChangePage('prev')}
+                            onClick={() => {
+                                if (mouseDevice) {
+                                    handleChangePage('prev');
+                                }
+                            }}
+                            onTouchStart={() => {
+                                if (touchDevice) {
+                                    handleChangePage('prev');
+                                }
+                            }}
                         >
                             {currentPage.prev.name}
                         </Link>
@@ -55,8 +65,16 @@ export function Pagination() {
                     <li className="btn pagination__item pagination__item_next">
                         <Link
                             to={currentPage.next.path}
-                            onClick={() => handleChangePage('next')}
-                            onTouchStart={() => handleChangePage('next')}
+                            onClick={() => {
+                                if (mouseDevice) {
+                                    handleChangePage('next');
+                                }
+                            }}
+                            onTouchStart={() => {
+                                if (touchDevice) {
+                                    handleChangePage('next');
+                                }
+                            }}
                         >
                             {currentPage.next.name}
                         </Link>
