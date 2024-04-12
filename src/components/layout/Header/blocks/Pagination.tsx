@@ -12,8 +12,6 @@ export function Pagination() {
         next: PAGES[currentIndex.current + 1],
     });
     const navigate = useNavigate();
-    const touchDevice = window.matchMedia('(pointer: coarse)').matches;
-    const mouseDevice = window.matchMedia('(pointer: fine)').matches;
 
     function handleChangePage(direction: 'next' | 'prev') {
         if (direction === 'next') currentIndex.current += 1;
@@ -44,14 +42,7 @@ export function Pagination() {
                         <Link
                             to={currentPage.prev.path}
                             onClick={() => {
-                                if (mouseDevice) {
-                                    handleChangePage('prev');
-                                }
-                            }}
-                            onTouchStart={() => {
-                                if (touchDevice) {
-                                    handleChangePage('prev');
-                                }
+                                handleChangePage('prev');
                             }}
                         >
                             {currentPage.prev.name}
@@ -66,14 +57,7 @@ export function Pagination() {
                         <Link
                             to={currentPage.next.path}
                             onClick={() => {
-                                if (mouseDevice) {
-                                    handleChangePage('next');
-                                }
-                            }}
-                            onTouchStart={() => {
-                                if (touchDevice) {
-                                    handleChangePage('next');
-                                }
+                                handleChangePage('next');
                             }}
                         >
                             {currentPage.next.name}
