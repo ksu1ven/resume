@@ -14,6 +14,7 @@ import mouseCursorLeft from '@assets/images/mouse-left.png';
 import mouseCursorRight from '@assets/images/mouse-right.png';
 import catEatsMouse from '@assets/images/cat-eats-mouse.png';
 import happySong from '@assets/music/bananacat - original sound.mp3';
+import { useImagesLoaded } from '@utils/useImagesLoaded';
 
 interface CatBananaProps {
     isCatAnimated: boolean;
@@ -46,6 +47,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         [imageHeigth / 2, clientHeight - imageHeigth / 2],
         [-imageOffsetTop, clientHeight - imageOffsetTop - imageHeigth]
     );
+    const preloadersStart = useImagesLoaded();
 
     useEffect(() => {
         if (!imageOffsetLeft && !imageOffsetTop && imageRef.current) {
@@ -138,14 +140,14 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 )}
             </AnimatePresence>
             <audio src={happySong} ref={happySongRef} muted />
-            {/* {document.readyState === 'complete' && (
+            {preloadersStart && (
                 <>
                     <link rel="preload" as="image" href={catBananaLeft} />
                     <link rel="preload" as="image" href={catBananaRight} />
                     <link rel="preload" as="image" href={mouseCursorLeft} />
                     <link rel="preload" as="image" href={mouseCursorRight} />
                 </>
-            )} */}
+            )}
         </div>
     );
 }
