@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useState, useRef, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 import skillsCat from '@assets/videos/skills-cat.webm';
@@ -17,6 +18,7 @@ export function Skills() {
         null,
         null,
     ]);
+    const [onCanPlay, setOnCanPlay] = useState(false);
 
     function handleSpeak() {
         setVideoPlaying(!isVideoPlaying);
@@ -85,7 +87,7 @@ export function Skills() {
                         onClick={handleSpeak}
                         onKeyDown={handleSpeak}
                         initial="offscreen"
-                        whileInView="onscreen"
+                        whileInView={onCanPlay ? 'onscreen' : 'offscreen'}
                         viewport={{ once: true, amount: 1 }}
                         variants={catVariants}
                     >
@@ -101,6 +103,7 @@ export function Skills() {
                             src={skillsCat}
                             className="skills-cat__video"
                             ref={videoRef}
+                            onCanPlay={() => setOnCanPlay(true)}
                             onEnded={(e) => {
                                 if (videoPlayedTimes < 1) {
                                     setVideoPlayedTimes((times) => times + 1);
@@ -117,7 +120,14 @@ export function Skills() {
                     </motion.div>
                 </section>
             </main>
-            <link rel="preload" as="image" href={talkingCloudLeft} />
+
+            <link
+                className="preload"
+                rel="preload"
+                as="image"
+                href={talkingCloudLeft}
+                fetchPriority="high"
+            />
         </>
     );
 }

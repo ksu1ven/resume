@@ -20,10 +20,6 @@
     font-family: var(--ff-title);
     font-weight: 400;
 
-    @include mixins.respond-to(desktop) {
-        display: none;
-    }
-
     &__rules {
         color: var(--color-white);
         font-size: var(--fs-medium-big);

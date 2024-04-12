@@ -21,28 +21,30 @@ export function Header() {
 
     return (
         <header className="header">
-            <section className="wrapper game">
-                <CatBanana
-                    isCatAnimated={isCatAnimated}
-                    setGameLoading={setGameLoading}
-                />
-                <h2 className="game__rules">
-                    {gameIsLoading
-                        ? 'Игра загружается...'
-                        : 'Поиграй с котом-бананом. Нажми на домик, чтобы начать'}
-                </h2>
-                <button
-                    aria-label="House"
-                    type="button"
-                    className="house"
-                    onClick={handleClick}
-                    onKeyDown={handleClick}
-                    onMouseOut={handleMouseOut}
-                    onBlur={handleMouseOut}
-                    onMouseOver={handleMouseOver}
-                    onFocus={handleMouseOver}
-                />
-            </section>
+            {window.matchMedia('(hover: hover)').matches && (
+                <section className="wrapper game">
+                    <CatBanana
+                        isCatAnimated={isCatAnimated}
+                        setGameLoading={setGameLoading}
+                    />
+                    <h2 className="game__rules">
+                        {gameIsLoading
+                            ? 'Игра загружается...'
+                            : 'Поиграй с котом-бананом. Нажми на домик, чтобы начать'}
+                    </h2>
+                    <button
+                        aria-label="House"
+                        type="button"
+                        className="house"
+                        onClick={handleClick}
+                        onKeyDown={handleClick}
+                        onMouseOut={handleMouseOut}
+                        onBlur={handleMouseOut}
+                        onMouseOver={handleMouseOver}
+                        onFocus={handleMouseOver}
+                    />
+                </section>
+            )}
 
             <div className="pagination-bg">
                 <Pagination />
