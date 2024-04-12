@@ -5,25 +5,31 @@ import { Pagination } from './blocks/Pagination';
 export function Header() {
     let catWasClicked = false;
     const [isCatAnimated, setIsCatAnimated] = useState(false);
+    const [gameIsLoading, setGameLoading] = useState(true);
 
     function handleClick() {
         catWasClicked = true;
     }
 
     function handleMouseOver() {
-        setIsCatAnimated(false);
+        if (!gameIsLoading) setIsCatAnimated(false);
     }
 
     function handleMouseOut() {
-        if (catWasClicked) setIsCatAnimated(true);
+        if (catWasClicked && !gameIsLoading) setIsCatAnimated(true);
     }
 
     return (
         <header className="header">
             <section className="wrapper game">
-                <CatBanana isCatAnimated={isCatAnimated} />
+                <CatBanana
+                    isCatAnimated={isCatAnimated}
+                    setGameLoading={setGameLoading}
+                />
                 <h2 className="game__rules">
-                    Поиграй с котом-бананом. Нажми на домик, чтобы начать
+                    {gameIsLoading
+                        ? 'Игра загружается...'
+                        : 'Поиграй с котом-бананом. Нажми на домик, чтобы начать'}
                 </h2>
                 <button
                     aria-label="House"

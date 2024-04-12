@@ -18,9 +18,10 @@ import { useImagesLoaded } from '@utils/useImagesLoaded';
 
 interface CatBananaProps {
     isCatAnimated: boolean;
+    setGameLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function CatBanana({ isCatAnimated }: CatBananaProps) {
+export function CatBanana({ isCatAnimated, setGameLoading }: CatBananaProps) {
     const cursorPosition = useCursorPosition(isCatAnimated);
 
     const [animationEnd, setAnimationEnd] = useState(false);
@@ -48,12 +49,12 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         [-imageOffsetTop, clientHeight - imageOffsetTop - imageHeigth]
     );
     const preloadersStart = useImagesLoaded();
-    const [catBananaPreloaded, setCatBananaPreloaded] = useState(false);
+
     let preloadedImages = 0;
 
     function catBananaPreload() {
         preloadedImages += 1;
-        if (preloadedImages === 5) setCatBananaPreloaded(true);
+        if (preloadedImages === 5) setGameLoading(false);
     }
 
     useEffect(() => {
@@ -69,15 +70,12 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
             ?.querySelectorAll('*');
 
         if (isCatAnimated && cursorPosition) {
-            console.log('start');
-            const newCursor = catBananaPreloaded
-                ? `url(${cursorPosition.cursorDirection.X === 'left' ? mouseCursorLeft : mouseCursorRight}), pointer`
-                : 'wait';
+            const newCursor = `url(${cursorPosition.cursorDirection.X === 'left' ? mouseCursorLeft : mouseCursorRight}), pointer`;
+
             rootElements?.forEach((el) => {
                 if (el instanceof HTMLElement)
                     el.style.setProperty('cursor', newCursor);
             });
-            if (!catBananaPreloaded) return;
 
             x.set(cursorPosition.left);
             y.set(cursorPosition.top);
@@ -85,8 +83,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 happySongRef.current.muted = false;
                 happySongRef.current.play();
             }
-        } else if (!isCatAnimated && catBananaPreloaded) {
-            console.log('end');
+        } else if (!isCatAnimated) {
             rootElements?.forEach((el) => {
                 if (el instanceof HTMLElement)
                     el.style.removeProperty('cursor');
@@ -98,7 +95,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 happySongRef.current.pause();
             }
         }
-    }, [cursorPosition, isCatAnimated, x, y, catBananaPreloaded]);
+    }, [cursorPosition, isCatAnimated, x, y]);
 
     return (
         <div className="cat-container">
