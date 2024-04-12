@@ -53,7 +53,6 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
 
     function catBananaPreload() {
         preloadedImages += 1;
-        console.log(preloadedImages);
         if (preloadedImages === 5) setCatBananaPreloaded(true);
     }
 
@@ -68,7 +67,9 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         const rootElements = document
             .querySelector('#root')
             ?.querySelectorAll('*');
+
         if (isCatAnimated && cursorPosition) {
+            console.log('start');
             const newCursor = catBananaPreloaded
                 ? `url(${cursorPosition.cursorDirection.X === 'left' ? mouseCursorLeft : mouseCursorRight}), pointer`
                 : 'wait';
@@ -77,13 +78,15 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                     el.style.setProperty('cursor', newCursor);
             });
             if (!catBananaPreloaded) return;
+
             x.set(cursorPosition.left);
             y.set(cursorPosition.top);
             if (happySongRef.current) {
                 happySongRef.current.muted = false;
                 happySongRef.current.play();
             }
-        } else {
+        } else if (!isCatAnimated && catBananaPreloaded) {
+            console.log('end');
             rootElements?.forEach((el) => {
                 if (el instanceof HTMLElement)
                     el.style.removeProperty('cursor');
