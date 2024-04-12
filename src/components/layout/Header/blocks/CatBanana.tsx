@@ -48,6 +48,14 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
         [-imageOffsetTop, clientHeight - imageOffsetTop - imageHeigth]
     );
     const preloadersStart = useImagesLoaded();
+    const [catBananaPreloaded, setCatBananaPreloaded] = useState(false);
+    let preloadedImages = 0;
+
+    function catBananaPreload() {
+        preloadedImages += 1;
+        console.log(preloadedImages);
+        if (preloadedImages === 5) setCatBananaPreloaded(true);
+    }
 
     useEffect(() => {
         if (!imageOffsetLeft && !imageOffsetTop && imageRef.current) {
@@ -57,7 +65,18 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
     }, [imageOffsetLeft, imageOffsetTop]);
 
     useEffect(() => {
+        const rootElements = document
+            .querySelector('#root')
+            ?.querySelectorAll('*');
         if (isCatAnimated && cursorPosition) {
+            const newCursor = catBananaPreloaded
+                ? `url(${cursorPosition.cursorDirection.X === 'left' ? mouseCursorLeft : mouseCursorRight}), pointer`
+                : 'wait';
+            rootElements?.forEach((el) => {
+                if (el instanceof HTMLElement)
+                    el.style.setProperty('cursor', newCursor);
+            });
+            if (!catBananaPreloaded) return;
             x.set(cursorPosition.left);
             y.set(cursorPosition.top);
             if (happySongRef.current) {
@@ -65,6 +84,10 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 happySongRef.current.play();
             }
         } else {
+            rootElements?.forEach((el) => {
+                if (el instanceof HTMLElement)
+                    el.style.removeProperty('cursor');
+            });
             x.set(0);
             y.set(0);
             if (happySongRef.current) {
@@ -72,22 +95,7 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                 happySongRef.current.pause();
             }
         }
-    }, [cursorPosition, isCatAnimated, x, y]);
-
-    useEffect(() => {
-        const newCursor = isCatAnimated
-            ? `url(${cursorPosition.cursorDirection.X === 'left' ? mouseCursorLeft : mouseCursorRight}), pointer`
-            : 'auto';
-
-        document.body.style.cursor = newCursor;
-
-        document.querySelectorAll('*').forEach((el) => {
-            if (el instanceof HTMLElement && isCatAnimated)
-                el.style.setProperty('cursor', newCursor);
-            else if (el instanceof HTMLElement)
-                el.style.removeProperty('cursor');
-        });
-    }, [isCatAnimated, cursorPosition.cursorDirection.X]);
+    }, [cursorPosition, isCatAnimated, x, y, catBananaPreloaded]);
 
     return (
         <div className="cat-container">
@@ -101,7 +109,9 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
                               cursorPosition.cursorDirection.X === 'left'
                                 ? catBananaLeft
                                 : catBananaRight
-                            : catBananaRightMin
+                            : preloadersStart
+                              ? catBananaRight
+                              : catBananaRightMin
                     }
                     alt="catBanana"
                     animate={
@@ -141,12 +151,13 @@ export function CatBanana({ isCatAnimated }: CatBananaProps) {
             </AnimatePresence>
             <audio src={happySong} ref={happySongRef} muted />
             {preloadersStart && (
-                <>
+                <script onLoad={catBananaPreload}>
                     <link rel="preload" as="image" href={catBananaLeft} />
                     <link rel="preload" as="image" href={catBananaRight} />
                     <link rel="preload" as="image" href={mouseCursorLeft} />
                     <link rel="preload" as="image" href={mouseCursorRight} />
-                </>
+                    <link rel="preload" as="image" href={catEatsMouse} />
+                </script>
             )}
         </div>
     );
