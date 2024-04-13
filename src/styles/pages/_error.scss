@@ -18,19 +18,15 @@
     &__link {
         position: relative;
 
-        margin: 3rem 0;
+        margin: 1rem 0;
         padding: 1rem 2rem;
         border-radius: var(--border-radius);
         transition: var(--transition);
 
         color: var(--color-white);
-        font-size: calc(1.1 * var(--fs-medium-big));
+        font-size: calc(1.1 * var(--fs-medium));
 
         background-color: var(--color-primary);
-
-        @include mixins.respond-to(mobile) {
-            margin: 1.5rem 0;
-        }
     }
 
     &__img {
