@@ -34,13 +34,13 @@
     }
 
     &_skills {
-        width: 20rem;
-        height: 18rem;
-        padding: 1rem 5rem 4rem 3rem;
-
         position: absolute;
         top: 3rem;
         left: 55%;
+
+        width: 20rem;
+        height: 18rem;
+        padding: 1rem 5rem 4rem 3rem;
 
         font-weight: bold;
         font-size: var(--fs-medium-big);

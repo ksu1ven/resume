@@ -1,0 +1,35 @@
+@use '../utils/mixins';
+
+.error {
+    &-bg {
+        background-color: var(--color-primary-lighter);
+    }
+
+    min-height: 100vh;
+    @include mixins.flex(column, flex-end, center);
+
+    &__h1 {
+        font-family: var(--ff-title);
+        font-size: var(--fs-big);
+        color: var(--color-dark-m);
+        text-align: center;
+    }
+
+    &__link {
+        position: relative;
+
+        margin: 3rem 0;
+        padding: 1rem 2rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+
+        color: var(--color-white);
+        font-size: calc(1.1 * var(--fs-medium-big));
+
+        background-color: var(--color-primary);
+
+        @include mixins.respond-to(mobile) {
+            margin: 1.5rem 0;
+        }
+    }
+}

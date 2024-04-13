@@ -12,6 +12,7 @@
     }
 
     padding: 2rem;
+
     @include mixins.flex(null, center, center);
 
     @include mixins.respond-to(mobile) {
@@ -29,12 +30,14 @@
         @include mixins.respond-to(tablet) {
             padding-top: 40%;
             width: 150%;
+
             transform: translateX(-20%);
         }
 
         @include mixins.respond-to(mobile) {
             padding-top: 60%;
             width: 200%;
+
             transform: translateX(-20%);
         }
     }

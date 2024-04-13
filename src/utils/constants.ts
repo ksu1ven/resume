@@ -12,12 +12,104 @@ import shelterPets from '@assets/images/portfolio images/shelter-pets.jpg';
 import catAccountant from '@assets/images/cat-accountant.jpg';
 import catBarista from '@assets/images/cat-barista.jpg';
 import catCasier from '@assets/images/cat-cashier.jpg';
+import phoneIcon from '@assets/icons/phone.png';
+import mailIcon from '@assets/icons/mail.png';
+import telegramIcon from '@assets/icons/telegram.png';
+import githubIcon from '@assets/icons/github.png';
+import RSIcon from '@assets/icons/rs-logo.jpg';
+
 import {
+    ContactsItem,
     EducationItem,
     ExperienceItem,
     PaginationItem,
     PortfolioItem,
 } from './types';
+
+export const MONTHES = [
+    'январь',
+    'февраль',
+    'март',
+    'апрель',
+    'май',
+    'июль',
+    'август',
+    'сентябрь',
+    'октябрь',
+    'ноябрь',
+    'декабрь',
+];
+
+export const PAGES: PaginationItem[] = [
+    { path: '', name: 'Обо мне' },
+    { path: 'education', name: 'Образование' },
+    { path: 'portfolio', name: 'Портфолио' },
+    { path: 'skills', name: 'Навыки' },
+    { path: 'experience', name: 'Опыт работы' },
+    { path: 'bye-bye', name: 'Пока-пока!' },
+];
+
+export const CONTACTS: ContactsItem[] = [
+    {
+        src: phoneIcon,
+        alt: 'Phone icon',
+        to: 'tel:+375296255321',
+        innerHtml: '+375(29) 625-53-21',
+    },
+    {
+        src: mailIcon,
+        alt: 'Mail icon',
+        to: 'mailto:ksu1ven@mail.ru',
+        innerHtml: 'ksu1ven@mail.ru',
+    },
+    {
+        src: telegramIcon,
+        alt: 'Telegram icon',
+        to: 'https://t.me/ksu1ven',
+        innerHtml: 'https://t.me/ksu1ven',
+    },
+];
+
+export const PROFESSIONAL_CONTACTS: ContactsItem[] = [
+    {
+        src: githubIcon,
+        alt: 'Github icon',
+        to: 'https://github.com/ksu1ven',
+        innerHtml: 'GitHub',
+    },
+    {
+        src: RSIcon,
+        alt: 'RS School icon',
+        to: 'https://app.rs.school/cv/3adc8c9f-82d7-4588-adae-79ed41ed4c51',
+        innerHtml: 'RS School CV',
+    },
+];
+
+export const EDUCATION: EducationItem[] = [
+    {
+        institution: 'Белорусский государственный экономический университет',
+        year: 2016,
+        course: 'Финансы и кредит',
+    },
+    {
+        institution: 'The Rolling Scopes School',
+        year: 2023,
+        course: 'JavaScript/Front-end',
+        position: 'Позиция - 78 из 1379',
+    },
+    {
+        institution: 'The Rolling Scopes School',
+        year: 2024,
+        course: 'React',
+        position: 'Позиция - 5 из 1077',
+    },
+    {
+        institution: 'The Rolling Scopes School',
+        year: 2024,
+        course: 'Node JS',
+        position: 'В процессе обучения',
+    },
+];
 
 export const PORTFOLIO: PortfolioItem[] = [
     {
@@ -157,54 +249,5 @@ export const EXPERIENCE: ExperienceItem[] = [
         dateTo: new Date(2018, 6),
         description:
             'Обмен валют, проведение платежей, выдача и пополнение депозитов.',
-    },
-];
-
-export const MONTHES = [
-    'январь',
-    'февраль',
-    'март',
-    'апрель',
-    'май',
-    'июль',
-    'август',
-    'сентябрь',
-    'октябрь',
-    'ноябрь',
-    'декабрь',
-];
-
-export const PAGES: PaginationItem[] = [
-    { path: '', name: 'Обо мне' },
-    { path: 'education', name: 'Образование' },
-    { path: 'portfolio', name: 'Портфолио' },
-    { path: 'skills', name: 'Навыки' },
-    { path: 'experience', name: 'Опыт работы' },
-    { path: 'bye-bye', name: 'Пока-пока!' },
-];
-
-export const EDUCATION: EducationItem[] = [
-    {
-        institution: 'Белорусский государственный экономический университет',
-        year: 2016,
-        course: 'Финансы и кредит',
-    },
-    {
-        institution: 'The Rolling Scopes School',
-        year: 2023,
-        course: 'JavaScript/Front-end',
-        position: 'Позиция - 78 из 1379',
-    },
-    {
-        institution: 'The Rolling Scopes School',
-        year: 2024,
-        course: 'React',
-        position: 'Позиция - 5 из 1077',
-    },
-    {
-        institution: 'The Rolling Scopes School',
-        year: 2024,
-        course: 'Node JS',
-        position: 'В процессе обучения',
     },
 ];

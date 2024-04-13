@@ -1,12 +1,12 @@
 @use '../utils/mixins';
 
 .swiper__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+    @include mixins.abs();
+    z-index: 50;
+
     width: 100vw;
     height: 100dvh;
-    z-index: 50;
+
     @include mixins.flex(null, center, center);
 
     background-image: url('@assets/images/swiper-certificates.jpg');
@@ -16,7 +16,6 @@
 
 .certificates-swiper {
     cursor: grab;
-
     background-color: var(--color-light-transparent);
 
     @include mixins.respond-to(laptop) {
@@ -26,11 +25,11 @@
 }
 
 .certificates-slide {
+    position: relative;
+
     @include mixins.flex(null, center, center);
     height: 100vh;
     width: fit-content;
-
-    position: relative;
 
     @include mixins.respond-to(laptop) {
         height: 100vw;
@@ -53,6 +52,7 @@
 .swiper-button-prev,
 .swiper-button-next {
     padding: 0 2rem;
+
     color: var(--color-dark-s);
 }
 
@@ -65,25 +65,26 @@
 }
 
 .swiper-close {
-    width: 4rem;
-    height: 4rem;
-
     position: absolute;
     top: 2rem;
     right: 2rem;
-    cursor: pointer;
     z-index: 10;
+
+    width: 4rem;
+    height: 4rem;
+
+    cursor: pointer;
 
     background-image: url('@assets/icons/cross.png');
     background-size: contain;
     background-position: center;
 
     @include mixins.respond-to(mobile) {
-        width: 2.5rem;
-        height: 2.5rem;
-
         top: 1rem;
         right: 1rem;
+
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 
@@ -98,12 +99,10 @@
     }
 
     .parallax-bg {
+        @include mixins.abs();
+
         width: 150%;
         height: 100%;
-
-        position: absolute;
-        left: 0;
-        top: 0;
 
         background-image: url('@assets/images/swiper-portfolio.jpg');
         -webkit-background-size: contain;
@@ -143,9 +142,11 @@
     }
 
     .img-container {
-        transition: var(--transition);
-        @include mixins.flex(null, center, center);
         padding: 2rem;
+
+        @include mixins.flex(null, center, center);
+
+        transition: var(--transition);
 
         @include mixins.respond-to(tablet) {
             padding: 1rem;
@@ -160,10 +161,10 @@
         }
 
         .portfolio-slide__img {
+            position: absolute;
+
             width: 25rem;
             height: 21rem;
-
-            position: absolute;
             border-radius: var(--border-radius);
 
             &:hover {

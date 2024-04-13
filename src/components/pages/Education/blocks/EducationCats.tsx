@@ -17,6 +17,7 @@ export function EducationCats() {
     >(null);
 
     const videoRef = useRef<HTMLVideoElement>(null);
+    const isVideoCanPlayRef = useRef(false);
     const timersId = useRef<ReturnType<typeof setTimeout>[] | null[]>([
         null,
         null,
@@ -27,7 +28,7 @@ export function EducationCats() {
     function handleTalk() {
         setVideoPlaying(!isVideoPlaying);
 
-        if (!isVideoPlaying && videoRef.current) {
+        if (!isVideoPlaying && videoRef.current && isVideoCanPlayRef.current) {
             videoRef.current.play();
         } else if (videoRef.current) {
             setCatHRSpeech('');
@@ -111,6 +112,9 @@ export function EducationCats() {
                         src={talkingCats}
                         className="education-cats__video"
                         preload="auto"
+                        onCanPlay={() => {
+                            isVideoCanPlayRef.current = true;
+                        }}
                         onEnded={() => {
                             setVideoPlaying(false);
                             setCatHRSpeech('');

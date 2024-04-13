@@ -6,6 +6,7 @@
 
     &__content {
         height: 100%;
+
         @include mixins.flex(column, center, flex-end);
         gap: 0.2rem;
 

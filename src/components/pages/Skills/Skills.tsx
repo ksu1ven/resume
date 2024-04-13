@@ -6,6 +6,7 @@ import talkingCloudLeft from '@assets/icons/talking-cloud-right.png';
 
 export function Skills() {
     const [isVideoPlaying, setVideoPlaying] = useState(false);
+    const [isVideoCanPlay, setVideoCanPlay] = useState(false);
     const [videoPlayedTimes, setVideoPlayedTimes] = useState(0);
     const [catSpeech, setCatSpeech] = useState('');
     const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -18,7 +19,6 @@ export function Skills() {
         null,
         null,
     ]);
-    const [onCanPlay, setOnCanPlay] = useState(false);
 
     function handleSpeak() {
         setVideoPlaying(!isVideoPlaying);
@@ -87,7 +87,7 @@ export function Skills() {
                         onClick={handleSpeak}
                         onKeyDown={handleSpeak}
                         initial="offscreen"
-                        whileInView={onCanPlay ? 'onscreen' : 'offscreen'}
+                        whileInView={isVideoCanPlay ? 'onscreen' : 'offscreen'}
                         viewport={{ once: true, amount: 1 }}
                         variants={catVariants}
                     >
@@ -103,7 +103,7 @@ export function Skills() {
                             src={skillsCat}
                             className="skills-cat__video"
                             ref={videoRef}
-                            onCanPlay={() => setOnCanPlay(true)}
+                            onCanPlay={() => setVideoCanPlay(true)}
                             onEnded={(e) => {
                                 if (videoPlayedTimes < 1) {
                                     setVideoPlayedTimes((times) => times + 1);

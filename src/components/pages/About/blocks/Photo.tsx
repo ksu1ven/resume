@@ -2,38 +2,16 @@ import { motion } from 'framer-motion';
 import photo from '@assets/images/photo.png';
 
 export function Photo() {
-    const rotateDegreeOuter = '-5deg';
-    const rotateDegreeInner = '25deg';
-    const borderRadius = '0.2rem';
-
     function getCorrectAnimation(block: 'inner' | 'outer') {
         return {
             scale:
                 block === 'inner' ? [1, 1.2, 1.2, 1, 1] : [1, 0.9, 0.9, 1, 1],
             rotate:
                 block === 'inner'
-                    ? [
-                          rotateDegreeInner,
-                          rotateDegreeInner,
-                          90,
-                          90,
-                          rotateDegreeInner,
-                      ]
-                    : [
-                          rotateDegreeOuter,
-                          rotateDegreeOuter,
-                          175,
-                          175,
-                          rotateDegreeOuter,
-                      ],
+                    ? ['25deg', '25deg', 90, 90, '25deg']
+                    : ['-5deg', '-5deg', 175, 175, '-5deg'],
 
-            borderRadius: [
-                borderRadius,
-                borderRadius,
-                '20%',
-                '20%',
-                borderRadius,
-            ],
+            borderRadius: ['0.2rem', '0.2rem', '20%', '20%', '0.2rem'],
         };
     }
 

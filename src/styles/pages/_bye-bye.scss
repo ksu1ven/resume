@@ -5,7 +5,9 @@
         background-image: url('@assets/images/background-bye-bye.jpg');
         background-size: cover;
     }
+
     margin: 5rem;
+
     @include mixins.flex(column, center, center);
     gap: 2rem;
 

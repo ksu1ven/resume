@@ -11,6 +11,7 @@ import { Portfolio } from '@pages/Portfolio/Portfolio';
 import { Skills } from '@pages/Skills/Skills';
 import { Experience } from '@pages/Experience/Experience';
 import { ByeBye } from '@pages/ByeBye/ByeBye';
+import { Error } from '@pages/Error Page/Error';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -23,7 +24,7 @@ const router = createBrowserRouter(
                 <Route path="experience" element={<Experience />} />
                 <Route path="bye-bye" element={<ByeBye />} />
             </Route>
-            <Route path="*" element={<main>Error</main>} />
+            <Route path="*" element={<Error />} />
         </>
     )
 );

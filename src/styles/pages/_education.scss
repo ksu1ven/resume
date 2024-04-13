@@ -31,8 +31,9 @@
     @include mixins.flex(null, flex-start, stretch);
 
     @include mixins.respond-to(laptop) {
-        @include mixins.flex(column, center, center);
         padding: 3rem 0 5rem;
+
+        @include mixins.flex(column, center, center);
     }
 
     @include mixins.respond-to(mobile) {
@@ -73,6 +74,7 @@
 
     @include mixins.respond-to(laptop) {
         width: 90%;
+
         justify-content: center;
         grid-template-columns: repeat(7, 14.5%);
         grid-template-areas:
@@ -87,6 +89,7 @@
 
     @include mixins.respond-to(tablet) {
         width: 100%;
+
         grid-template-columns: repeat(4, 20%);
         grid-template-areas:
             'b1 b1 . . '
@@ -100,6 +103,7 @@
 
     @include mixins.respond-to(mobile) {
         padding: 0 0 2rem;
+
         grid-template-columns: repeat(3, 28vw);
         grid-template-areas:
             'b1 b1 . '
@@ -115,6 +119,7 @@
 .education__block {
     position: relative;
     z-index: 3;
+
     transition: var(--transition);
 
     font-size: var(--fs-medium-small);
@@ -128,10 +133,11 @@
         width: 100%;
         height: 100%;
         padding: 1rem;
+        border-radius: var(--border-radius);
         transition: var(--transition);
 
-        border-radius: var(--border-radius);
         color: var(--color-dark-s);
+
         background-color: var(--color-white);
     }
 
@@ -224,11 +230,11 @@
 }
 
 .education-cats {
+    position: relative;
+
     margin-top: 10rem;
 
     flex-basis: 45%;
-
-    position: relative;
 
     @include mixins.respond-to(desktop) {
         flex-basis: 60%;
@@ -263,21 +269,25 @@
 
         @include mixins.respond-to(laptop) {
             height: calc(100vw * 1.1);
+
             background-position: center;
         }
 
         @include mixins.respond-to(mobile) {
             height: auto;
-            background-image: url('@assets/images/laptop-mobile.png');
+
             transform: scaleX(1.15);
+
+            background-image: url('@assets/images/laptop-mobile.png');
         }
     }
 
     &__speech {
-        width: 45%;
-        height: 40%;
         position: relative;
         z-index: 2;
+
+        width: 45%;
+        height: 40%;
 
         @include mixins.flex(column, center, center);
 
@@ -295,13 +305,14 @@
     }
 
     &__video {
+        position: relative;
+        left: -5%;
+        bottom: 17%;
+
         width: 60%;
         height: 50%;
 
         box-shadow: none;
-        position: relative;
-        left: -5%;
-        bottom: 17%;
 
         @include mixins.respond-to(laptop) {
             left: -4%;
@@ -309,19 +320,19 @@
         }
 
         @include mixins.respond-to(mobile) {
-            width: 99%;
-
             top: calc(100vw * -0.38);
             left: -4.5%;
             transform: scaleX(0.81);
+
+            width: 99%;
         }
     }
 
     &__description {
-        margin-left: 2rem;
-
         position: absolute;
         bottom: 4rem;
+
+        margin-left: 2rem;
 
         font-family: var(--ff-title);
         font-size: var(--fs-medium);
@@ -337,9 +348,9 @@
         }
 
         @include mixins.respond-to(mobile) {
-            font-size: var(--fs-medium-small);
-
             margin-left: 0;
+
+            font-size: var(--fs-medium-small);
         }
     }
 }

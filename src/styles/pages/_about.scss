@@ -104,9 +104,10 @@
     }
 
     .greeting {
+        margin-bottom: 2rem;
+
         font-family: var(--ff-title);
         font-size: var(--fs-big);
-        margin-bottom: 2rem;
 
         @include mixins.respond-to(laptop) {
             margin-left: 20%;
@@ -114,6 +115,7 @@
 
         @include mixins.respond-to(mobile) {
             margin-left: 0;
+
             text-align: center;
         }
     }
@@ -133,6 +135,7 @@
 
         @include mixins.respond-to(mobile) {
             margin-left: 0;
+
             text-align: center;
         }
     }
@@ -146,6 +149,7 @@
 
         &_professional {
             margin-left: 7rem;
+
             @include mixins.flex(column, flex-start, flex-start);
 
             @include mixins.respond-to(laptop) {
