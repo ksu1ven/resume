@@ -37,7 +37,7 @@ export function Pagination() {
                 ❮
             </button>
             <ul className="pagination__list">
-                {currentPage.prev && (
+                {currentPage.prev && window.innerWidth > 576 && (
                     <li className="btn pagination__item pagination__item_prev">
                         <Link
                             to={currentPage.prev.path}
@@ -52,7 +52,7 @@ export function Pagination() {
                 <li className="pagination__item pagination__item_current">
                     {currentPage.current.name}
                 </li>
-                {currentPage.next && (
+                {currentPage.next && window.innerWidth > 576 && (
                     <li className="btn pagination__item pagination__item_next">
                         <Link
                             to={currentPage.next.path}

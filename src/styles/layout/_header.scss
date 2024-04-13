@@ -83,7 +83,7 @@
     }
 
     @include mixins.respond-to(mobile) {
-        padding: 0;
+        padding: 1rem;
     }
 
     &__list {
@@ -118,11 +118,6 @@
             padding: 1rem;
             font-size: calc(1.1 * var(--fs-medium));
             background-color: var(--color-primary);
-
-            @include mixins.respond-to(mobile) {
-                padding: 0.8rem 0.5rem;
-                font-size: calc(0.8 * var(--fs-medium-small));
-            }
         }
 
         &_next {
@@ -142,7 +137,7 @@
             }
 
             @include mixins.respond-to(mobile) {
-                font-size: calc(0.6 * var(--fs-medium-small));
+                font-size: var(--fs-medium-small);
             }
         }
 
@@ -163,7 +158,7 @@
             }
 
             @include mixins.respond-to(mobile) {
-                font-size: calc(0.6 * var(--fs-medium-small));
+                font-size: (--fs-medium-small);
             }
         }
     }
@@ -173,6 +168,10 @@
         color: var(--color-white);
         padding: 0.5rem;
         border-radius: 50%;
+
+        @include mixins.respond-to(mobile) {
+            font-size: (--fs-big);
+        }
 
         &:disabled {
             color: var(--color-dark-transparent);

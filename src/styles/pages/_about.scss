@@ -30,6 +30,10 @@
     @include mixins.respond-to(laptop) {
         @include mixins.flex(column, flex-start, flex-start);
     }
+
+    @include mixins.respond-to(mobile) {
+        margin-bottom: 1.5rem;
+    }
 }
 
 .photo-container {
@@ -192,6 +196,10 @@
     text-align: justify;
 
     background-color: var(--color-primary);
+
+    @include mixins.respond-to(mobile) {
+        padding: 2rem 0;
+    }
 
     &__h2 {
         margin-bottom: 1rem;
