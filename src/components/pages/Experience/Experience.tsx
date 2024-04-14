@@ -53,7 +53,7 @@ export function Experience() {
                                             ${MONTHES[item.dateTo.getMonth()]} ${item.dateTo.getFullYear()}`}
                             </h4>
                             <p className="item__description">
-                                {item.description}
+                                Приобретённые навыки: {item.description}
                             </p>
                         </div>
                     </motion.li>
