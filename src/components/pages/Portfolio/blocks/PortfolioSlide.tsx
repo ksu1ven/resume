@@ -61,6 +61,7 @@ export function PortfolioSlide({
                             <img
                                 src={image.img}
                                 alt={`${name} ${ind}`}
+                                loading="lazy"
                                 style={{
                                     top: `${ind * imageOffset}rem`,
                                     left: `${ind * imageOffset}rem`,
