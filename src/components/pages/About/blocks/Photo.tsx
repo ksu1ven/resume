@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import photo from '@assets/images/photo.png';
+import photo from '@assets/images/photo.avif';
 
 export function Photo() {
     function getCorrectAnimation(block: 'inner' | 'outer') {
