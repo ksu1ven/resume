@@ -115,9 +115,6 @@
             background-image: url('@assets/images/swiper-portfolio-tablet.jpg');
             background-position: left;
         }
-        @include mixins.respond-to(mobile) {
-            background-image: url('@assets/images/swiper-portfolio-mobile.jpg');
-        }
     }
 }
 

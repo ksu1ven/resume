@@ -7,7 +7,11 @@
         background-repeat: no-repeat;
 
         @include mixins.respond-to(laptop) {
+            background-image: url('@assets/images/background-skills-laptop.jpg');
             background-position: top center;
+        }
+        @include mixins.respond-to(mobile) {
+            background-image: url('@assets/images/background-skills-mobile.jpg');
         }
     }
 
