@@ -4,6 +4,10 @@
     background-image: url('@assets/images/footer.jpg');
     background-size: cover;
 
+    @include mixins.respond-to(mobile) {
+        background-image: url('@assets/images/footer-mobile.jpg');
+    }
+
     &__content {
         height: 100%;
 
