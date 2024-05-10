@@ -7,11 +7,15 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    @include mixins.respond-to(laptop) {
+        background-image: url('@assets/images/header-laptop.jpg');
+    }
+
     @include mixins.respond-to(mobile) {
         position: sticky;
         top: 0;
         z-index: 40;
-
+        background-image: url('@assets/images/header-mobile.jpg');
         width: 100vw;
     }
 }
