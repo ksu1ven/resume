@@ -5,9 +5,9 @@ export function ByeBye() {
         <main className="bye-bye-bg">
             <div className="wrapper">
                 <section className="bye-bye">
-                    <h1 className="bye-bye__h1">
+                    <h3 className="bye-bye__h3">
                         Котик очень ждёт Вашего звонка...
-                    </h1>
+                    </h3>
                     <figure className="bye-bye__figure">
                         <img
                             src={byeBye}
