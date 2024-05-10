@@ -2,6 +2,7 @@
 
 .skills {
     &-bg {
+        overflow-x: hidden;
         background-image: url('@assets/images/background-skills.jpg');
         background-size: cover;
         background-repeat: no-repeat;
