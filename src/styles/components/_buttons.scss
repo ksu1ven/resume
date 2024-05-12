@@ -75,6 +75,10 @@
     border-radius: 20%;
     transform: rotate(50deg);
     box-shadow: 0 5px 10px var(--color-dark-s);
+    .block-inner:not(:hover) {
+        transform: rotate(-50deg);
+        border-radius: 20%;
+    }
 }
 
 .block-inner:hover {
