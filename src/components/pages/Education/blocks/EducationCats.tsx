@@ -67,33 +67,36 @@ export function EducationCats() {
 
     return (
         <>
-            <section
+            <link rel="preload" as="image" href={certificateReact} />
+            <link rel="preload" as="image" href={certificateJs} />
+            <link rel="preload" as="image" href={talkingCloudLeft} />
+            <link rel="preload" as="image" href={talkingCloudRight} />
+            <div
                 className="education-cats"
                 onClick={handleTalk}
                 onKeyDown={handleTalk}
                 role="presentation"
             >
                 <div className="education-cats__laptop">
-                    <div className="education-cats__speech" role="presentation">
+                    <div className="cat-speech" role="presentation">
                         {catHRSpeech && (
-                            <div className="cat-speech cat-speech_hr">
+                            <div className="cat-speech__cloud cat-speech__cloud_hr">
                                 {catHRSpeech}
                             </div>
                         )}
                         {catMeSpeech && (
-                            <div className="cat-speech cat-speech_me">
+                            <div className="cat-speech__cloud cat-speech__cloud_me">
                                 {catMeSpeech}
                                 {catMeCertificate && (
                                     <button
                                         type="button"
                                         onClick={() => {
                                             setVideoPlaying(false);
-                                            handleTalk();
                                             setSwiperVisible(true);
                                         }}
                                     >
                                         <img
-                                            className="cat-speech_me__certificate"
+                                            className="cat-speech__certificate"
                                             src={
                                                 catMeCertificate === 'js'
                                                     ? certificateJs
@@ -107,6 +110,7 @@ export function EducationCats() {
                         )}
                         <div />
                     </div>
+
                     <video
                         ref={videoRef}
                         src={talkingCats}
@@ -126,7 +130,7 @@ export function EducationCats() {
                     Нажмите на котиков, они покажут мои сертификаты. <br />
                     Подробнее рассмотреть сертификаты вы можете кликнув на них.
                 </p>
-            </section>
+            </div>
             {isSwiperVisible && catMeCertificate && (
                 <div
                     className="swiper__overlay"
@@ -142,10 +146,6 @@ export function EducationCats() {
                     />
                 </div>
             )}
-            <link rel="preload" as="image" href={certificateReact} />
-            <link rel="preload" as="image" href={certificateJs} />
-            <link rel="preload" as="image" href={talkingCloudLeft} />
-            <link rel="preload" as="image" href={talkingCloudRight} />
         </>
     );
 }

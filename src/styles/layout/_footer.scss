@@ -8,12 +8,13 @@
         background-image: url('@assets/images/footer-mobile.jpg');
     }
 
-    &__content {
+    &__wrapper {
         height: 100%;
-
-        @include mixins.flex(column, center, flex-end);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
         gap: 0.2rem;
-
         font-size: var(--fs-small);
         color: var(--color-white);
     }

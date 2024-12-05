@@ -1,0 +1,17 @@
+body {
+    overflow-x: hidden;
+    font-family: var(--ff-text);
+    font-size: var(--fs-medium);
+    color: var(--color-dark-m);
+}
+
+h1,
+h2 {
+    font-family: var(--ff-title);
+    font-size: var(--fs-big);
+}
+
+h3 {
+    font-family: var(--ff-title);
+    font-size: var(--fs-medium-big);
+}

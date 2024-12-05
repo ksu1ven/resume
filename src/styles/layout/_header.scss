@@ -1,7 +1,7 @@
-@use '../utils/variables';
 @use '../utils/mixins';
 
 .header {
+    position: relative;
     background-image: url('@assets/images/header.jpg');
     background-size: cover;
     background-position: center;
@@ -16,52 +16,49 @@
         top: 0;
         z-index: 40;
         background-image: url('@assets/images/header-mobile.jpg');
-        width: 100vw;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 60%;
+        background: linear-gradient(
+            to top,
+            var(--color-light-transparent) 60%,
+            transparent 100%
+        );
     }
 }
 
 .game {
-    @include mixins.flex(null, space-between, center);
-    font-family: var(--ff-title);
-    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    &__rules {
+    @include mixins.respond-to(laptop) {
+        display: none;
+    }
+
+    @media screen and (pointer: coarse) {
+        display: none;
+    }
+
+    &__description {
         color: var(--color-white);
+        font-family: var(--ff-title);
         font-size: var(--fs-medium-big);
         font-weight: bold;
         text-align: center;
     }
 
-    .cat-container {
-        height: 8rem;
-
-        position: relative;
-        z-index: 5;
-
-        &__cat-banana__img {
-            @include mixins.abs();
-
-            height: 8rem;
-        }
-
-        &__cat-catch__img {
-            @include mixins.abs();
-
-            width: 10rem;
-
-            z-index: 2;
-        }
-    }
-
-    .house {
+    &__button {
         position: relative;
         z-index: 3;
-
         width: 8rem;
         height: 8rem;
-
-        transition: var(--transition);
-
         background-image: url('@assets/images/mouse-house.png');
         background-size: contain;
         background-repeat: no-repeat;
@@ -73,33 +70,42 @@
     }
 }
 
+.cat-container {
+    height: 8rem;
+    position: relative;
+    z-index: 5;
+
+    &__img_banana {
+        position: absolute;
+        inset: 0;
+        height: 8rem;
+    }
+
+    &__img_catch {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        width: 10rem;
+    }
+}
+
 .pagination {
-    &-bg {
-        padding: 1rem 0;
+    position: relative;
+    z-index: 2;
+    padding: 1rem 0;
 
-        background-color: var(--color-light-transparent);
-        box-shadow: 0rem 0rem 1.5rem 1.5rem var(--color-light-transparent);
-
-        @include mixins.respond-to(desktop) {
-            background-color: transparent;
-        }
-    }
-
-    @include mixins.flex(null, center, center);
-
-    @include mixins.respond-to(desktop) {
-        padding: 1.5rem 0;
-    }
-
-    @include mixins.respond-to(mobile) {
-        padding: 0;
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
     }
 
     &__list {
-        @include mixins.flex(null, center, center);
-
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         color: var(--color-white);
-        list-style: none;
 
         @include mixins.respond-to(mobile) {
             gap: 0;
@@ -107,83 +113,73 @@
     }
 
     &__item {
+        position: relative;
         min-width: 6rem;
         border-radius: var(--border-radius);
-
         font-weight: bold;
         text-align: center;
         text-wrap: nowrap;
-
         box-shadow: var(--drop-shadow-white);
 
         @include mixins.respond-to(mobile) {
             min-width: 3.5rem;
         }
 
-        a {
-            color: var(--color-white);
-        }
-
         &_current {
             padding: 1rem;
-
             font-size: calc(1.1 * var(--fs-medium));
-
             background-color: var(--color-primary);
+            cursor: default;
         }
 
-        &_next {
+        &_next,
+        &_prev {
             padding: 0.5rem;
-            transform: perspective(12rem) rotateY(30deg) translateZ(2rem);
-
             font-size: calc(0.8 * var(--fs-medium));
-
             background: linear-gradient(
                 90deg,
                 var(--color-primary) 0%,
-                var(--color-primary-lighter) 30%
+                var(--color-primary-lighter) 70%
             );
-
-            transition: ease-in-out 0.4s;
-
-            &:hover {
-                transform: perspective(12rem) rotateY(30deg) translateY(-3px)
-                    translateZ(2rem);
-            }
+            @include mixins.transitions();
+            transition-property: transform;
 
             @include mixins.respond-to(mobile) {
-                font-size: var(--fs-medium-small);
+                display: none;
+            }
+        }
+
+        &_next {
+            transform: perspective(12rem) rotateY(30deg) translateZ(2rem);
+
+            @include mixins.interactive() {
+                transform: perspective(12rem) rotateY(30deg) translateY(-3px)
+                    translateZ(2rem);
             }
         }
 
         &_prev {
-            padding: 0.5rem;
             transform: perspective(10rem) rotateY(-30deg) translateZ(2rem);
 
-            font-size: calc(0.8 * var(--fs-medium));
-
-            background: linear-gradient(
-                90deg,
-                var(--color-primary-lighter) 0%,
-                var(--color-primary) 70%
-            );
-            transition: var(--transition);
-
-            &:hover {
-                transform: perspective(10rem) rotateY(-30deg) translateY(-3px)
+            @include mixins.interactive() {
+                transform: perspective(12rem) rotateY(-30deg) translateY(-3px)
                     translateZ(2rem);
             }
+        }
+    }
 
-            @include mixins.respond-to(mobile) {
-                font-size: (--fs-medium-small);
-            }
+    &__link {
+        color: var(--color-white);
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
         }
     }
 
     &__arrow {
         padding: 0.5rem;
-        border-radius: 50%;
-
         font-size: var(--fs-medium-big);
         color: var(--color-white);
 

@@ -18,6 +18,7 @@ module.exports = {
     },
     plugins: ['react', 'react-refresh', '@typescript-eslint', 'prettier'],
     rules: {
+        'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 0,
         'import/no-absolute-path': 0,
         'react-refresh/only-export-components': [

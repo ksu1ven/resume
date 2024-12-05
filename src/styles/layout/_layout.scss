@@ -16,9 +16,13 @@
 }
 
 .wrapper {
-    width: calc(100vw - 10rem);
-    max-width: 1300px;
-    margin: auto;
+    width: calc(100vw - 16rem);
+    max-width: 1600px;
+    margin: 0 auto;
+
+    @include mixins.respond-to(desktop) {
+        width: calc(100vw - 10rem);
+    }
 
     @include mixins.respond-to(laptop) {
         width: calc(100vw - 6rem);

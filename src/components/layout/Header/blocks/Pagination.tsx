@@ -26,7 +26,7 @@ export function Pagination() {
     }
 
     return (
-        <nav className="wrapper pagination">
+        <nav className="wrapper pagination__content">
             <button
                 type="button"
                 className="btn-arrow pagination__arrow"
@@ -36,11 +36,13 @@ export function Pagination() {
             >
                 ❮
             </button>
+
             <ul className="pagination__list">
-                {currentPage.prev && window.innerWidth > 576 && (
+                {currentPage.prev && (
                     <li className="btn pagination__item pagination__item_prev">
                         <Link
                             to={currentPage.prev.path}
+                            className="pagination__link"
                             onClick={() => {
                                 handleChangePage('prev');
                             }}
@@ -49,13 +51,16 @@ export function Pagination() {
                         </Link>
                     </li>
                 )}
+
                 <li className="pagination__item pagination__item_current">
                     {currentPage.current.name}
                 </li>
-                {currentPage.next && window.innerWidth > 576 && (
+
+                {currentPage.next && (
                     <li className="btn pagination__item pagination__item_next">
                         <Link
                             to={currentPage.next.path}
+                            className="pagination__link"
                             onClick={() => {
                                 handleChangePage('next');
                             }}
@@ -65,6 +70,7 @@ export function Pagination() {
                     </li>
                 )}
             </ul>
+
             <button
                 type="button"
                 className="btn-arrow pagination__arrow"

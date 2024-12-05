@@ -1,55 +1,50 @@
 @use '../utils/mixins';
 
 .education {
-    &-bg {
-        background-color: var(--color-light);
-        background-image: url('@assets/images/background-education.jpg');
-        background-size: contain;
-        background-position: left top;
-        background-repeat: no-repeat;
-        overflow: hidden;
+    overflow: hidden;
+    background-color: var(--color-light);
+    background-image: url('@assets/images/background-education.jpg');
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
 
-        @include mixins.respond-to(desktop) {
-            background-position: left -120% top 0;
-        }
-
-        @include mixins.respond-to(laptop) {
-            background-image: url('@assets/images/background-education-laptop.jpg');
-            background-position: left -120% top -5%;
-        }
-
-        @include mixins.respond-to(tablet) {
-            background-size: 150%;
-            background-position: left 100% top 20%;
-        }
-        @include mixins.respond-to(mobile) {
-            background-size: 200%;
-            background-position: left 70% top 30%;
-        }
+    @include mixins.respond-to(desktop) {
+        background-position: left -120% top 0;
     }
-
-    padding: 3rem 0 0;
-
-    @include mixins.flex(null, flex-start, stretch);
 
     @include mixins.respond-to(laptop) {
-        padding: 3rem 0 5rem;
-
-        @include mixins.flex(column, center, center);
+        background-image: url('@assets/images/background-education-laptop.jpg');
+        background-position: left -120% top -5%;
     }
 
+    @include mixins.respond-to(tablet) {
+        background-size: 150%;
+        background-position: left 100% top 20%;
+    }
     @include mixins.respond-to(mobile) {
-        padding: 4rem 0 3rem;
+        background-size: 200%;
+        background-position: left 70% top 30%;
+    }
+
+    &__wrapper {
+        padding: 10rem 0;
+        display: flex;
+        gap: 1rem;
+
+        @include mixins.respond-to(laptop) {
+            padding: 5rem 0;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include mixins.respond-to(mobile) {
+            padding: 4rem 0 3rem;
+        }
     }
 }
 
 .education-path {
-    padding: 5rem 0;
-
-    position: relative;
-    z-index: 2;
-
-    flex-basis: 55%;
+    width: 55%;
     display: grid;
     grid-template-columns: repeat(7, 14.5%);
     grid-template-areas:
@@ -62,7 +57,7 @@
         '. . . . . b4 b4';
 
     @include mixins.respond-to(desktop) {
-        flex-basis: 40%;
+        width: 40%;
         grid-template-columns: repeat(4, 25%);
         grid-template-areas:
             'b1 b1 . . '
@@ -76,7 +71,6 @@
 
     @include mixins.respond-to(laptop) {
         width: 90%;
-
         justify-content: center;
         grid-template-columns: repeat(7, 14.5%);
         grid-template-areas:
@@ -91,7 +85,6 @@
 
     @include mixins.respond-to(tablet) {
         width: 100%;
-
         grid-template-columns: repeat(4, 20%);
         grid-template-areas:
             'b1 b1 . . '
@@ -104,9 +97,7 @@
     }
 
     @include mixins.respond-to(mobile) {
-        padding: 0 0 2rem;
-
-        grid-template-columns: repeat(3, 28vw);
+        grid-template-columns: repeat(3, 6rem);
         grid-template-areas:
             'b1 b1 . '
             '.  a1 .'
@@ -118,29 +109,24 @@
     }
 }
 
-.education__block {
+.education-block {
     position: relative;
     z-index: 3;
     aspect-ratio: 1;
-
-    transition: var(--transition);
-
     font-size: var(--fs-medium-small);
-
     background-color: var(--color-primary-lighter);
-    background-size: 100%;
     border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow-white);
 
     &_inner {
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 1rem;
         border-radius: var(--border-radius);
-        transition: var(--transition);
-
         color: var(--color-dark-s);
-
         background-color: var(--color-white);
     }
 
@@ -184,18 +170,19 @@
         grid-area: b4;
     }
 
-    &__institution {
+    &__title {
         margin-bottom: 1rem;
-
-        font-family: var(--ff-title);
         font-size: var(--fs-medium);
         color: var(--color-dark-m);
     }
+
+    &__subtitle {
+        margin-bottom: 0.5rem;
+    }
 }
 
-.arrow {
-    height: 1rem;
-
+.education-arrow {
+    height: 1.5rem;
     position: relative;
     z-index: 1;
 
@@ -204,19 +191,22 @@
     }
 
     @include mixins.respond-to(mobile) {
-        height: 4rem;
-    }
-
-    &__img {
-        min-width: 5rem;
-        width: 100%;
-        height: 7rem;
-
-        transform: translateY(-2rem);
+        height: 5rem;
     }
 
     &_left {
         transform: scaleX(-1);
+    }
+
+    &__img {
+        width: 100%;
+        height: 7rem;
+        transform: translateY(-2rem);
+
+        @include mixins.respond-to(mobile) {
+            transform: none;
+            height: 100%;
+        }
     }
 
     &#arrow-1 {
@@ -234,126 +224,140 @@
 
 .education-cats {
     position: relative;
-
-    margin-top: 10rem;
-
-    flex-basis: 45%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 
     @include mixins.respond-to(desktop) {
-        flex-basis: 60%;
+        width: 60%;
     }
 
     @include mixins.respond-to(laptop) {
-        width: calc(100vw * 0.9);
-        margin-top: 1rem;
-        padding-bottom: 4rem;
-
-        flex-basis: 100%;
+        width: 90%;
     }
 
     @include mixins.respond-to(mobile) {
         width: 100%;
-        padding-bottom: 5rem;
     }
 
     &__laptop {
-        width: 100%;
-        height: 82%;
-
         position: relative;
-        padding-top: 6.5%;
-
-        @include mixins.flex(column, flex-start, center);
-
+        width: 100%;
+        aspect-ratio: 0.75;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         background-image: url('@assets/images/laptop.png');
         background-size: 100% 100%;
-        background-position: top center;
         background-repeat: no-repeat;
 
-        @include mixins.respond-to(laptop) {
-            height: calc(100vw * 1.1);
-
-            background-position: center;
-        }
-
         @include mixins.respond-to(mobile) {
-            height: auto;
-
-            transform: scaleX(1.15);
-
+            aspect-ratio: 0.5556;
             background-image: url('@assets/images/laptop-mobile.png');
         }
     }
 
-    &__speech {
-        position: relative;
-        z-index: 2;
-
-        width: 45%;
-        height: 40%;
-
-        @include mixins.flex(column, center, center);
-
-        @include mixins.respond-to(laptop) {
-            width: calc(100vw * 0.4);
-            height: calc(100vw * 0.4);
-        }
-
-        @include mixins.respond-to(mobile) {
-            width: calc(100vw * 0.75);
-            height: calc(100vw * 0.75);
-
-            transform: scaleX(0.75) scaleY(0.85) translateY(-5%);
-        }
-    }
-
     &__video {
-        position: relative;
-        left: -5%;
-        bottom: 17%;
-
-        width: 60%;
-        height: 50%;
-
-        box-shadow: none;
-
-        @include mixins.respond-to(laptop) {
-            left: -4%;
-            bottom: 15.5%;
-        }
+        width: 80%;
+        margin-top: 22%;
+        margin-left: 5.5%;
 
         @include mixins.respond-to(mobile) {
-            top: calc(100vw * -0.38);
-            left: -4.5%;
-            transform: scaleX(0.81);
-
-            width: 99%;
+            margin-top: 58.5%;
         }
     }
 
     &__description {
-        position: absolute;
-        bottom: 4rem;
-
-        margin-left: 2rem;
-
+        width: 80%;
         font-family: var(--ff-title);
         font-size: var(--fs-medium);
         color: var(--color-dark-s);
         font-weight: bold;
 
-        @include mixins.respond-to(desktop) {
-            bottom: 7%;
-        }
-
-        @include mixins.respond-to(laptop) {
-            bottom: 0;
-        }
-
         @include mixins.respond-to(mobile) {
-            margin-left: 0;
-
+            width: 100%;
             font-size: var(--fs-medium-small);
         }
+    }
+}
+
+.cat-speech {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 90%;
+    height: 50%;
+    padding: 3rem;
+    display: flex;
+
+    &:has(.cat-speech__cloud_hr) {
+        justify-content: flex-end;
+    }
+
+    &__cloud {
+        width: 60%;
+        height: 100%;
+        padding: 0 10% 18% 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: var(--fs-medium);
+        text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include mixins.respond-to(mobile) {
+            width: 100%;
+            padding: 7% 16% 18% 16%;
+        }
+
+        &_hr {
+            background-image: url('@assets/icons/talking-cloud-left.png');
+        }
+
+        &_me {
+            transform: translateX(40%);
+            background-image: url('@assets/icons/talking-cloud-right.png');
+
+            @include mixins.respond-to(mobile) {
+                transform: none;
+            }
+        }
+
+        &_skills {
+            position: absolute;
+            top: 3rem;
+            left: 55%;
+
+            width: 20rem;
+            height: 18rem;
+            padding: 1rem 5rem 4rem 3rem;
+
+            font-weight: bold;
+            font-size: var(--fs-medium-big);
+
+            background-image: url('@assets/icons/talking-cloud-left.png');
+
+            @include mixins.respond-to(tablet) {
+                left: 30%;
+            }
+
+            @include mixins.respond-to(mobile) {
+                width: 14rem;
+                height: 12rem;
+            }
+        }
+    }
+
+    &__certificate {
+        width: 60%;
+        aspect-ratio: 1.4164;
+        margin: 0 auto;
     }
 }

@@ -1,56 +1,79 @@
 @use '../utils/mixins';
 
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
 .personal-info {
-    &-bg {
-        padding: 5rem 0;
-        overflow-x: hidden;
-        background-image: url('@assets/images/background-about.jpg');
-        background-size: cover;
-        background-position: right top;
+    background-image: url('@assets/images/background-about.jpg');
+    background-size: cover;
+    background-position: right top;
 
-        @include mixins.respond-to(desktop) {
-            background-position: center top;
-        }
-
-        @include mixins.respond-to(laptop) {
-            background-image: url('@assets/images/background-about-laptop.jpg');
-            background-position: right bottom;
-        }
-
-        @include mixins.respond-to(tablet) {
-            background-position: center bottom;
-        }
-        @include mixins.respond-to(mobile) {
-            background-image: url('@assets/images/background-about-mobile.jpg');
-        }
+    @include mixins.respond-to(desktop) {
+        background-position: center top;
     }
 
-    margin-bottom: 3rem;
-
-    @include mixins.flex(null, flex-start, flex-start);
-    gap: 5rem;
-
     @include mixins.respond-to(laptop) {
-        @include mixins.flex(column, flex-start, flex-start);
+        background-image: url('@assets/images/background-about-laptop.jpg');
+        background-position: right bottom;
+    }
+
+    @include mixins.respond-to(tablet) {
+        background-position: center bottom;
     }
 
     @include mixins.respond-to(mobile) {
-        margin-bottom: 1.5rem;
+        background-image: url('@assets/images/background-about-mobile.jpg');
+    }
+
+    &__wrapper {
+        padding: 8rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+
+        @include mixins.respond-to(laptop) {
+            padding: 5rem 0;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    &__right-block {
+        flex: 1 0 50%;
+        color: var(--color-dark-m);
+
+        @include mixins.respond-to(laptop) {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+
+        @include mixins.respond-to(laptop) {
+            margin-left: 20%;
+        }
+
+        @include mixins.respond-to(mobile) {
+            margin-left: 0;
+            text-align: center;
+        }
     }
 }
 
 .photo-container {
-    padding: 3rem 0;
-
-    @include mixins.flex(null, center, center);
-    flex-basis: 35%;
-
-    transform: rotate(-5deg);
-
+    width: 35%;
+    aspect-ratio: 0.8;
     background-image: url('@assets/images/background-photo.jpg');
     background-size: cover;
     border-radius: var(--border-radius);
     box-shadow: var(--drop-shadow-dark);
+
+    @include mixins.respond-to(desktop) {
+        width: 40%;
+    }
 
     @include mixins.respond-to(laptop) {
         align-self: center;
@@ -63,14 +86,15 @@
 
     @include mixins.respond-to(mobile) {
         width: 80%;
-        padding: 1rem 0;
     }
 
     &_inner {
-        @include mixins.flex(null, center, center);
-
-        transform: rotate(25deg);
-
+        width: 90%;
+        aspect-ratio: 0.8;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
         border-radius: var(--border-radius);
         background-color: var(--color-light);
         box-shadow: var(--drop-shadow-dark);
@@ -78,90 +102,48 @@
         @include mixins.respond-to(tablet) {
             width: 100%;
         }
-        @include mixins.respond-to(mobile) {
-            width: 110%;
-        }
     }
 
-    .photo {
-        width: 70%;
-        padding: 3rem 0;
-
-        transform: rotate(-20deg) translate(-20px, -30px);
-
-        @include mixins.respond-to(tablet) {
-            width: 80%;
-            padding: 2rem 0;
-        }
+    &__img {
+        height: 95%;
+        width: auto;
     }
 }
 
 .contacts {
-    flex-grow: 1;
-
-    font-size: var(--fs-medium);
-    color: var(--color-dark-m);
+    padding-left: 5%;
+    color: var(--color-dark-s);
 
     @include mixins.respond-to(laptop) {
-        width: 100%;
+        padding-left: 10%;
     }
 
-    .greeting {
-        margin-bottom: 2rem;
-
-        font-family: var(--ff-title);
-        font-size: var(--fs-big);
-
-        @include mixins.respond-to(laptop) {
-            margin-left: 20%;
-        }
-
-        @include mixins.respond-to(mobile) {
-            margin-left: 0;
-
-            text-align: center;
-        }
+    @include mixins.respond-to(mobile) {
+        padding-left: 0;
+        text-align: center;
     }
 
-    &__h2 {
+    &__subtitle {
         margin-bottom: 1rem;
+        font-size: var(--fs-medium-big);
+    }
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    @include mixins.respond-to(tablet) {
+        gap: 0.5rem;
     }
 
-    &__block {
-        margin-left: 3rem;
-
-        color: var(--color-dark-s);
+    &_professional {
+        margin-left: 15%;
 
         @include mixins.respond-to(laptop) {
-            margin-left: 10%;
-        }
-
-        @include mixins.respond-to(mobile) {
             margin-left: 0;
-
-            text-align: center;
-        }
-    }
-
-    &__list {
-        @include mixins.flex(column, flex-start, flex-start);
-
-        @include mixins.respond-to(tablet) {
-            gap: 0.5rem;
-        }
-
-        &_professional {
-            margin-left: 7rem;
-
-            @include mixins.flex(column, flex-start, flex-start);
-
-            @include mixins.respond-to(laptop) {
-                margin-left: 0;
-            }
-
-            @include mixins.respond-to(tablet) {
-                gap: 0.5rem;
-            }
         }
     }
 
@@ -169,49 +151,77 @@
         list-style: none;
         font-size: var(--fs-medium-big);
         font-weight: bold;
+    }
 
-        &__link {
-            @include mixins.flex(null, flex-start, center);
-            color: var(--color-dark-s);
+    &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        color: var(--color-dark-s);
+
+        @include mixins.interactive('.contacts-list__text_animated') {
+            opacity: 1;
+        }
+    }
+
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+
+        @include mixins.respond-to(laptop) {
+            width: 3rem;
+            height: 3rem;
         }
 
-        &__icon {
-            width: 4rem;
-            height: 4rem;
+        @include mixins.respond-to(mobile) {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
 
-            transition: var(--transition);
+    &__text {
+        &_initial {
+            position: relative;
+        }
 
-            @include mixins.respond-to(laptop) {
-                width: 3rem;
-                height: 3rem;
-            }
-
-            @include mixins.respond-to(mobile) {
-                width: 2rem;
-                height: 2rem;
-            }
+        &_animated {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: opacity var(--transition);
         }
     }
 }
 
 .description {
     padding: 5rem 0;
-
+    flex-grow: 1;
     color: var(--color-dark-m);
     font-size: var(--fs-medium-big);
     font-weight: bold;
     text-align: justify;
-
     background-color: var(--color-primary);
 
     @include mixins.respond-to(mobile) {
         padding: 2rem 0;
     }
 
-    &__h2 {
-        margin-bottom: 1rem;
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
+    &__title {
+        margin-bottom: 1rem;
         font-family: var(--ff-title);
         text-align: left;
+        text-transform: uppercase;
     }
 }

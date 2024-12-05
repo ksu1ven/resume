@@ -102,7 +102,7 @@ export function CatBanana({ isCatAnimated, setGameLoading }: CatBananaProps) {
             <AnimatePresence>
                 <motion.img
                     ref={imageRef}
-                    className="cat-container__cat-banana__img"
+                    className="cat-container__img_banana"
                     src={
                         isCatAnimated
                             ? cursorPosition &&
@@ -143,13 +143,15 @@ export function CatBanana({ isCatAnimated, setGameLoading }: CatBananaProps) {
                         src={catEatsMouse}
                         alt="Cat eats mouse"
                         key="cat-catch"
-                        className="cat-container__cat-catch__img"
+                        className="cat-container__img_catch"
                         initial={{ x: catX.get(), y: catY.get(), opacity: 0 }}
                         animate={{ x: catX.get(), y: catY.get(), opacity: 1 }}
                     />
                 )}
             </AnimatePresence>
+
             <audio src={happySong} ref={happySongRef} muted />
+
             {preloadersStart && (
                 <script onLoad={catBananaPreload}>
                     <link rel="preload" as="image" href={catBananaLeft} />

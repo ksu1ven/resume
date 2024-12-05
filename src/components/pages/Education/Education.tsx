@@ -1,14 +1,14 @@
 import React from 'react';
 import { EDUCATION } from '@utils/constants';
 import { EducationBlock } from './blocks/EducationBlock';
-import { Arrow } from './blocks/Arrow';
+import { EducationArrow } from './blocks/EducationArrow';
 import { EducationCats } from './blocks/EducationCats';
 
 export function Education() {
     return (
-        <main className="education-bg">
-            <div className="wrapper education">
-                <section className="education-path">
+        <main className="education">
+            <div className="wrapper education__wrapper">
+                <div className="education-path">
                     {EDUCATION.map((item, ind, arr) => (
                         <React.Fragment key={item.course}>
                             <EducationBlock
@@ -17,14 +17,14 @@ export function Education() {
                                 id={`block-${ind + 1}`}
                             />
                             {ind + 1 !== arr.length && (
-                                <Arrow
+                                <EducationArrow
                                     direction={ind % 2 !== 0 ? 'left' : 'right'}
                                     id={`arrow-${ind + 1}`}
                                 />
                             )}
                         </React.Fragment>
                     ))}
-                </section>
+                </div>
 
                 <EducationCats />
             </div>

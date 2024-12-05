@@ -1,17 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-    Navigation,
-    EffectFlip,
-    Keyboard,
-    Mousewheel,
-    A11y,
-} from 'swiper/modules';
+import { Navigation, EffectFlip } from 'swiper/modules';
 import certificateJs from '@assets/images/certificate-js.png';
 import certificateReact from '@assets/images/certificate-react.png';
 
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import 'swiper/scss/a11y';
 import 'swiper/scss/effect-flip';
 
 interface CertificatesSwiperProps {
@@ -27,16 +20,10 @@ export function CertificatesSwiper({
         <Swiper
             className="wrapper certificates-swiper"
             initialSlide={activeSlide === 'js' ? 0 : 1}
-            modules={[Navigation, EffectFlip, Keyboard, Mousewheel, A11y]}
+            modules={[Navigation, EffectFlip]}
             spaceBetween={10}
             slidesPerView={1}
             navigation
-            keyboard
-            mousewheel
-            a11y={{
-                prevSlideMessage: 'Previous slide',
-                nextSlideMessage: 'Next slide',
-            }}
             effect="flip"
             flipEffect={{
                 limitRotation: true,
@@ -57,6 +44,7 @@ export function CertificatesSwiper({
                 className="swiper-close"
                 aria-label="close swiper"
             />
+
             <SwiperSlide className="certificates-slide">
                 <img
                     className="certificates-slide__img"
@@ -64,6 +52,7 @@ export function CertificatesSwiper({
                     alt="JS certificate"
                 />
             </SwiperSlide>
+
             <SwiperSlide className="certificates-slide">
                 <img
                     className="certificates-slide__img"

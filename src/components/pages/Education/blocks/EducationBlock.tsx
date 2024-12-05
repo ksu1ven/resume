@@ -16,16 +16,16 @@ export function EducationBlock({
 }: StudyBlockProps) {
     return (
         <div
-            className={`block education__block education__block_${direction}`}
+            className={`block education-block education-block_${direction}`}
             id={id}
         >
             <div
-                className={`block-inner education__block_inner education__block_${direction}_inner`}
+                className={`block-inner education-block_inner education-block_${direction}_inner`}
             >
-                <h2 className="education__block__institution">{institution}</h2>
-                <h3>{course}</h3>
-                {position && <h3>{position}</h3>}
-                <h3>{year}</h3>
+                <h3 className="education-block__title">{institution}</h3>
+                <h4 className="education-block__subtitle">{course}</h4>
+                {position && <p>{position}</p>}
+                <p>{year}</p>
             </div>
         </div>
     );

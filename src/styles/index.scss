@@ -1,9 +1,13 @@
+@use './utils/mixins';
+@use './utils/variables';
 @use './base/reset';
 @use './base/fonts';
+@use './base/common';
 
 @use './components/swiper';
 @use './components/buttons';
-@use './components/speech-clouds';
+
+@use './utils/animations';
 
 @use './layout/header';
 @use './layout/footer';
@@ -16,13 +20,3 @@
 @use './pages/experience';
 @use './pages/bye-bye';
 @use './pages/error';
-
-@use './utils/mixins';
-@use './utils/variables';
-@use './utils/animations';
-
-body {
-    overflow-x: hidden;
-    font-family: var(--ff-text);
-    color: var(--color-dark-m);
-}

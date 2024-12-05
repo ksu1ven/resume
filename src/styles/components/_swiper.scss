@@ -2,15 +2,11 @@
 
 .swiper__overlay {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 50;
-
-    width: 100vw;
-    height: 100dvh;
-
-    @include mixins.flex(null, center, center);
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url('@assets/images/swiper-certificates.jpg');
     background-size: cover;
     background-position: left bottom;
@@ -19,6 +15,7 @@
 .certificates-swiper {
     cursor: grab;
     background-color: var(--color-light-transparent);
+    backdrop-filter: blur(5px);
 
     @include mixins.respond-to(laptop) {
         width: 90vh !important;
@@ -28,10 +25,10 @@
 
 .certificates-slide {
     position: relative;
-
-    @include mixins.flex(null, center, center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    width: fit-content;
 
     @include mixins.respond-to(laptop) {
         height: 100vw;
@@ -39,6 +36,7 @@
 
     &__img {
         width: 70%;
+        height: auto;
 
         @include mixins.respond-to(desktop) {
             width: 80%;
@@ -46,7 +44,9 @@
 
         @include mixins.respond-to(tablet) {
             width: auto;
-            height: 80%;
+            height: auto;
+            max-width: 70%;
+            max-height: 80%;
         }
     }
 }
@@ -54,7 +54,6 @@
 .swiper-button-prev,
 .swiper-button-next {
     padding: 0 2rem;
-
     color: var(--color-dark-s);
 }
 
@@ -71,12 +70,8 @@
     top: 2rem;
     right: 2rem;
     z-index: 10;
-
     width: 4rem;
     height: 4rem;
-
-    cursor: pointer;
-
     background-image: url('@assets/icons/cross.png');
     background-size: contain;
     background-position: center;
@@ -84,7 +79,6 @@
     @include mixins.respond-to(mobile) {
         top: 1rem;
         right: 1rem;
-
         width: 2.5rem;
         height: 2.5rem;
     }

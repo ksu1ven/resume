@@ -35,3 +35,18 @@
     --transition: ease-in-out 0.4s;
     --transition-min: ease-in-out 0.2s;
 }
+
+$breakpoints: (
+    'desktop': (
+        max-width: 1300px,
+    ),
+    'laptop': (
+        max-width: 992px,
+    ),
+    'tablet': (
+        max-width: 768px,
+    ),
+    'mobile': (
+        max-width: 576px,
+    ),
+) !default;

@@ -1,43 +1,88 @@
+@use '../utils/mixins';
+
+.btn {
+    @include mixins.transitions();
+    transition-property: transform, box-shadow;
+
+    @include mixins.interactive() {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px var(--color-dark-s);
+    }
+}
+
+.icon {
+    @include mixins.transitions();
+    transition-property: transform, filter;
+
+    @include mixins.interactive() {
+        transform: translateY(-3px);
+        filter: drop-shadow(0 5px 10px var(--color-dark-s));
+    }
+}
+
+.block {
+    @include mixins.transitions();
+    transition-property: transform, border-radius;
+
+    @include mixins.interactive() {
+        border-radius: 20%;
+        transform: rotate(50deg);
+        box-shadow: 0 5px 10px var(--color-dark-s);
+    }
+
+    @include mixins.interactive('.block-inner:not(:hover)') {
+        transform: rotate(-50deg);
+        border-radius: 20%;
+    }
+
+    &-inner {
+        @include mixins.transitions();
+
+        @include mixins.interactive() {
+            transform: rotate(-50deg);
+            border-radius: 20%;
+        }
+    }
+}
+
 .btn::after,
 .icon::after,
 .block::after {
     position: absolute;
-    top: 0;
-    left: 0;
-
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-
+    inset: 0;
     z-index: -1;
-    transition: var(--transition);
+    content: '';
+    border-radius: 100px;
+    @include mixins.transitions();
+    transition-property: transform, background-color, opacity;
 }
 
-.btn:hover::after,
-.icon:hover::after,
-.block:hover::after {
+.btn:active::after,
+.icon:active::after,
+.block:active::after {
     transform: scaleX(1.4) scaleY(1.6);
-
     background-color: var(--color-white);
     opacity: 0;
+}
+
+@media screen and (pointer: fine) and (hover: hover) {
+    .btn:hover::after,
+    .icon:hover::after,
+    .block:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        background-color: var(--color-white);
+        opacity: 0;
+    }
 }
 
 .btn-arrow,
 .swiper-button-next,
 .swiper-button-prev {
-    @media (hover: 'none') {
-        transform: scaleX(1.4) scaleY(1.6);
-        transition: var(--transition);
+    @include mixins.transitions();
+    transition-property: transform;
+    @include mixins.interactive() {
+        transform: scaleX(1.2) scaleY(1.4);
     }
-}
-
-.btn-arrow:hover,
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    transform: scaleX(1.4) scaleY(1.6);
-    transition: var(--transition);
 }
 
 .btn-arrow:disabled,
@@ -45,43 +90,4 @@
 .swiper-button-prev:disabled {
     cursor: auto;
     transform: none;
-}
-
-.btn {
-    @media (hover: 'hover') {
-        &:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px var(--color-dark-s);
-        }
-
-        &:active {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 10px var(--color-dark-s);
-        }
-    }
-}
-
-.icon:hover {
-    transform: translateY(-3px);
-    filter: drop-shadow(0 5px 10px var(--color-dark-s));
-}
-
-.icon:active {
-    transform: translateY(-1px);
-    filter: drop-shadow(0 5px 10px var(--color-dark-s));
-}
-
-.block:hover {
-    border-radius: 20%;
-    transform: rotate(50deg);
-    box-shadow: 0 5px 10px var(--color-dark-s);
-    .block-inner:not(:hover) {
-        transform: rotate(-50deg);
-        border-radius: 20%;
-    }
-}
-
-.block-inner:hover {
-    transform: rotate(-50deg);
-    border-radius: 20%;
 }

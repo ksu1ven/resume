@@ -29,11 +29,34 @@ $breakpoints: (
     flex-direction: $dir;
     justify-content: $jus;
     align-items: $ali;
-    gap: var(--gap, 1rem);
 }
 
 @mixin abs() {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+@mixin transitions() {
+    @media screen and (pointer: fine) and (hover: hover) {
+        transition-duration: 0.4s;
+        transition-timing-function: ease-in;
+    }
+
+    @media screen and (pointer: coarse) and (hover: none) {
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in;
+    }
+}
+
+@mixin interactive($element: null) {
+    &:active #{$element} {
+        @content;
+    }
+
+    @media screen and (pointer: fine) and (hover: hover) {
+        &:hover #{$element} {
+            @content;
+        }
+    }
 }

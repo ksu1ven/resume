@@ -9,7 +9,7 @@ export function Photo() {
             rotate:
                 block === 'inner'
                     ? ['25deg', '25deg', 90, 90, '25deg']
-                    : ['-5deg', '-5deg', 175, 175, '-5deg'],
+                    : ['-5deg', '-5deg', 175, 175, '-25deg'],
 
             borderRadius: ['0.2rem', '0.2rem', '20%', '20%', '0.2rem'],
         };
@@ -17,6 +17,7 @@ export function Photo() {
 
     const transition = {
         duration: 2,
+        delay: 2,
         ease: 'easeInOut',
         times: [0, 0.2, 0.3, 0.8, 1],
         repeat: 0,
@@ -33,9 +34,12 @@ export function Photo() {
                 animate={getCorrectAnimation('inner')}
                 transition={transition}
             >
-                <img src={photo} alt="CatOksana" className="photo" />
+                <img
+                    src={photo}
+                    alt="CatOksana"
+                    className="photo-container__img"
+                />
             </motion.div>
-            <link rel="preload" as="image" href={photo} />
         </motion.div>
     );
 }
