@@ -85,23 +85,31 @@
 }
 
 .portfolio-swiper {
-    height: calc(100vh - 5rem);
-    padding: 2rem 0;
-
+    --swiper-navigation-sides-offset: 2rem;
+    min-height: 100%;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
     cursor: grab;
 
-    @include mixins.respond-to(desktop) {
-        height: auto;
+    @include mixins.respond-to(laptop) {
+        --swiper-navigation-sides-offset: 10px;
     }
 
-    .parallax-bg {
-        @include mixins.abs();
+    @include mixins.respond-to(mobile) {
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
+    }
 
+    &__parallax-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 150%;
         height: 100%;
-
         background-image: url('@assets/images/swiper-portfolio.jpg');
-        -webkit-background-size: contain;
         background-size: cover;
         background-position: center;
 
@@ -113,105 +121,21 @@
 }
 
 .portfolio-slide {
-    &__container {
-        @include mixins.flex(null, center, center);
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 
-    width: 80%;
-    height: 90%;
-    border-radius: var(--border-radius);
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-
-    color: var(--color-white);
-
-    background-color: var(--color-dark-transparent);
-
-    @include mixins.respond-to(desktop) {
-        grid-template-columns: 100%;
-    }
-
-    @include mixins.respond-to(mobile) {
-        width: 90%;
-    }
-
-    .img-container {
-        padding: 2rem;
-
-        @include mixins.flex(null, center, center);
-
-        transition: var(--transition);
-
-        @include mixins.respond-to(tablet) {
-            padding: 1rem;
-        }
-
-        &_inner {
-            position: relative;
-        }
-
-        &__link {
-            transition: var(--transition);
-        }
-
-        .portfolio-slide__img {
-            position: absolute;
-
-            width: 25rem;
-            height: 21rem;
-            border-radius: var(--border-radius);
-
-            &:hover {
-                z-index: 2;
-                transform: scale(1.2) !important;
-            }
-
-            @include mixins.respond-to(tablet) {
-                width: calc(100vw * 0.65);
-                height: calc(100vw * 0.65 * 0.8);
-            }
-        }
-    }
-
-    &__content {
-        padding: 2rem;
-
-        @include mixins.flex(column, flex-start, flex-start);
-        gap: 1rem;
-
-        font-weight: bold;
-        background-color: var(--color-dark-transparent-m);
-        box-shadow: -2rem 0.7rem 3rem 2rem var(--color-dark-transparent-m);
+    &__wrapper {
+        height: 100%;
+        backdrop-filter: blur(5px);
 
         @include mixins.respond-to(desktop) {
-            margin-top: -3rem;
-            box-shadow: 0.7rem -2rem 3rem 2rem var(--color-dark-transparent-m);
+            width: 80vw;
         }
-    }
 
-    &__name {
-        font-family: var(--ff-title);
-        font-size: var(--fs-medium-big);
-        text-transform: uppercase;
-    }
-
-    &__type {
-        font-family: var(--ff-title);
-        font-size: var(--fs-medium-big);
-        color: var(--color-light);
-    }
-
-    &__stack {
-        font-size: var(--fs-medium);
-    }
-
-    &__link,
-    &__description {
-        font-size: var(--fs-medium-small);
-        color: var(--color-light);
-        font-family: var(--ff-text);
-        text-align: justify;
+        @include mixins.respond-to(mobile) {
+            width: 100%;
+        }
     }
 }

@@ -4,6 +4,7 @@ import certificateJs from '@assets/images/certificate-js.png';
 import certificateReact from '@assets/images/certificate-react.png';
 import talkingCloudLeft from '@assets/icons/talking-cloud-left.png';
 import talkingCloudRight from '@assets/icons/talking-cloud-right.png';
+import certificateSwiperBg from '@assets/images/swiper-certificates.jpg';
 import { CertificatesSwiper } from './CertificatesSwiper';
 
 export function EducationCats() {
@@ -67,10 +68,6 @@ export function EducationCats() {
 
     return (
         <>
-            <link rel="preload" as="image" href={certificateReact} />
-            <link rel="preload" as="image" href={certificateJs} />
-            <link rel="preload" as="image" href={talkingCloudLeft} />
-            <link rel="preload" as="image" href={talkingCloudRight} />
             <div
                 className="education-cats"
                 onClick={handleTalk}
@@ -146,6 +143,12 @@ export function EducationCats() {
                     />
                 </div>
             )}
+
+            <link rel="preload" as="image" href={certificateReact} />
+            <link rel="preload" as="image" href={certificateJs} />
+            <link rel="preload" as="image" href={talkingCloudLeft} />
+            <link rel="preload" as="image" href={talkingCloudRight} />
+            <link rel="preload" as="image" href={certificateSwiperBg} />
         </>
     );
 }

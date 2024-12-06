@@ -9,7 +9,7 @@
     --color-white-transparent: #ffffff6b;
     --color-dark-m: #32342e;
     --color-dark-transparent: #32342e75;
-    --color-dark-transparent-m: #32342eb1;
+    --color-dark-transparent-m: #32342ec0;
     --color-dark-s: #52564d;
     --color-black: #111111;
 
@@ -31,9 +31,10 @@
     --fs-smallest: clamp(0.5rem, 0.7vw, 1rem);
 
     --border-radius: 0.2rem;
+    --border-radius-l: 0.5rem;
 
-    --transition: ease-in-out 0.4s;
-    --transition-min: ease-in-out 0.2s;
+    --transition: ease-in-out 0.3s;
+    --transition-min: ease-in-out 0.1s;
 }
 
 $breakpoints: (
