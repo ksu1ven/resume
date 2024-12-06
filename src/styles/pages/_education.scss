@@ -331,30 +331,6 @@
                 transform: none;
             }
         }
-
-        &_skills {
-            position: absolute;
-            top: 3rem;
-            left: 55%;
-
-            width: 20rem;
-            height: 18rem;
-            padding: 1rem 5rem 4rem 3rem;
-
-            font-weight: bold;
-            font-size: var(--fs-medium-big);
-
-            background-image: url('@assets/icons/talking-cloud-left.png');
-
-            @include mixins.respond-to(tablet) {
-                left: 30%;
-            }
-
-            @include mixins.respond-to(mobile) {
-                width: 14rem;
-                height: 12rem;
-            }
-        }
     }
 
     &__certificate {

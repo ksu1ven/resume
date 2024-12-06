@@ -79,10 +79,10 @@ export function Skills() {
 
     return (
         <>
-            <main className="skills-bg">
-                <section className="wrapper skills">
+            <main className="skills">
+                <div className="wrapper skills__wrapper">
                     <motion.div
-                        className="skills-cat__speech"
+                        className="skills-cat"
                         role="presentation"
                         onClick={handleSpeak}
                         onKeyDown={handleSpeak}
@@ -92,13 +92,11 @@ export function Skills() {
                         variants={catVariants}
                     >
                         {isVideoPlaying && (
-                            <div
-                                className="cat-speech cat-speech_skills"
-                                ref={cloudRef}
-                            >
+                            <div className="skills-cat__speech" ref={cloudRef}>
                                 {catSpeech}
                             </div>
                         )}
+
                         <video
                             src={skillsCat}
                             className="skills-cat__video"
@@ -118,7 +116,7 @@ export function Skills() {
                             }}
                         />
                     </motion.div>
-                </section>
+                </div>
             </main>
 
             <link

@@ -1,49 +1,72 @@
 @use '../utils/mixins';
 
 .skills {
-    &-bg {
-        overflow-x: hidden;
-        background-image: url('@assets/images/background-skills.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
+    overflow: hidden;
+    background-image: url('@assets/images/background-skills.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 
-        @include mixins.respond-to(laptop) {
-            background-image: url('@assets/images/background-skills-laptop.jpg');
-            background-position: top center;
-        }
-        @include mixins.respond-to(mobile) {
-            background-image: url('@assets/images/background-skills-mobile.jpg');
-        }
+    @include mixins.respond-to(laptop) {
+        background-image: url('@assets/images/background-skills-laptop.jpg');
+        background-position: top center;
     }
-
-    padding: 2rem;
-
-    @include mixins.flex(null, center, center);
-
     @include mixins.respond-to(mobile) {
-        padding: 0;
+        background-image: url('@assets/images/background-skills-mobile.jpg');
     }
 
-    &-cat__speech {
-        position: relative;
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+}
 
-    &-cat__video {
-        padding-top: 30%;
+.skills-cat {
+    position: relative;
+
+    &__video {
+        aspect-ratio: 1.333;
         width: 120%;
+        padding-top: 30%;
 
         @include mixins.respond-to(tablet) {
             padding-top: 40%;
             width: 150%;
-
             transform: translateX(-20%);
         }
 
         @include mixins.respond-to(mobile) {
-            padding-top: 60%;
+            padding-top: 50%;
             width: 200%;
+        }
+    }
 
-            transform: translateX(-20%);
+    &__speech {
+        position: absolute;
+        top: 3rem;
+        left: 55%;
+        width: 20rem;
+        height: 18rem;
+        padding: 1rem 5rem 4rem 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        font-size: var(--fs-medium-big);
+        background-image: url('@assets/icons/talking-cloud-left.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include mixins.respond-to(tablet) {
+            left: 30%;
+        }
+
+        @include mixins.respond-to(mobile) {
+            top: 2rem;
+            width: 14rem;
+            height: 12rem;
         }
     }
 }
