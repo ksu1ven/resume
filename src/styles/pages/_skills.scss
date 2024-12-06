@@ -1,6 +1,7 @@
 @use '../utils/mixins';
 
 .skills {
+    min-height: 773px;
     overflow: hidden;
     background-image: url('@assets/images/background-skills.jpg');
     background-size: cover;
@@ -9,6 +10,9 @@
     @include mixins.respond-to(laptop) {
         background-image: url('@assets/images/background-skills-laptop.jpg');
         background-position: top center;
+    }
+    @include mixins.respond-to(tablet) {
+        min-height: auto;
     }
     @include mixins.respond-to(mobile) {
         background-image: url('@assets/images/background-skills-mobile.jpg');

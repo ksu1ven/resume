@@ -88,7 +88,7 @@ export function Skills() {
                         onKeyDown={handleSpeak}
                         initial="offscreen"
                         whileInView={isVideoCanPlay ? 'onscreen' : 'offscreen'}
-                        viewport={{ once: true, amount: 1 }}
+                        viewport={{ once: true }}
                         variants={catVariants}
                     >
                         {isVideoPlaying && (

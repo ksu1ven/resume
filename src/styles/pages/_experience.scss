@@ -4,11 +4,15 @@
     &-bg {
         background-color: var(--color-primary);
         background-size: cover;
+        overflow: hidden;
     }
+
+    overflow: visible;
 
     padding: 5rem 0;
 
-    @include mixins.flex(column, flex-start, center);
+    @include mixins.flex(column, flex-start, flex-start);
+    gap: 2rem;
 
     @include mixins.respond-to(tablet) {
         padding: 2rem 0;
@@ -16,18 +20,24 @@
 }
 
 .experience__item {
+}
+
+.item {
+    flex: 0 0 auto;
+    position: relative;
     width: 80%;
+
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
 
-    @include mixins.flex(null, flex-start, center);
+    @include mixins.flex(null, flex-start, stretch);
     gap: 2rem;
 
     background-color: var(--color-light);
 
-    @include mixins.respond-to(desktop) {
-        width: 68%;
-    }
+    // @include mixins.respond-to(desktop) {
+    //     width: 68%;
+    // }
 
     @include mixins.respond-to(laptop) {
         min-height: 14rem;
@@ -42,8 +52,10 @@
     }
 
     .item__img {
-        width: 12rem;
+        // width: 12rem;
+        width: 25%;
         padding: 1rem;
+        aspect-ratio: 1.4;
         border-radius: var(--border-radius);
 
         background-color: var(--color-primary-lighter);

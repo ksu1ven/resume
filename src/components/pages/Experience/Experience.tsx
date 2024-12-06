@@ -1,38 +1,52 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EXPERIENCE, MONTHES } from '@utils/constants';
 
 export function Experience() {
+    const [animationEndCounter, setAnimationEndCounter] = useState(0);
+
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.item').forEach((item, index, array) => {
+            item.setAttribute(
+                'style',
+                `border-radius: 0.2rem; opacity: 1; transform: translateX(${window.innerWidth >= 768 ? `${(index / (array.length - 1)) * 25}%` : 0})`
+            );
+        });
+    });
+
     return (
         <main className="experience-bg">
             <ul className="wrapper experience">
-                {EXPERIENCE.map((item, ind) => (
+                {EXPERIENCE.map((item, ind, array) => (
                     <motion.li
                         key={ind}
-                        className="experience__item"
-                        style={
-                            window.innerWidth >= 768
-                                ? { marginLeft: `${ind * 5}rem` }
-                                : {}
-                        }
+                        className="item"
                         initial={{
-                            x: '-100%',
+                            x: '-50%',
                             borderRadius:
                                 window.innerWidth >= 768 ? '50px' : '10px',
-                            scaleX: 0,
+                            opacity: 0,
                         }}
-                        animate={
+                        whileInView={
                             window.innerWidth >= 768
                                 ? {
-                                      marginLeft: `${ind * 5}rem`,
+                                      x: `${(ind / (array.length - 1)) * 25}%`,
+                                      borderRadius: '0.2rem',
+                                      opacity: 1,
+                                  }
+                                : {
                                       x: 0,
                                       borderRadius: '0.2rem',
-                                      scaleX: 1,
+                                      opacity: 1,
                                   }
-                                : { x: 0, borderRadius: '0.2rem', scaleX: 1 }
                         }
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{
                             duration: 0.5,
-                            delay: (ind + 1) * 0.2,
+                            delay: (ind - animationEndCounter) * 0.2,
+                        }}
+                        onAnimationComplete={() => {
+                            setAnimationEndCounter((prev) => prev + 1);
                         }}
                     >
                         <img
