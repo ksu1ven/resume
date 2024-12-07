@@ -1,31 +1,28 @@
 @use '../utils/mixins';
 
 .error {
-    &-bg {
-        background-color: var(--color-primary-lighter);
+    overflow: hidden;
+    background-color: var(--color-primary-lighter);
+
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
     }
 
-    min-height: 100vh;
-    @include mixins.flex(column, flex-end, center);
-
-    &__h1 {
-        font-family: var(--ff-title);
-        font-size: var(--fs-big);
+    &__title {
         color: var(--color-dark-m);
         text-align: center;
     }
 
     &__link {
-        position: relative;
-
-        margin: 1rem 0;
+        margin: 2rem 0;
         padding: 1rem 2rem;
         border-radius: var(--border-radius);
-        transition: var(--transition);
-
         color: var(--color-white);
-        font-size: calc(1.1 * var(--fs-medium));
-
+        font-size: var(--fs-medium);
         background-color: var(--color-primary);
     }
 
