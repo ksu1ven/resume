@@ -7,6 +7,7 @@ export function About() {
             <section className="personal-info">
                 <div className="wrapper personal-info__wrapper">
                     <Photo />
+
                     <Contacts />
                 </div>
             </section>
@@ -14,6 +15,7 @@ export function About() {
             <section className="description">
                 <div className="wrapper description__wrapper">
                     <h2 className="description__title">Немного обо мне</h2>
+
                     <p>
                         Имею опыт написания интернет-магазинов, различных
                         веб-сайтов и приложений. Хочу углубить свой опыт в

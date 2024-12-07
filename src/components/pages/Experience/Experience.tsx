@@ -6,21 +6,23 @@ export function Experience() {
     const [animationEndCounter, setAnimationEndCounter] = useState(0);
 
     window.addEventListener('resize', () => {
-        document.querySelectorAll('.item').forEach((item, index, array) => {
-            item.setAttribute(
-                'style',
-                `border-radius: 0.2rem; opacity: 1; transform: translateX(${window.innerWidth >= 768 ? `${(index / (array.length - 1)) * 25}%` : 0})`
-            );
-        });
+        document
+            .querySelectorAll('.experience-item')
+            .forEach((item, index, array) => {
+                item.setAttribute(
+                    'style',
+                    `border-radius: 0.2rem; opacity: 1; transform: translateX(${window.innerWidth >= 768 ? `${(index / (array.length - 1)) * 25}%` : 0})`
+                );
+            });
     });
 
     return (
-        <main className="experience-bg">
-            <ul className="wrapper experience">
+        <main className="experience">
+            <ul className="wrapper experience__list">
                 {EXPERIENCE.map((item, ind, array) => (
                     <motion.li
                         key={ind}
-                        className="item"
+                        className="experience-item"
                         initial={{
                             x: '-50%',
                             borderRadius:
@@ -52,21 +54,24 @@ export function Experience() {
                         <img
                             src={item.img}
                             alt={item.profession}
-                            className="item__img"
+                            className="experience-item__img"
                         />
-                        <div className="item__details">
-                            <h2 className="item__profession">
+
+                        <div className="experience-item__details">
+                            <h3 className="experience-item__profession">
                                 {item.profession}
-                            </h2>
-                            <h3 className="item__company">
-                                {item.company}, г. {item.city}
                             </h3>
 
-                            <h4 className="item__date">
+                            <h4 className="experience-item__company">
+                                {item.company}, г. {item.city}
+                            </h4>
+
+                            <time className="experience-item__date">
                                 {`${MONTHES[item.dateFrom.getMonth()]} ${item.dateFrom.getFullYear()} -
                                             ${MONTHES[item.dateTo.getMonth()]} ${item.dateTo.getFullYear()}`}
-                            </h4>
-                            <p className="item__description">
+                            </time>
+
+                            <p className="experience-item__description">
                                 Приобретённые навыки: {item.description}
                             </p>
                         </div>

@@ -17,9 +17,11 @@ export function ContactsList({ list, customClass }: ContactsListProps) {
                             alt={contact.alt}
                             className="contacts-list__icon icon"
                         />
+
                         <span className="contacts-list__text contacts-list__text_initial">
                             {contact.innerHtml}
                         </span>
+
                         <span className="contacts-list__text contacts-list__text_animated text-animation">
                             {contact.innerHtml}
                         </span>

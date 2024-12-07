@@ -23,8 +23,11 @@ export function EducationBlock({
                 className={`block-inner education-block_inner education-block_${direction}_inner`}
             >
                 <h3 className="education-block__title">{institution}</h3>
+
                 <h4 className="education-block__subtitle">{course}</h4>
+
                 {position && <p>{position}</p>}
+
                 <p>{year}</p>
             </div>
         </div>

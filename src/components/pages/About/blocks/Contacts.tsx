@@ -9,11 +9,14 @@ export function Contacts() {
                     Привет! Я КотОксана, <br />
                     Frontend разработчик.
                 </h1>
+
                 <div className="contacts">
-                    <h2 className="contacts__subtitle">Мои контакты</h2>
+                    <h3 className="contacts__subtitle">Мои контакты</h3>
+
                     <ContactsList list={CONTACTS} />
                 </div>
             </div>
+
             <ContactsList
                 list={PROFESSIONAL_CONTACTS}
                 customClass="contacts-list_professional"

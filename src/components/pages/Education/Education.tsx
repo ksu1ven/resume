@@ -16,6 +16,7 @@ export function Education() {
                                 text={item}
                                 id={`block-${ind + 1}`}
                             />
+
                             {ind + 1 !== arr.length && (
                                 <EducationArrow
                                     direction={ind % 2 !== 0 ? 'left' : 'right'}

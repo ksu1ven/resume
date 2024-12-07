@@ -81,6 +81,7 @@ export function EducationCats() {
                                 {catHRSpeech}
                             </div>
                         )}
+
                         {catMeSpeech && (
                             <div className="cat-speech__cloud cat-speech__cloud_me">
                                 {catMeSpeech}

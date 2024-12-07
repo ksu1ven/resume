@@ -1,43 +1,31 @@
 @use '../utils/mixins';
 
 .experience {
-    &-bg {
-        background-color: var(--color-primary);
-        background-size: cover;
-        overflow: hidden;
-    }
+    overflow: hidden;
+    background-color: var(--color-primary);
+    background-size: cover;
 
-    overflow: visible;
+    &__list {
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
 
-    padding: 5rem 0;
-
-    @include mixins.flex(column, flex-start, flex-start);
-    gap: 2rem;
-
-    @include mixins.respond-to(tablet) {
-        padding: 2rem 0;
+        @include mixins.respond-to(tablet) {
+            padding: 2rem 0;
+        }
     }
 }
 
-.experience__item {
-}
-
-.item {
-    flex: 0 0 auto;
+.experience-item {
     position: relative;
     width: 80%;
-
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
-
-    @include mixins.flex(null, flex-start, stretch);
+    display: flex;
+    align-items: center;
     gap: 2rem;
-
     background-color: var(--color-light);
-
-    // @include mixins.respond-to(desktop) {
-    //     width: 68%;
-    // }
 
     @include mixins.respond-to(laptop) {
         min-height: 14rem;
@@ -47,24 +35,21 @@
         width: 100%;
         min-height: auto;
         padding: 1rem;
-
-        @include mixins.flex(column, center, center);
+        flex-direction: column;
     }
 
-    .item__img {
-        // width: 12rem;
-        width: 25%;
+    &__img {
+        width: 12rem;
         padding: 1rem;
         aspect-ratio: 1.4;
         border-radius: var(--border-radius);
-
         background-color: var(--color-primary-lighter);
     }
 
-    .item__details {
+    &__details {
         width: 70%;
-
-        @include mixins.flex(column, flex-start, null);
+        display: flex;
+        flex-direction: column;
         gap: 0.3rem;
 
         @include mixins.respond-to(tablet) {
@@ -72,27 +57,25 @@
         }
     }
 
-    .item__profession {
+    &__profession {
         text-shadow: var(--text-shadow-dark);
-        font-family: var(--ff-title);
         text-transform: uppercase;
         font-size: var(--fs-medium-big);
     }
 
-    .item__company {
+    &__company {
         color: var(--color-dark-s);
-        font-family: var(--ff-title);
         text-transform: uppercase;
         font-size: var(--fs-medium);
     }
 
-    .item__description,
-    .item__date {
+    &__description,
+    &__date {
         color: var(--color-dark-s);
         font-size: var(--fs-medium-small);
     }
 
-    .item__date {
+    &__date {
         text-transform: capitalize;
     }
 }

@@ -124,7 +124,6 @@ export function Skills() {
                 rel="preload"
                 as="image"
                 href={talkingCloudLeft}
-                fetchPriority="high"
             />
         </>
     );
