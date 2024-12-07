@@ -46,6 +46,7 @@ export type ExperienceItem = {
     company: string;
     city: string;
     dateFrom: Date;
-    dateTo: Date;
-    description: string;
+    dateTo: Date | string;
+    description?: string;
+    skills?: string;
 };

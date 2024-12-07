@@ -5,6 +5,16 @@ import { EXPERIENCE, MONTHES } from '@utils/constants';
 export function Experience() {
     const [animationEndCounter, setAnimationEndCounter] = useState(0);
 
+    function getDateReadableFormat(dateFrom: Date, dateTo: Date | string) {
+        const dateFromReadable = `${MONTHES[dateFrom.getMonth()]} ${dateFrom.getFullYear()}`;
+        const dateToReadable =
+            dateTo instanceof Date
+                ? `${MONTHES[dateTo.getMonth()]} ${dateTo.getFullYear()}`
+                : dateTo;
+
+        return `${dateFromReadable} - ${dateToReadable}`;
+    }
+
     window.addEventListener('resize', () => {
         document
             .querySelectorAll('.experience-item')
@@ -67,12 +77,16 @@ export function Experience() {
                             </h4>
 
                             <time className="experience-item__date">
-                                {`${MONTHES[item.dateFrom.getMonth()]} ${item.dateFrom.getFullYear()} -
-                                            ${MONTHES[item.dateTo.getMonth()]} ${item.dateTo.getFullYear()}`}
+                                {getDateReadableFormat(
+                                    item.dateFrom,
+                                    item.dateTo
+                                )}
                             </time>
 
                             <p className="experience-item__description">
-                                Приобретённые навыки: {item.description}
+                                {item.skills
+                                    ? `Приобретённые навыки: ${item.skills}`
+                                    : item.description}
                             </p>
                         </div>
                     </motion.li>

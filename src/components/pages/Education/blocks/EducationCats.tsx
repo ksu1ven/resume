@@ -58,7 +58,7 @@ export function EducationCats() {
         }, 8400);
         timersId.current[3] = setTimeout(() => {
             setCatMeCertificate(null);
-            setCatMeSpeech('И на Node JS скоро будет.');
+            setCatMeSpeech('И Vue знаю. И Node JS скоро будет.');
         }, 10000);
     }
 

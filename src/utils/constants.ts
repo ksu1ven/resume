@@ -9,6 +9,7 @@ import perfumeOrder from '@assets/images/portfolio images/perfume-store-order.jp
 import selectors from '@assets/images/portfolio images/selectors.jpg';
 import shelter from '@assets/images/portfolio images/shelter.jpg';
 import shelterPets from '@assets/images/portfolio images/shelter-pets.jpg';
+import catProgrammer from '@assets/images/cat-programmer.jpg';
 import catAccountant from '@assets/images/cat-accountant.jpg';
 import catBarista from '@assets/images/cat-barista.jpg';
 import catCasier from '@assets/images/cat-cashier.jpg';
@@ -16,7 +17,7 @@ import phoneIcon from '@assets/icons/phone.png';
 import mailIcon from '@assets/icons/mail.png';
 import telegramIcon from '@assets/icons/telegram.png';
 import githubIcon from '@assets/icons/github.png';
-import RSIcon from '@assets/icons/rs-logo.jpg';
+import linkedinIcon from '@assets/icons/linkedin.png';
 
 import {
     ContactsItem,
@@ -32,6 +33,7 @@ export const MONTHES = [
     'март',
     'апрель',
     'май',
+    'июнь',
     'июль',
     'август',
     'сентябрь',
@@ -78,10 +80,10 @@ export const PROFESSIONAL_CONTACTS: ContactsItem[] = [
         innerHtml: 'GitHub',
     },
     {
-        src: RSIcon,
-        alt: 'RS School icon',
-        to: 'https://app.rs.school/cv/3adc8c9f-82d7-4588-adae-79ed41ed4c51',
-        innerHtml: 'RS School CV',
+        src: linkedinIcon,
+        alt: 'LinkedIn icon',
+        to: 'https://www.linkedin.com/in/%D0%BEksana-yakhimovich-a70873297/',
+        innerHtml: 'LinkedIn',
     },
 ];
 
@@ -105,9 +107,9 @@ export const EDUCATION: EducationItem[] = [
     },
     {
         institution: 'The Rolling Scopes School',
-        year: 2024,
-        course: 'Node JS',
-        position: 'В процессе обучения',
+        year: 2025,
+        course: 'Node JS, AWS',
+        position: 'В планах на изучение',
     },
 ];
 
@@ -221,14 +223,23 @@ export const PORTFOLIO: PortfolioItem[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
     {
+        img: catProgrammer,
+        profession: 'Frontend разработчик',
+        company: 'Egorov Agency',
+        city: 'Минск',
+        dateFrom: new Date(2024, 5),
+        dateTo: 'Настоящее время',
+        description:
+            'Разработка веб-приложений на Vue, PHP(Wordpress) с нуля, поддержка существующих американских проектов на WordPress (исправление нюансов вёрстки, ошибок PHP и плагинов в консоли, разработка новых секций и т.д.).',
+    },
+    {
         img: catAccountant,
         profession: 'бухгалтер',
         company: 'Технокласс',
         city: 'Минск',
         dateFrom: new Date(2020, 6),
         dateTo: new Date(2024, 2),
-        description:
-            'аналитические навыки, внимание к деталям, решение проблем, технические способности, внимание к соблюдению требований и стремление к непрерывному обучению.',
+        skills: 'аналитические навыки, внимание к деталям, решение проблем, технические способности, внимание к соблюдению требований и стремление к непрерывному обучению.',
     },
     {
         img: catBarista,
@@ -237,8 +248,7 @@ export const EXPERIENCE: ExperienceItem[] = [
         city: 'Брест',
         dateFrom: new Date(2019, 5),
         dateTo: new Date(2020, 5),
-        description:
-            'лидерская позиция, самостоятельность в принятии решений, управление взаимоотношениями с клиентами, креативность и управление временем.',
+        skills: 'лидерская позиция, самостоятельность в принятии решений, управление взаимоотношениями с клиентами, креативность и управление временем.',
     },
     {
         img: catCasier,
@@ -247,7 +257,6 @@ export const EXPERIENCE: ExperienceItem[] = [
         city: 'Минск',
         dateFrom: new Date(2016, 1),
         dateTo: new Date(2018, 6),
-        description:
-            'концентрация внимания, стрессоустойчивость и умение считать.',
+        skills: 'концентрация внимания, стрессоустойчивость и умение считать.',
     },
 ];

@@ -37,19 +37,19 @@ export function Skills() {
         }
 
         timersId.current[0] = setTimeout(() => {
-            setCatSpeech('HTML CSS SASS');
+            setCatSpeech('HTML CSS SСSS');
         }, 900);
         timersId.current[1] = setTimeout(() => {
-            setCatSpeech('JavaScript TypeScript');
+            setCatSpeech('JavaScript TypeScript PHP');
         }, 3700);
         timersId.current[2] = setTimeout(() => {
-            setCatSpeech('React Redux Next.js');
+            setCatSpeech('React Redux Next.js Vue Pinia');
         }, 6700);
         timersId.current[3] = setTimeout(() => {
-            setCatSpeech('Jest Vitest');
+            setCatSpeech('WordPress Shopify');
         }, 9200);
         timersId.current[4] = setTimeout(() => {
-            setCatSpeech('Webpack Vite');
+            setCatSpeech('Jest Vitest THREE.js');
         }, 12000);
         timersId.current[5] = setTimeout(() => {
             setCatSpeech('Git');
