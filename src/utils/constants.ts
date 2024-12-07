@@ -1,11 +1,19 @@
+import monziMain from '@assets/images/portfolio images/monzi-main.jpg';
+import monziConstructor from '@assets/images/portfolio images/monzi-collection.jpg';
+import monziFavourite from '@assets/images/portfolio images/monzi-favourite.jpg';
+import berocMain from '@assets/images/portfolio images/beroc-main.jpg';
+import berocTeam from '@assets/images/portfolio images/beroc-team.jpg';
+import figurrenWeltAbout from '@assets/images/portfolio images/figurenwelt-about.jpg';
+import figurrenWeltBestSellers from '@assets/images/portfolio images/figurenwelt-bestsellers.jpg';
+import figurrenWeltLightsabbels from '@assets/images/portfolio images/figurenwelt-lightsabels.jpg';
+import america1 from '@assets/images/portfolio images/america-1.jpg';
+import america2 from '@assets/images/portfolio images/america-2.jpg';
+import america3 from '@assets/images/portfolio images/america-3.jpg';
 import odysseyCatalog from '@assets/images/portfolio images/odyssey-catalog.jpg';
 import odysseyCart from '@assets/images/portfolio images/odyssey-cart.jpg';
 import odysseyLogin from '@assets/images/portfolio images/odyssey-login.jpg';
 import graphQl from '@assets/images/portfolio images/graphql.jpg';
 import minesweeper from '@assets/images/portfolio images/minesweeper.jpg';
-import perfumeCatalog from '@assets/images/portfolio images/perfume-store.jpg';
-import perfumeCart from '@assets/images/portfolio images/perfume-store-cart.jpg';
-import perfumeOrder from '@assets/images/portfolio images/perfume-store-order.jpg';
 import selectors from '@assets/images/portfolio images/selectors.jpg';
 import shelter from '@assets/images/portfolio images/shelter.jpg';
 import shelterPets from '@assets/images/portfolio images/shelter-pets.jpg';
@@ -44,10 +52,10 @@ export const MONTHES = [
 
 export const PAGES: PaginationItem[] = [
     { path: '', name: 'Обо мне' },
+    { path: 'experience', name: 'Опыт работы' },
     { path: 'education', name: 'Образование' },
     { path: 'portfolio', name: 'Портфолио' },
     { path: 'skills', name: 'Навыки' },
-    { path: 'experience', name: 'Опыт работы' },
     { path: 'bye-bye', name: 'Пока-пока!' },
 ];
 
@@ -115,6 +123,80 @@ export const EDUCATION: EducationItem[] = [
 
 export const PORTFOLIO: PortfolioItem[] = [
     {
+        name: 'Мобильное веб-приложение Monzi',
+        images: [
+            { img: monziMain, url: 'https://monzi.io/scene' },
+            {
+                img: monziConstructor,
+                url: 'https://monzi.io/scene/constructor',
+            },
+            {
+                img: monziFavourite,
+                url: 'https://monzi.io/scene/favourite',
+            },
+        ],
+        deploy: 'https://monzi.io/',
+        stack: 'Vue, Pinia, THREE.js, Vite',
+        description:
+            'Разработка мобильного приложения Monzi с использованием Vue и 3D. В приложении можно выбирать персонажей в конструкторе, покупать и продавать их, обмениваться с другими игроками. Персонажа можно улучшать, покупая ему анимации. Энергию для покупки анимации можно заработать, тапая по экрану своего персонажа.',
+        type: 'Командный',
+        responsibility:
+            'Страница "Конструктор", "Избранное", "Логин", "Регистрация", часть "Главной", большинство попапов, PWA, 3D персонаж (с помощью тимлида)',
+    },
+    {
+        name: 'Сайт экономической организации Beroc',
+        images: [
+            { img: berocMain, url: 'https://beroc.e2qr.com/' },
+            {
+                img: berocTeam,
+                url: 'https://beroc.e2qr.com/',
+            },
+        ],
+        deploy: 'https://beroc.e2qr.com/',
+        stack: 'PHP, WordPress',
+        description:
+            'Разработка веб-сайта для экономической организации на WordPress. Работа с плагинами ACF, Ninja Forms, Polilang, Cyr-To-Lat, Yoast.',
+        type: 'Командный',
+        responsibility: 'Примерно треть секций всего сайта.',
+    },
+    {
+        name: 'Интернет-магазин игрушек Figurrenwelt',
+        images: [
+            { img: figurrenWeltAbout, url: '' },
+            {
+                img: figurrenWeltBestSellers,
+                url: '',
+            },
+            {
+                img: figurrenWeltLightsabbels,
+                url: '',
+            },
+        ],
+        stack: 'Shopify, THREE.js',
+        description:
+            'Разработка немецкого интернет-магазина игрушек на Shopify. На сайте используется огромное количество 3D, анимаций и прочих визуальных эффектов. Сайт в процессе разработки, ссылки на продакш на данный момент нет.',
+        type: 'Командный',
+        responsibility:
+            'Секции "Content", "Bestsellers", "Lightsabels", "Choose Side" на вторичках, cекции "Video", "About" на главной.',
+    },
+    {
+        name: 'Поддержка существующих американских проектов',
+        images: [
+            { img: america1, url: 'https://pluggedinatl.com/' },
+            {
+                img: america2,
+                url: 'https://flatcreekbaptist.org/',
+            },
+            {
+                img: america3,
+                url: 'https://govavia.com/',
+            },
+        ],
+        stack: 'PHP, WordPress',
+        description:
+            'Поддержка существующих американских проектов на WordPress (не только изображённых на фото). Работа с темами, плагинами ACF, Carbon Fields, Ninja Forms, Yoast. Исправление нюансов вёрстки, ошибок PHP и плагинов в консоли. Переход на другую версию node и Webpack.',
+    },
+    {
         name: 'Интернет-магазин космотуров Space Odyssey[4165]',
         images: [
             { img: odysseyLogin, url: 'https://odyssey4165.vercel.app/login' },
@@ -160,29 +242,6 @@ export const PORTFOLIO: PortfolioItem[] = [
         stack: 'Vanilla JS, Webpack',
         description:
             'Целью игры является открытие всех ячеек, не содержащих мины. Игрок открывает ячейки, стараясь не открыть ячейку с миной. Открыв ячейку с миной, он проигрывает. Мины расставляются после первого хода, поэтому проиграть на первом же ходу невозможно. Есть возможность выбирать размер поля и количество мин, а также результаты последних 10 игр сохраняются в таблице рекордов.',
-        type: 'Индивидуальный',
-    },
-    {
-        name: 'Интернет-магазин парфюмерии',
-        images: [
-            {
-                img: perfumeCart,
-                url: 'https://ksu1ven.github.io/online-store/',
-            },
-            {
-                img: perfumeOrder,
-                url: 'https://ksu1ven.github.io/online-store/',
-            },
-            {
-                img: perfumeCatalog,
-                url: 'https://ksu1ven.github.io/online-store/',
-            },
-        ],
-        deploy: 'https://ksu1ven.github.io/online-store/',
-        repo: 'https://github.com/ksu1ven/online-store',
-        stack: 'Vanilla JS, Webpack',
-        description:
-            'Интернет-магазин парфюмерии с возможностью фильтрации, сортировки и поиска по названию аромата. В корзине можно манипулировать количеством аромата, а также применять промокоды. Форма для заполнения деталей заказа с валидацией полей. ',
         type: 'Индивидуальный',
     },
     {

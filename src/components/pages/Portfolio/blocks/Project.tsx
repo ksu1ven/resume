@@ -43,25 +43,31 @@ export function Project({
                     {name}
                 </h3>
 
-                <h4 data-swiper-parallax="-900" className="project__type">
-                    {type} проект
-                </h4>
+                {type && (
+                    <h4 data-swiper-parallax="-900" className="project__type">
+                        {type} проект
+                    </h4>
+                )}
 
-                <Link
-                    to={deploy}
-                    data-swiper-parallax="-750"
-                    className="project__link"
-                >
-                    Деплой
-                </Link>
+                {deploy && (
+                    <Link
+                        to={deploy}
+                        data-swiper-parallax="-750"
+                        className="project__link"
+                    >
+                        Сайт
+                    </Link>
+                )}
 
-                <Link
-                    to={repo}
-                    data-swiper-parallax="-650"
-                    className="project__link"
-                >
-                    Репозиторий
-                </Link>
+                {repo && (
+                    <Link
+                        to={repo}
+                        data-swiper-parallax="-650"
+                        className="project__link"
+                    >
+                        Репозиторий
+                    </Link>
+                )}
 
                 <h4 data-swiper-parallax="-500" className="project__stack">
                     Стек: {stack}

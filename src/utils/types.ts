@@ -33,10 +33,10 @@ export type PortfolioItem = {
     name: string;
     images: { img: string; url: string }[];
     stack: string;
-    deploy: string;
-    repo: string;
+    deploy?: string;
+    repo?: string;
     description: string;
-    type: 'Командный' | 'Индивидуальный';
+    type?: 'Командный' | 'Индивидуальный';
     responsibility?: string;
 };
 

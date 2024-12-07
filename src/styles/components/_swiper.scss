@@ -129,6 +129,7 @@
     &__wrapper {
         height: 100%;
         backdrop-filter: blur(5px);
+        overflow: hidden;
 
         @include mixins.respond-to(desktop) {
             width: 80vw;
