@@ -4,14 +4,12 @@
 @use './base/fonts';
 @use './base/common';
 
-@use './components/swiper';
-@use './components/buttons';
-
-@use './utils/animations';
-
+@use './layout/layout';
 @use './layout/header';
 @use './layout/footer';
-@use './layout/layout';
+
+@use './components/buttons';
+@use './components/swiper';
 
 @use './pages/about';
 @use './pages/education';
@@ -20,3 +18,5 @@
 @use './pages/experience';
 @use './pages/bye-bye';
 @use './pages/error';
+
+@use './utils/animations';

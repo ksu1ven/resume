@@ -18,7 +18,7 @@
     backdrop-filter: blur(5px);
 
     @include mixins.respond-to(laptop) {
-        width: 90vh !important;
+        max-width: 90vh;
         transform: rotate(90deg);
     }
 }
@@ -35,19 +35,10 @@
     }
 
     &__img {
-        width: 70%;
+        width: auto;
         height: auto;
-
-        @include mixins.respond-to(desktop) {
-            width: 80%;
-        }
-
-        @include mixins.respond-to(tablet) {
-            width: auto;
-            height: auto;
-            max-width: 70%;
-            max-height: 80%;
-        }
+        max-width: 70%;
+        max-height: 80%;
     }
 }
 
