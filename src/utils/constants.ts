@@ -194,7 +194,7 @@ export const PORTFOLIO: PortfolioItem[] = [
         ],
         stack: 'PHP, WordPress',
         description:
-            'Поддержка существующих американских проектов на WordPress (не только изображённых на фото). Работа с темами, плагинами ACF, Carbon Fields, Ninja Forms, Yoast,. Исправление нюансов вёрстки, ошибок PHP и плагинов в консоли. Переход на другую версию node и Webpack.',
+            'Поддержка существующих американских проектов на WordPress (не только изображённых на фото). Работа с темами, плагинами ACF, Carbon Fields, Ninja Forms, Yoast, WP Rocket. Исправление нюансов вёрстки, ошибок PHP и плагинов в консоли. Переход на другую версию node и Webpack.',
     },
     {
         name: 'Интернет-магазин космотуров Space Odyssey[4165]',
