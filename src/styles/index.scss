@@ -4,11 +4,12 @@
 @use './base/fonts';
 @use './base/common';
 
+@use './components/buttons';
+
 @use './layout/layout';
 @use './layout/header';
 @use './layout/footer';
 
-@use './components/buttons';
 @use './components/swiper';
 
 @use './pages/about';
