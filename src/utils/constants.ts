@@ -1,26 +1,40 @@
+import tvoiExpertMain from '@assets/images/portfolio images/tvoi-expert-main.jpg';
+import tvoiExpertChat from '@assets/images/portfolio images/tvoi-expert-chat.jpg';
+import tvoiExpertRequests from '@assets/images/portfolio images/tvoi-expert-requests.jpg';
+
+import bookingShipsMain from '@assets/images/portfolio images/bookingships-main.jpg';
+import bookingShipsCatalog from '@assets/images/portfolio images/bookingships-catalog.jpg';
+import bookingShipsDetailed from '@assets/images/portfolio images/bookingships-detailed.jpg';
+
+import kfMain from '@assets/images/portfolio images/kf-main.jpg';
+import imperialisMain from '@assets/images/portfolio images/imperialis-main.jpg';
+import godEyeMain from '@assets/images/portfolio images/god-eye-main.jpg';
+
 import monziMain from '@assets/images/portfolio images/monzi-main.jpg';
 import monziConstructor from '@assets/images/portfolio images/monzi-collection.jpg';
 import monziFavourite from '@assets/images/portfolio images/monzi-favourite.jpg';
+
 import berocMain from '@assets/images/portfolio images/beroc-main.jpg';
 import berocTeam from '@assets/images/portfolio images/beroc-team.jpg';
+
 import figurrenWeltAbout from '@assets/images/portfolio images/figurenwelt-about.jpg';
 import figurrenWeltBestSellers from '@assets/images/portfolio images/figurenwelt-bestsellers.jpg';
 import figurrenWeltLightsabbels from '@assets/images/portfolio images/figurenwelt-lightsabels.jpg';
+
 import america1 from '@assets/images/portfolio images/america-1.jpg';
 import america2 from '@assets/images/portfolio images/america-2.jpg';
 import america3 from '@assets/images/portfolio images/america-3.jpg';
+
 import odysseyCatalog from '@assets/images/portfolio images/odyssey-catalog.jpg';
 import odysseyCart from '@assets/images/portfolio images/odyssey-cart.jpg';
 import odysseyLogin from '@assets/images/portfolio images/odyssey-login.jpg';
-import graphQl from '@assets/images/portfolio images/graphql.jpg';
-import minesweeper from '@assets/images/portfolio images/minesweeper.jpg';
-import selectors from '@assets/images/portfolio images/selectors.jpg';
-import shelter from '@assets/images/portfolio images/shelter.jpg';
-import shelterPets from '@assets/images/portfolio images/shelter-pets.jpg';
+
 import catProgrammer from '@assets/images/cat-programmer.jpg';
+import catProgrammerOrange from '@assets/images/cat-programmer-orange.jpg';
 import catAccountant from '@assets/images/cat-accountant.jpg';
 import catBarista from '@assets/images/cat-barista.jpg';
 import catCasier from '@assets/images/cat-cashier.jpg';
+
 import phoneIcon from '@assets/icons/phone.png';
 import mailIcon from '@assets/icons/mail.png';
 import telegramIcon from '@assets/icons/telegram.png';
@@ -114,14 +128,73 @@ export const EDUCATION: EducationItem[] = [
         position: 'Позиция - 5 из 1077',
     },
     {
-        institution: 'The Rolling Scopes School',
+        institution: 'Самообразование',
         year: 2025,
-        course: 'Node JS, AWS',
-        position: 'В планах на изучение',
+        course: 'Nuxt.js',
+        position: 'Начато изучение',
     },
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
+    {
+        name: 'Telegram-бот ТВОЙ ЭКСПЕРТ',
+        images: [
+            { img: tvoiExpertMain, url: 'https://tvoiexpert.online/' },
+            {
+                img: tvoiExpertChat,
+                url: 'https://tvoiexpert.online/',
+            },
+            {
+                img: tvoiExpertRequests,
+                url: 'https://tvoiexpert.online/',
+            },
+        ],
+        deploy: 'https://tvoiexpert.online/',
+        stack: 'Vue, Tailwind, Telegram Mini Apps, Pinia, Vite',
+        description:
+            'Разработка медицинского телеграм-бота с 2 интерфейсами: пациента и специалиста. Пациент за небольшую плату может задавать вопрос конкретному специалисту либо всем, пополнять баланс через Telegram, общаться в чате с прикреплением вложений. Специалист может (не) принимать запросы на консультацию, проводить консультации в чате, смотреть свою статистику ( Chart.js ), приглашать других коллег и получать кэшбек. В настройках можно задать чёрный список пациентов, размер вознаграждения коллеге и многое другое. В приложении использован протокол WebSocket не только в чате, но и на многих страницах, что позволяет получать сообщения, запросы, уведомления моментально без перезагрузки страницы.',
+        type: 'Индивидуальный',
+        responsibility: 'Всё приложение',
+    },
+    {
+        name: 'Сервис бронирования BookingShips',
+        images: [
+            { img: bookingShipsMain, url: 'https://bookingships.com/' },
+            {
+                img: bookingShipsCatalog,
+                url: 'https://bookingships.com/catalog',
+            },
+            {
+                img: bookingShipsDetailed,
+                url: 'https://bookingships.com/detailed-page/6',
+            },
+        ],
+        deploy: 'https://bookingships.com/',
+        stack: 'Vue, Tailwind, Pinia, Vite',
+        description:
+            'Разработка сервиса онлайн бронирования яхт, водных экскурсий и маршрутов по Санкт-Петербургу. Пользователь может зарегистрироваться как арендатор либо как арендодатель. Арендодатель может подать объявление, отслеживать продажи билетов. Арендатор может выбрать услугу в каталоге с фильтрами, а после приобрести её с использованием платежей через Yookassa. В приложении множество слайдеров, модальных окон, карта с поиском по введнному слову и т.д.',
+        type: 'Индивидуальный',
+        responsibility: 'Всё приложение',
+    },
+    {
+        name: 'Доработка существующих проектов',
+        images: [
+            { img: kfMain, url: 'https://kfsamara.ru/' },
+            {
+                img: godEyeMain,
+                url: 'https://god-eye.ru/',
+            },
+            {
+                img: imperialisMain,
+                url: 'https://imperialisorchestra.ru/',
+            },
+        ],
+        stack: 'Vue, Tailwind, Pinia, Vite',
+        description:
+            'Правки по вёрстке Perfect Pixel, добавление интерактивности на кликабельные элементы, плавности. В God Eye также - добавление логики подставления данных в форму, динамического роутинга,  слайдеров, интеграции с VK Видео. В KF - интеграция с бэкендом изменения данных профиля, валидация полей на фронте.',
+        type: 'Командный',
+        responsibility: 'Всё приложение (доработка)',
+    },
     {
         name: 'Мобильное веб-приложение Monzi',
         images: [
@@ -215,79 +288,26 @@ export const PORTFOLIO: PortfolioItem[] = [
         responsibility:
             'Страница "Логин", "Каталог", "Корзина", роутинг и большинство запросов на сервер CommerceTools',
     },
-    {
-        name: 'Игровая площадка/IDE для запросов GraphiQL',
-        images: [
-            { img: graphQl, url: 'https://graphql-rsschool-app.netlify.app/' },
-        ],
-        deploy: 'https://graphql-rsschool-app.netlify.app/',
-        repo: 'https://github.com/AndreiZaretski/graphiql-app',
-        stack: 'React, GraphiQl, Vite, Vitest',
-        description:
-            'GraphiQL — это игровая площадка/IDE для запросов GraphiQL. Для работы вы можете использовать любой API, поддерживающий CORS. Есть возможность просмотреть документацию для построения запроса для заданной API. Добавлены возможности авторизации и аутентификации, обеспечивающие доступ к инструменту только авторизованным пользователям.',
-        type: 'Командный',
-        responsibility:
-            'Страница "Главная": раздел запросов /ответов, prettify для запроса, проводник документации',
-    },
-    {
-        name: 'Игра "Сапёр"',
-        images: [
-            {
-                img: minesweeper,
-                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/minesweeper/',
-            },
-        ],
-        deploy: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/minesweeper/',
-        repo: 'https://github.com/rolling-scopes-school/ksu1ven-JSFE2023Q1/tree/minesweeper',
-        stack: 'Vanilla JS, Webpack',
-        description:
-            'Целью игры является открытие всех ячеек, не содержащих мины. Игрок открывает ячейки, стараясь не открыть ячейку с миной. Открыв ячейку с миной, он проигрывает. Мины расставляются после первого хода, поэтому проиграть на первом же ходу невозможно. Есть возможность выбирать размер поля и количество мин, а также результаты последних 10 игр сохраняются в таблице рекордов.',
-        type: 'Индивидуальный',
-    },
-    {
-        name: 'Тренажёр CSS-Селекторов',
-        images: [
-            {
-                img: selectors,
-                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/rss-css-selectors/',
-            },
-        ],
-        deploy: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/rss-css-selectors/',
-        repo: 'https://github.com/rolling-scopes-school/ksu1ven-JSFE2023Q1/tree/RSS-CSS-Selectors',
-        stack: 'Vanilla JS, Webpack',
-        description:
-            'Тренажёр позволяет в игровой форме понять принцип написания селекторов. Справа находится блок с описанием уровня, после прочтения которого необходимо вписать селектор в поле ввода.  Изображение с едой и редактор кода в левой секции синхронизированы при наведении. При верном ответе котик кушает и и игрок переходит на следующий уровень.',
-        type: 'Индивидуальный',
-    },
-    {
-        name: 'Сайт приюта для животных',
-        images: [
-            {
-                img: shelterPets,
-                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/shelter/dist/our-pets.html',
-            },
-            {
-                img: shelter,
-                url: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/shelter/dist/',
-            },
-        ],
-        deploy: 'https://rolling-scopes-school.github.io/ksu1ven-JSFE2023Q1/shelter/dist/',
-        repo: 'https://github.com/rolling-scopes-school/ksu1ven-JSFE2023Q1/tree/shelter',
-        stack: 'Vanilla JS, Webpack',
-        description:
-            'Perfect Pixel вёрстка по макету из Figma. Из сложностей - карусель и пагинация с рандомными питомцами из списка всех, при этом на экране повторяющихся питомцев нет.',
-        type: 'Индивидуальный',
-    },
 ];
 
 export const EXPERIENCE: ExperienceItem[] = [
+    {
+        img: catProgrammerOrange,
+        profession: 'Frontend разработчик',
+        company: 'Silicon Knights',
+        city: 'Санкт-Петербург',
+        dateFrom: new Date(2025, 0),
+        dateTo: 'Настоящее время',
+        description:
+            'Разработка веб-приложений на Vue, Tailwind и FSD. В числе проектов: медицинский телеграм бот с интерфейсом пациента и специалиста (+есть встроенный мессенджер), сервис бронирования яхт и экскурсий в Санкт-Петербурге, многостраничные сайты-визитки организаций. ',
+    },
     {
         img: catProgrammer,
         profession: 'Frontend разработчик',
         company: 'Egorov Agency',
         city: 'Минск',
         dateFrom: new Date(2024, 5),
-        dateTo: 'Настоящее время',
+        dateTo: new Date(2025, 0),
         description:
             'Разработка веб-приложений на Vue, PHP(Wordpress) с нуля, поддержка существующих американских проектов на WordPress (исправление нюансов вёрстки, ошибок PHP и плагинов в консоли, разработка новых секций и т.д.).',
     },

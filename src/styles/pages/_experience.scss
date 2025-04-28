@@ -44,6 +44,7 @@
         aspect-ratio: 1.4;
         border-radius: var(--border-radius);
         background-color: var(--color-primary-lighter);
+        object-fit: cover;
     }
 
     &__details {
