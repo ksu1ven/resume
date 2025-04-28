@@ -235,16 +235,17 @@ export const PORTFOLIO: PortfolioItem[] = [
     {
         name: 'Интернет-магазин игрушек Figurrenwelt',
         images: [
-            { img: figurrenWeltAbout, url: '' },
+            { img: figurrenWeltAbout, url: 'https://figurenwelt.de/en/' },
             {
                 img: figurrenWeltBestSellers,
-                url: '',
+                url: 'https://figurenwelt.de/en/pages/harry-potter',
             },
             {
                 img: figurrenWeltLightsabbels,
-                url: '',
+                url: 'https://figurenwelt.de/en/pages/star-wars',
             },
         ],
+        deploy: 'https://figurenwelt.de/en/',
         stack: 'Shopify, THREE.js',
         description:
             'Разработка немецкого интернет-магазина игрушек на Shopify. На сайте используется огромное количество 3D, анимаций и прочих визуальных эффектов. Сайт в процессе разработки, ссылки на продакш на данный момент нет.',
