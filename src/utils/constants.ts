@@ -6,6 +6,10 @@ import bookingShipsMain from '@assets/images/portfolio images/bookingships-main.
 import bookingShipsCatalog from '@assets/images/portfolio images/bookingships-catalog.jpg';
 import bookingShipsDetailed from '@assets/images/portfolio images/bookingships-detailed.jpg';
 
+import gotikaMain from '@assets/images/portfolio images/gotika-1.jpg';
+import gotikaCatalog from '@assets/images/portfolio images/gotika-2.jpg';
+import gotikaContacts from '@assets/images/portfolio images/gotika-3.jpg';
+
 import kfMain from '@assets/images/portfolio images/kf-main.jpg';
 import imperialisMain from '@assets/images/portfolio images/imperialis-main.jpg';
 import godEyeMain from '@assets/images/portfolio images/god-eye-main.jpg';
@@ -150,7 +154,7 @@ export const PORTFOLIO: PortfolioItem[] = [
             },
         ],
         deploy: 'https://tvoiexpert.online/',
-        stack: 'Vue, Tailwind, Telegram Mini Apps, Pinia, Vite',
+        stack: 'Vue, Tailwind, Telegram Mini Apps, Pinia, Vite, WebSocket, CloudPayments, Chart.js, Axios',
         description:
             'Разработка медицинского телеграм-бота с 2 интерфейсами: пациента и специалиста. Пациент за небольшую плату может задавать вопрос конкретному специалисту либо всем, пополнять баланс через Telegram, общаться в чате с прикреплением вложений. Специалист может (не) принимать запросы на консультацию, проводить консультации в чате, смотреть свою статистику ( Chart.js ), приглашать других коллег и получать кэшбек. В настройках можно задать чёрный список пациентов, размер вознаграждения коллеге и многое другое. В приложении использован протокол WebSocket не только в чате, но и на многих страницах, что позволяет получать сообщения, запросы, уведомления моментально без перезагрузки страницы.',
         type: 'Индивидуальный',
@@ -170,14 +174,35 @@ export const PORTFOLIO: PortfolioItem[] = [
             },
         ],
         deploy: 'https://bookingships.com/',
-        stack: 'Vue, Tailwind, Pinia, Vite',
+        stack: 'Vue, Tailwind, Pinia, Vite, Axios',
         description:
             'Разработка сервиса онлайн бронирования яхт, водных экскурсий и маршрутов по Санкт-Петербургу. Пользователь может зарегистрироваться как арендатор либо как арендодатель. Арендодатель может подать объявление, отслеживать продажи билетов. Арендатор может выбрать услугу в каталоге с фильтрами, а после приобрести её с использованием платежей через Yookassa. В приложении множество слайдеров, модальных окон, карта с поиском по введнному слову и т.д.',
         type: 'Индивидуальный',
         responsibility: 'Всё приложение',
     },
     {
-        name: 'Доработка существующих проектов',
+        name: 'Интернет магазин тротуарной плитки Gotika',
+        images: [
+            { img: gotikaMain, url: 'https://gotika.dgbridge.ru/' },
+            {
+                img: gotikaCatalog,
+                url: 'https://gotika.dgbridge.ru/catalog',
+            },
+            {
+                img: gotikaContacts,
+                url: 'https://gotika.dgbridge.ru/contacts',
+            },
+        ],
+        deploy: 'https://gotika.dgbridge.ru/',
+        stack: 'Vue, Tailwind, Pinia, Vite',
+        description:
+            'Разработка интернет-магазина тротуарной плитки (пока вёрстка с основной логикой, без бэкенда) со стандартными его атрибутами.',
+        type: 'Командный',
+        responsibility:
+            'Половина страниц, проверка второй половины от Junior-специалиста',
+    },
+    {
+        name: 'Доработка существующих проектов (на фото далеко не все)',
         images: [
             { img: kfMain, url: 'https://kfsamara.ru/' },
             {
@@ -191,7 +216,7 @@ export const PORTFOLIO: PortfolioItem[] = [
         ],
         stack: 'Vue, Tailwind, Pinia, Vite',
         description:
-            'Правки по вёрстке Perfect Pixel, добавление интерактивности на кликабельные элементы, плавности. В God Eye также - добавление логики подставления данных в форму, динамического роутинга,  слайдеров, интеграции с VK Видео. В KF - интеграция с бэкендом изменения данных профиля, валидация полей на фронте.',
+            'Правки по вёрстке Perfect Pixel, новые дизайны, добавление интерактивности на кликабельные элементы, плавности, динамического роутинга, слайдеров, интеграции с VK Видео, интеграции с бэкендом изменения данных, валидация полей на фронте, построение маршрута на Leaflet картах, запуск игр на Unity и многое другое.',
         type: 'Командный',
         responsibility: 'Всё приложение (доработка)',
     },
@@ -248,7 +273,7 @@ export const PORTFOLIO: PortfolioItem[] = [
         deploy: 'https://figurenwelt.de/en/',
         stack: 'Shopify, THREE.js',
         description:
-            'Разработка немецкого интернет-магазина игрушек на Shopify. На сайте используется огромное количество 3D, анимаций и прочих визуальных эффектов. Сайт в процессе разработки, ссылки на продакш на данный момент нет.',
+            'Разработка немецкого интернет-магазина игрушек на Shopify. На сайте используется огромное количество 3D, анимаций и прочих визуальных эффектов.',
         type: 'Командный',
         responsibility:
             'Секции "Content", "Bestsellers", "Lightsabels", "Choose Side" на вторичках, cекции "Video", "About" на главной.',
